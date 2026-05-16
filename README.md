@@ -10,6 +10,10 @@ icon: hand-wave
 **English version:** [docs.proxyshard.com/eng](https://docs.proxyshard.com/eng/)
 
 **Російська версія:** [docs.proxyshard.com](https://docs.proxyshard.com/)
+
+**Українська версія:** [docs.proxyshard.com/ua](https://docs.proxyshard.com/ua/)
+
+**Китайська версія:** [docs.proxyshard.com/cn](https://docs.proxyshard.com/cn/)
 {% endhint %}
 
 ***
