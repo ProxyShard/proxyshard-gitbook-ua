@@ -1,0 +1,107 @@
+# Table of contents
+
+* [Proxyshard GitBook](README.md)
+* [Що таке Proxyshard](about-proxyshard.md)
+* [Зв'язок з нами](contact-us.md)
+
+## Наші продукти
+
+* [Резидентські проксі](our-products/residential-proxies/README.md)
+  * [Unlimited Residential proxy](our-products/residential-proxies/unlimited-residential-proxy.md)
+  * [Список доступних країн](our-products/residential-proxies/available-countries.md)
+  * [Як використовувати Residential проксі](our-products/residential-proxies/how-to-use-residential-proxies.md)
+* [Датацентрові проксі](our-products/datacenter-proxies.md)
+* [Мобільні проксі](our-products/mobile-proxies.md)
+* [ISP проксі](our-products/isp-proxies.md)
+* [Підміна мережевого відбитка (p0f)](our-products/p0f-spoofing.md)
+* [Проксі з UDP](our-products/udp-proxies.md)
+* [Обмеження](our-products/restrictions.md)
+* [IP Checker](our-products/ip-checker.md)
+* [Proxy Tester](our-products/proxy-tester.md)
+* [Про протокол UDP](our-products/about-udp/README.md)
+  * [Як встановити Tampermonkey і скрипт для дебагу WebRTC](our-products/about-udp/tampermonkey-webrtc-debug.md)
+  * [Як працює витік через WebRTC](our-products/about-udp/how-webrtc-leak-works.md)
+  * [Де перевірити витік WebRTC](our-products/about-udp/webrtc-leak-check-tools.md)
+  * [Чому одного TCP-проксі недостатньо](our-products/about-udp/why-tcp-proxy-not-enough.md)
+  * [Чому блокування WebRTC не рятує від виявлення](our-products/about-udp/why-blocking-webrtc-doesnt-help.md)
+  * [Результати наших польових тестів](our-products/about-udp/field-test-results.md)
+  * [Програмні рішення для ввімкнення WebRTC](our-products/about-udp/webrtc-software-solutions.md)
+
+## Користувацьке API
+
+* ```yaml
+  props:
+    models: true
+    downloadLink: true
+  type: builtin:openapi
+  dependencies:
+    spec:
+      ref:
+        kind: openapi
+        spec: proxysharddoc-api
+  ```
+
+## Навігація сайтом
+
+* [Поповнення балансу](site-navigation/top-up-balance.md)
+* [Придбання та продовження проксі](site-navigation/buying-and-renewing/README.md)
+  * [Приклад придбання датацентрових проксі](site-navigation/buying-and-renewing/buying-datacenter-proxies.md)
+  * [Приклад придбання резидентських проксі](site-navigation/buying-and-renewing/buying-residential-proxies.md)
+  * [Приклад придбання ISP проксі](site-navigation/buying-and-renewing/buying-isp-proxies.md)
+  * [Приклад придбання мобільних проксі](site-navigation/buying-and-renewing/buying-mobile-proxies.md)
+* [Пошук замовлень (Product tag)](site-navigation/order-search-product-tag.md)
+* [Рахунки](site-navigation/invoices.md)
+* [Мої замовлення](site-navigation/my-orders.md)
+* [Реферальна програма](site-navigation/referral-program.md)
+
+## Питання та відповіді
+
+* [FAQ](faq-and-support/faq/README.md)
+  * [Резидентські проксі](faq-and-support/faq/residential-proxies.md)
+    * [Чому резидентські проксі не зберігаються](faq-and-support/faq/why-residential-proxies-not-saved.md)
+  * [Datacenter / ISP проксі](faq-and-support/faq/datacenter-isp-proxies.md)
+  * [Mobile проксі](faq-and-support/faq/mobile-proxies.md)
+  * [Загальні питання](faq-and-support/faq/general-questions.md)
+    * [Як перевірити працездатність проксі](faq-and-support/faq/how-to-check-proxy.md)
+    * [Проксі не працюють](faq-and-support/faq/proxy-not-working.md)
+    * [Локація проксі неправильна](faq-and-support/faq/wrong-proxy-location.md)
+
+## Інструкції з використання
+
+* [Інструкція з налаштування](setup-guides/getting-started.md)
+* [Windows](setup-guides/windows/README.md)
+  * [Proxifier](setup-guides/windows/proxifier.md)
+  * [v2rayN](setup-guides/windows/v2rayn.md)
+  * [ClashX](setup-guides/windows/clashx.md)
+  * [NekoRay](setup-guides/windows/nekoray.md)
+  * [ProxyCap](setup-guides/windows/proxycap.md)
+  * [Win2Socks](setup-guides/windows/win2socks.md)
+  * [SocksCap64](setup-guides/windows/socskcap64.md)
+* [macOS](setup-guides/macos/README.md)
+  * [V2Box](setup-guides/macos/v2box.md)
+* [Linux](setup-guides/linux/README.md)
+  * [GUI-програми](setup-guides/linux/gui-apps/README.md)
+    * [v2rayN GUI](setup-guides/linux/gui-apps/v2rayn-gui.md)
+  * [CLI-програми](setup-guides/linux/cli-apps/README.md)
+    * [proxychains](setup-guides/linux/cli-apps/proxychain.md)
+* [iOS / Android](setup-guides/ios-android/README.md)
+  * [V2Box](setup-guides/ios-android/v2box.md)
+  * [Potatso](setup-guides/ios-android/potatso.md)
+  * [Super Proxy](setup-guides/ios-android/super-proxy.md)
+* [Антидетект-браузери](setup-guides/antidetect-browsers/README.md)
+  * [Браузер Vision](setup-guides/antidetect-browsers/vision-browser.md)
+  * [AdsPower](setup-guides/antidetect-browsers/adspower.md)
+* [Браузери](setup-guides/browsers/README.md)
+  * [Chrome](setup-guides/browsers/chrome/README.md)
+    * [ZeroOmega](setup-guides/browsers/chrome/zeroomega.md)
+  * [Safari](setup-guides/browsers/safari.md)
+  * [Mozilla Firefox](setup-guides/browsers/mozilla-firefox/README.md)
+    * [FoxyProxy](setup-guides/browsers/mozilla-firefox/foxyproxy.md)
+  * [Opera](setup-guides/browsers/opera/README.md)
+    * [ZeroOmega](setup-guides/browsers/opera/zeroomega.md)
+  * [Edge](setup-guides/browsers/edge/README.md)
+    * [ZeroOmega](setup-guides/browsers/edge/zeroomega.md)
+* [Telegram](setup-guides/telegram.md)
+* [MikroTik proxy](setup-guides/mikrotik-proxy.md)
+* [OpenWrt proxy](setup-guides/openwrt-proxy.md)
+* [Checker proxy](setup-guides/checker-proxy.md)

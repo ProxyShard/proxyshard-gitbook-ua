@@ -1,0 +1,72 @@
+---
+description: Проксі для Opera
+---
+
+# ZeroOmega
+
+## **Установка та налаштування** ZeroOmega
+
+{% hint style="warning" %}
+Дане рішення не підтримує тунелювання UDP! Дуже радимо розглянути для цих цілей [<mark style="color:green;">Vision</mark>](../../antidetect-browsers/vision-browser.md)
+{% endhint %}
+
+Оскільки Opera підтримує Chrome-розширення, ми рекомендуємо скористатися **ZeroOmega**
+
+Для браузера Opera є розширення [**ZeroOmega**](https://chromewebstore.google.com/detail/Proxy%20SwitchyOmega%203%20\(ZeroOmega\)/pfnededegaaopdmhkdmcofjmoldfiped)**,** здійсніть його встановлення
+
+{% embed url="https://chromewebstore.google.com/detail/Proxy%20SwitchyOmega%203%20(ZeroOmega)/pfnededegaaopdmhkdmcofjmoldfiped" %}
+
+<figure><img src="../../../.gitbook/assets/Image00002 (3).PNG" alt=""><figcaption></figcaption></figure>
+
+Після встановлення розширення, у вас праворуч зверху стане доступне встановлене розширення, натисніть на нього і для зручності користування закріпіть розширення.
+
+<figure><img src="../../../.gitbook/assets/Image00004 (3).PNG" alt=""><figcaption></figcaption></figure>
+
+\
+Відкрийте параметри розширення
+
+<figure><img src="../../../.gitbook/assets/Image00003 (3).PNG" alt=""><figcaption></figcaption></figure>
+
+В інтерфейсі налаштування ZeroOmega створіть новий профіль та надайте йому будь-яке ім'я
+
+<div align="center"><figure><img src="../../../.gitbook/assets/image (134).png" alt=""><figcaption></figcaption></figure></div>
+
+Тут вкажіть довільне ім'я профілю
+
+<figure><img src="../../../.gitbook/assets/image (135).png" alt=""><figcaption></figcaption></figure>
+
+Далі відкриється інтерфейс налаштування серверів, тут вам необхідно взяти із замовлення в "Proxy list" самі проксі та вручну вставити IP (або DNS) сервера, порт, логін та пароль.\
+Логін та пароль задаються в кнопці![Емодзі 🔒 ВКонтакте](https://vk.com/emoji/e/f09f9492_2x.png) .
+
+<figure><img src="../../../.gitbook/assets/image (136).png" alt=""><figcaption></figcaption></figure>
+
+Тут потрібно вставити логін і пароль проксі.
+
+<figure><img src="../../../.gitbook/assets/image (137).png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+**З прикладом налаштування проксі ви можете ознайомитись у розділі [Інструкція з налаштування](../../getting-started.md)**
+{% endhint %}
+
+Потім застосуйте налаштування
+
+<figure><img src="../../../.gitbook/assets/image (138).png" alt=""><figcaption></figcaption></figure>
+
+У спливаючому вікні розширення виберіть проксі, які ви налаштували раніше
+
+<figure><img src="../../../.gitbook/assets/Image00001 (3).PNG" alt=""><figcaption></figcaption></figure>
+
+**Готово! Ви закінчили налаштування проксі через розширення.**\
+**Тепер ви можете розпочати використання проксі.**
+
+
+
+
+
+
+
+
+
+
+
+
