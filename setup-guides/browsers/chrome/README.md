@@ -7,4 +7,5 @@ icon: chrome
 
 Розширення для браузера Chrome
 
+* [🔥 ProxyShard Extension](proxyshard.md)
 * [ZeroOmega](zeroomega.md)

@@ -7,4 +7,5 @@ icon: edge
 
 Розширення для браузера Edge
 
+* [🔥 ProxyShard Extension](proxyshard.md)
 * [ZeroOmega](zeroomega.md)
