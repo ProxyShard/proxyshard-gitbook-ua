@@ -58,6 +58,7 @@
 ## Питання та відповіді
 
 * [FAQ](faq-and-support/faq/README.md)
+  * [🔥 Популярні питання про продукти](faq-and-support/faq/products.md)
   * [Резидентські проксі](faq-and-support/faq/residential-proxies.md)
     * [Чому резидентські проксі не зберігаються](faq-and-support/faq/why-residential-proxies-not-saved.md)
   * [Datacenter / ISP проксі](faq-and-support/faq/datacenter-isp-proxies.md)
