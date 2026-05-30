@@ -1,7 +1,7 @@
 openapi: 3.0.3
 
 info:
-  title: ShardX Launcher — Automation API
+  title: ShardX Browser — Automation API
   version: "0.1.0"
   description: |
     Локальний HTTP API для автоматизації антидетект-браузера ShardX:
