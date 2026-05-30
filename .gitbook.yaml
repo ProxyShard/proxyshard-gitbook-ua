@@ -8,6 +8,8 @@ openapi:
   specs:
     - id: proxy-shard-user-api
       path: ./proxy-shard-user-api.openapi.yaml
+    - id: shardbrowser-api
+      path: ./shardx-launcher.openapi.yaml
 
 redirects:
   # Старые русские пути -> новые английские
