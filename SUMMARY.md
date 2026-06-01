@@ -19,7 +19,7 @@
 * [IP Checker](our-products/ip-checker.md)
 * [Proxy Tester](our-products/proxy-tester.md)
 * [ProxyShard Extension](our-products/proxyshard-extension.md)
-* [ShardX Browser (антидетект-браузер)](our-products/shardx-launcher.md)
+* [ShardX Launcher](our-products/shardx-launcher.md)
 * [Про протокол UDP](our-products/about-udp/README.md)
   * [Як встановити Tampermonkey і скрипт для дебагу WebRTC](our-products/about-udp/tampermonkey-webrtc-debug.md)
   * [Як працює витік через WebRTC](our-products/about-udp/how-webrtc-leak-works.md)
@@ -72,6 +72,7 @@
 ## Інструкції з використання
 
 * [Інструкція з налаштування](setup-guides/getting-started.md)
+* [ShardX Launcher](setup-guides/shardx-browser.md)
 * [Windows](setup-guides/windows/README.md)
   * [Proxifier](setup-guides/windows/proxifier.md)
   * [v2rayN](setup-guides/windows/v2rayn.md)
