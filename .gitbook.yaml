@@ -23,7 +23,7 @@ redirects:
   nashi-produkty/ogranicheniya: our-products/restrictions
   nashi-produkty/datacentr-proksi: our-products/datacenter-proxies
   nashi-produkty/isp-proksi: our-products/isp-proxies
-  nashi-produkty/proksi-s-udp: our-products/udp-proxies
+  nashi-produkty/proksi-s-udp: our-products/about-udp
   nashi-produkty/ip-checker: our-products/ip-checker
   instrukciya-po-ispolzovaniyu/instrukciya-po-nastroike: setup-guides/getting-started
   instrukciya-po-ispolzovaniyu/windows/clashx: setup-guides/windows/clashx

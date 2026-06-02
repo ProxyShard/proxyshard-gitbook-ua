@@ -14,7 +14,7 @@ icon: hand
 
 * Банківські сайти (онлайн-банкінг, особисті кабінети банків)
 * Державні портали та сайти
-* Платіжні процесори: <mark style="color:purple;">Stripe</mark>, <mark style="color:purple;">PayPal</mark>
+* Платіжні процесори: <mark style="color:purple;">Stripe</mark>, <mark style="color:purple;">PayPal</mark> (у тому числі <mark style="color:purple;">Yahoo</mark>)
 
 Це вимога регуляторів, спрямовану обмеження шахрайських дій. Блокування **не поширюється** на крипто-сервіси та платіжні системи на кшталт бірж.
 

@@ -7,14 +7,15 @@
 ## Наші продукти
 
 * [Резидентські проксі](our-products/residential-proxies/README.md)
-  * [Unlimited Residential proxy](our-products/residential-proxies/unlimited-residential-proxy.md)
+  * [Standard Residential](our-products/residential-proxies/standard-residential.md)
+  * [Premium Residential](our-products/residential-proxies/premium-residential.md)
+  * [Unlimited Residential](our-products/residential-proxies/unlimited-residential-proxy.md)
   * [Список доступних країн](our-products/residential-proxies/available-countries.md)
   * [Як використовувати Residential проксі](our-products/residential-proxies/how-to-use-residential-proxies.md)
 * [Датацентрові проксі](our-products/datacenter-proxies.md)
 * [Мобільні проксі](our-products/mobile-proxies.md)
 * [ISP проксі](our-products/isp-proxies.md)
 * [Підміна мережевого відбитка (p0f)](our-products/p0f-spoofing.md)
-* [Проксі з UDP](our-products/udp-proxies.md)
 * [Обмеження](our-products/restrictions.md)
 * [IP Checker](our-products/ip-checker.md)
 * [Proxy Tester](our-products/proxy-tester.md)
@@ -64,10 +65,9 @@
     * [Чому резидентські проксі не зберігаються](faq-and-support/faq/why-residential-proxies-not-saved.md)
   * [Datacenter / ISP проксі](faq-and-support/faq/datacenter-isp-proxies.md)
   * [Mobile проксі](faq-and-support/faq/mobile-proxies.md)
-  * [Загальні питання](faq-and-support/faq/general-questions.md)
-    * [Як перевірити працездатність проксі](faq-and-support/faq/how-to-check-proxy.md)
-    * [Проксі не працюють](faq-and-support/faq/proxy-not-working.md)
-    * [Локація проксі неправильна](faq-and-support/faq/wrong-proxy-location.md)
+  * [Як перевірити працездатність проксі](faq-and-support/faq/how-to-check-proxy.md)
+  * [Проксі не працюють](faq-and-support/faq/proxy-not-working.md)
+  * [Локація проксі неправильна](faq-and-support/faq/wrong-proxy-location.md)
 
 ## Інструкції з використання
 

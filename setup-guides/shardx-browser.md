@@ -132,7 +132,7 @@ scheme://user:pass@host:port
 
 <figure><img src="../.gitbook/assets/shardx-setup-check-proxy.png" alt=""><figcaption>Натисніть «Test all» для перевірки, потім «Import»</figcaption></figure>
 
-Після тесту кожен проксі отримає статус. Проксі з міткою <mark style="color:purple;">**UDP**</mark> підтримують <mark style="color:purple;">SOCKS5 UDP</mark>, а отже і <mark style="color:purple;">WebRTC</mark> — що дуже корисно при роботі з серйозними антифрод-системами. Якщо мітки <mark style="color:purple;">**UDP**</mark> немає, профіль браузера автоматично переходить у режим <mark style="color:purple;">**TCP-only**</mark>: IP не витече, однак трафік може виглядати підозріло для просунутих антифрод-систем. Ми наполегливо рекомендуємо використовувати [проксі з підтримкою UDP](../our-products/udp-proxies.md).
+Після тесту кожен проксі отримає статус. Проксі з міткою <mark style="color:purple;">**UDP**</mark> підтримують <mark style="color:purple;">SOCKS5 UDP</mark>, а отже і <mark style="color:purple;">WebRTC</mark> — що дуже корисно при роботі з серйозними антифрод-системами. Якщо мітки <mark style="color:purple;">**UDP**</mark> немає, профіль браузера автоматично переходить у режим <mark style="color:purple;">**TCP-only**</mark>: IP не витече, однак трафік може виглядати підозріло для просунутих антифрод-систем. Ми наполегливо рекомендуємо використовувати [проксі з підтримкою UDP](../our-products/about-udp/).
 
 Натисніть <mark style="color:purple;">**Import**</mark> — проксі з'явиться у списку зі статусом <mark style="color:purple;">**Active**</mark>.
 
