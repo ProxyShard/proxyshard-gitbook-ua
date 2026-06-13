@@ -61,6 +61,7 @@ redirects:
   navigaciya-po-saitu/moi-zakazy: site-navigation/my-orders
   navigaciya-po-saitu/referalnaya-programma: site-navigation/referral-program
   razbor-vozmozhnykh-problem/faq-chastye-voprosy: faq-and-support/faq
+  faq-and-support/faq/products: faq-and-support/faq/general-questions
   razbor-vozmozhnykh-problem/faq-chastye-voprosy/proksi-ne-rabotayut: faq-and-support/faq/proxy-not-working
   razbor-vozmozhnykh-problem/faq-chastye-voprosy/lokaciya-proksi-neverna: faq-and-support/faq/wrong-proxy-location
   chto-takoe-proxyshard: about-proxyshard
