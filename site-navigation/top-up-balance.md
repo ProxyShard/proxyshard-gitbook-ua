@@ -8,7 +8,7 @@ icon: dollar-sign
 Баланс використовується для придбання всіх продуктів на сайті, а також для продовження замовлень.\
 \
 На даний момент підтримуються поповнення:
-\- <mark style="color:purple;">Криптовалютою </mark>, через Nowpayments\
+\- <mark style="color:purple;">Криптовалютою </mark>, через Cryptomus\
 \- <mark style="color:purple;">Банківською карткою</mark>, через Stripe\
 \
 Щоб перейти до поповнення балансу гаманця, натисніть "[Wallet](https://dashboard.proxyshard.com/en/wallet)""
