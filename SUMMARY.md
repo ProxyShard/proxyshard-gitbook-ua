@@ -132,3 +132,12 @@
         kind: openapi
         spec: shardbrowser-api
   ```
+
+## Купити
+
+* [Купити резидентські проксі](https://proxyshard.com/residential-proxy)
+* [Купити датацентр проксі](https://proxyshard.com/datacenter-proxy)
+* [Купити ISP проксі](https://proxyshard.com/isp-proxy)
+* [Купити мобільні проксі](https://proxyshard.com/mobile-proxy)
+* [IP Чекер](https://proxyshard.com/ip-checker)
+* [Proxy Tester](https://proxyshard.com/proxy-tester)
