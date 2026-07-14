@@ -1,0 +1,1023 @@
+openapi: 3.0.3
+
+info:
+  title: ShardX Browser — Automation API
+  version: "0.1.0"
+  description: |
+    Локальний HTTP API для автоматизації антидетект-браузера ShardX:
+    генерація відбитків, створення/запуск/зупинка профілів, отримання
+    Chrome DevTools Protocol (CDP) WebSocket-ендпоінта для керування
+    запущеним профілем через Puppeteer / Playwright.
+
+    ## Прив'язка та життєвий цикл
+    Сервер працює всередині застосунку-лаунчера, слухає лише **127.0.0.1**
+    на порту, заданому в *Settings → Automation API* (за замовчуванням **40325**).
+    З інших хостів він **недоступний**. Зміна порту та включення/відключення
+    набувають чинності після перезапуску застосунку.
+
+    ## Аутентифікація
+    Усі ендпоінти, крім `GET /health`, вимагають **Bearer JWT** (HS256,
+    підписаний секретом лаунчера):
+
+        Authorization: Bearer <token>
+
+    Постійний токен відображається в *Settings → Automation API* (скопіюйте
+    його звідти). Кнопка **Regenerate token** миттєво ротує підписуючий
+    секрет: новий токен починає працювати одразу, всі раніше видані токени
+    стають недійсними. Окремого API-ключа та ендпоінта для видачі
+    токенів немає — сам токен і є обліковим записом.
+
+    Відсутній/невірний токен → `401` з порожнім тілом.
+
+    ## Типовий сценарій
+    1. `GET /fingerprint/new/{platform}` → повністю унікалізований відбиток
+       (випадкова platform_version, CPU/RAM з урахуванням хоста, обрізаний
+       екран, шум по векторах), **не** зберігається.
+    2. За бажанням відредагувати повернутий об'єкт `fingerprint` (наприклад,
+       увімкнути `noise.fonts.enabled`, задати `webrtc`, виправити `navigator`).
+    3. `POST /profiles` (або `POST /folders/{folder}/profiles`) з цим об'єктом
+       як `fingerprint` → лаунчер зберігає його **як є**
+       (create ніколи не перерандомізує).
+    4. `POST /profiles/{id}/start` → повертає CDP-ендпоінт; підключайтеся як
+       `browserWSEndpoint = cdp.web_socket_debugger_url`.
+    5. `POST /profiles/{id}/stop` після завершення.
+
+    ## Проксі та QUIC/WebRTC
+    При **кожному** запуску (через UI або API), до старту браузера, прив'язаний
+    проксі перевіряється живцем на UDP-relay (SOCKS5 UDP_ASSOCIATE). Якщо UDP
+    працює — вмикається QUIC, а WebRTC може використовувати проксований
+    UDP-relay; якщо ні — QUIC вимикається, WebRTC переводиться в режим
+    TCP-only, щоб реальний IP не витік. Поля часового поясу, локалі та
+    геолокації в режимі `auto` також підтягуються живцем через проксі при
+    запуску. Якщо передати `proxy` (рядок) при постійному створенні —
+    проксі додається у сховище та проходить повний тест; тимчасовий профіль
+    зберігає проксі інлайн.
+
+    ## Тимчасові профілі
+    `POST /profiles/temporary` створює профіль із прапорцем `temporary`: він
+    прихований з `GET /profiles` та інтерфейсу лаунчера, а після закриття
+    браузера видаляється автоматично (конфіг + папка даних). Якщо застосунок
+    впаде поки профіль відкритий — він буде видалений при наступному запуску.
+
+    ## Об'єкт fingerprint
+    `fingerprint`, що повертається `GET /fingerprint/new*` та приймається
+    ендпоінтами створення — це нативний FingerprintConfig лаунчера. Він
+    передається дослівно, тому схема нижче документує типові
+    підоб'єкти, але навмисно відкрита (`additionalProperties: true`).
+
+    ## MCP-сервер
+    Окремий **MCP** (Model Context Protocol) сервер дозволяє AI-клієнту
+    керувати лаунчером через *цей* API, а браузером профілю — по CDP.
+    Це самостійний Node-процес — **не** частина даного HTTP API і
+    не хоститься ним. Завантажити можна прямо з лаунчера
+    (**Settings → MCP server → Download MCP server** або кнопка «Download MCP»
+    на боковій панелі); лаунчер збереже вихідники у вибрану папку.
+    Також доступний у репозиторії: `rust/shardx-launcher/mcp/`.
+
+    Під капотом він просто викликає цей API: налаштуйте
+    `SHARDX_API` (базовий URL) та `SHARDX_TOKEN` (Bearer-токен з
+    *Settings → Automation API*). MCP-сервер надає:
+    - **API-інструменти** — тонкі обгортки над ендпоінтами нижче
+      (профілі, відбитки, проксі, папки, cookies, запуск/зупинка).
+    - **Браузерні інструменти** (patchright поверх CDP) — `browser_navigate`,
+      `browser_evaluate`, `browser_screenshot`, `browser_click`,
+      `browser_fill`, вкладки, очікування тощо, застосовуються до профілю,
+      запущеного через `POST /profiles/{id}/start` (який повертає
+      CDP-ендпоінт).
+
+    Запуск: або через **stdio** (клієнт стартує його сам), або через HTTP
+    на `127.0.0.1:<port>/mcp` (якщо задано `MCP_HTTP_PORT`). Детальніше —
+    в README MCP-сервера. (Лаунчер лише завантажує його; не запускає.)
+
+servers:
+  - url: http://127.0.0.1:40325
+    description: Локальний лаунчер (порт за замовчуванням; змінюється в Settings)
+
+security:
+  - bearerAuth: []
+
+tags:
+  - name: System
+    description: Системні ендпоінти
+  - name: Fingerprints
+    description: Генерація та перегляд відбитків
+  - name: Profiles
+    description: Керування профілями
+  - name: Folders
+    description: Керування папками
+  - name: Proxies
+    description: Керування проксі
+
+paths:
+  /health:
+    get:
+      tags: [System]
+      summary: Перевірка доступності сервера
+      description: Повертає базову інформацію про сервер. Єдиний ендпоінт, **не** що вимагає аутентифікації.
+      security: []
+      responses:
+        "200":
+          description: Сервер працює.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean, example: true }
+                  name: { type: string, example: shardx-launcher }
+                  version: { type: string, example: "0.1.0" }
+
+  /fingerprint/new:
+    get:
+      tags: [Fingerprints]
+      summary: Згенерувати новий відбиток (ОС хоста)
+      description: |
+        Повертає повністю унікалізований відбиток для **хостової**
+        операційної системи без збереження. Еквівалентно виклику
+        `/fingerprint/new/{platform}` з платформою хоста.
+      responses:
+        "200":
+          description: Унікалізований, не збережений відбиток.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FingerprintEnvelope"
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "404":
+          description: Бібліотека відбитків порожня.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+
+  /fingerprint/new/{platform}:
+    get:
+      tags: [Fingerprints]
+      summary: Згенерувати новий відбиток для заданої платформи
+      description: |
+        Вибирає випадковий відбиток з бібліотеки, що відповідає `platform`,
+        потім унікалізує його: нова `platform_version` для Sec-CH-UA,
+        `hardware_concurrency`/`device_memory` з урахуванням хоста (не перевищують
+        реальні значення машини), екран, обрізаний під реальний дисплей.
+        Повертається без збереження — передайте як `fingerprint` в ендпоінт створення.
+      parameters:
+        - name: platform
+          in: path
+          required: true
+          description: Регістронезалежно; приймаються псевдоніми `win`/`osx`/`darwin`.
+          schema:
+            type: string
+            enum: [Windows, macOS, Linux]
+      responses:
+        "200":
+          description: Унікалізований, не збережений відбиток.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FingerprintEnvelope"
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "404":
+          description: Підходящий відбиток не знайдено або бібліотека порожня.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+
+  /profiles:
+    get:
+      tags: [Profiles]
+      summary: Список профілів
+      description: |
+        Повертає постійні профілі (тимчасові приховані), від нових до старих,
+        закріплені — вгорі. Кожен запис доповнено актуальним станом запуску.
+      responses:
+        "200":
+          description: Список профілів.
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/ProfileListItem" }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+    post:
+      tags: [Profiles]
+      summary: Створити профіль
+      description: |
+        Зберігає профіль із переданого клієнтом об'єкта `fingerprint` **точно
+        як є** (повторна рандомізація не виконується — унікалізація вже
+        відбулася в `/fingerprint/new`). Використовуйте `folder`, щоб розмістити
+        профіль у папці; прив'яжіть проксі за `proxy_id` зі сховища або
+        інлайн через `proxy` (рядок, **не** зберігається у сховищі проксі).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/CreateProfileRequest" }
+      responses:
+        "200":
+          description: Метадані створеного профілю.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ProfileMeta" }
+        "400":
+          description: Відсутній або не є об'єктом `fingerprint`, або нерозбірлива строка проксі.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+
+  /profiles/temporary:
+    post:
+      tags: [Profiles]
+      summary: Створити тимчасовий профіль
+      description: |
+        Створює профіль із випадкового (або вказаного) відбитка бібліотеки,
+        унікалізованого як в `/fingerprint/new` і збереженого дослівно,
+        з прапорцем `temporary`: прихований зі списків і **автоматично видаляється
+        після закриття браузера** (або при наступному запуску після краша).
+        Використовуйте разом із `POST /profiles/{id}/start`.
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/TempProfileRequest" }
+      responses:
+        "200":
+          description: Створений тимчасовий профіль.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id: { type: string, format: uuid }
+                  name: { type: string }
+                  fingerprint_id:
+                    type: string
+                    description: Запис бібліотеки, на основі якого згенеровано профіль.
+                  temporary: { type: boolean, example: true }
+                  proxy_inline:
+                    type: boolean
+                    description: Чи був прикріплений інлайн-проксі.
+        "400":
+          description: Нерозбірлива строка проксі.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "404":
+          description: Підходящий відбиток не знайдено / порожня бібліотека.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+
+  /profiles/{id}:
+    get:
+      tags: [Profiles]
+      summary: Отримати профіль
+      description: |
+        Повертає повний збережений профіль: оболонку `_meta` плюс
+        розгорнутий FingerprintConfig. Якщо профіль запущений — додаються
+        `running` та `cdp`.
+      parameters:
+        - $ref: "#/components/parameters/ProfileId"
+      responses:
+        "200":
+          description: Збережений профіль.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/StoredProfile" }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "404":
+          description: Профіль не знайдено.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+    delete:
+      tags: [Profiles]
+      summary: Видалити профіль
+      description: Видаляє конфігурацію профілю та його папку даних користувача.
+      parameters:
+        - $ref: "#/components/parameters/ProfileId"
+      responses:
+        "200":
+          description: Видалено.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  deleted: { type: boolean, example: true }
+                  id: { type: string, format: uuid }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "500":
+          description: Помилка при видаленні.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+    patch:
+      tags: [Profiles]
+      summary: Редагувати профіль
+      description: |
+        Оновлює лише передані поля. Якщо передано `fingerprint` — він
+        ЗАМІНЮЄ збережений дослівно (без перерандомізації).
+        `folder: ""` прибирає профіль з папки; `proxy_id: ""` від'єднує проксі;
+        рядок `proxy` зберігається (дедуплікація) + проходить повний тест,
+        потім прив'язується. Повертає оновлений профіль.
+      parameters:
+        - $ref: "#/components/parameters/ProfileId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/EditProfileRequest" }
+      responses:
+        "200":
+          description: Оновлений збережений профіль.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/StoredProfile" }
+        "400":
+          description: Невірний fingerprint (не об'єкт) або нерозбірливий проксі.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "404":
+          description: Профіль не знайдено.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+
+  /profiles/{id}/start:
+    post:
+      tags: [Profiles]
+      summary: Запустити профіль (з CDP)
+      description: |
+        Запускає ShardX-браузер для профілю з увімкненим remote-debugging,
+        підставляє часовий пояс/локаль/гео з `auto`-полів через прив'язаний
+        проксі та повертає CDP-ендпоінт після того, як Chrome записав
+        DevToolsActivePort. CDP вмикається **лише** при запуску через API
+        (запуски з UI не відкривають налагоджувальний порт — антидетект не страждає).
+        `cdp` дорівнює `null`, якщо ендпоінт не вдалося прочитати протягом
+        таймауту. Працює для звичайних та тимчасових профілів.
+      parameters:
+        - $ref: "#/components/parameters/ProfileId"
+      requestBody:
+        required: false
+        description: Необов'язково. Порожнє тіло запускає у графічному режимі.
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                headless:
+                  type: boolean
+                  default: false
+                  description: Запустити в headless-режимі (--headless=new).
+      responses:
+        "200":
+          description: Запущено.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  profile_id: { type: string }
+                  pid: { type: integer, format: int64, description: PID процесу ОС. }
+                  headless: { type: boolean }
+                  cdp:
+                    nullable: true
+                    allOf: [{ $ref: "#/components/schemas/CdpInfo" }]
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "500":
+          description: Бінарний файл не налаштований / не вдалося запустити процес.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+
+  /profiles/{id}/stop:
+    post:
+      tags: [Profiles]
+      summary: Зупинити профіль
+      description: |
+        Відправляє браузеру сигнал graceful shutdown (SIGTERM на Unix; 5 секунд
+        очікування, потім SIGKILL). Тимчасові профілі видаляються в процесі закриття.
+        `stopped` дорівнює `false`, якщо профіль не був запущений.
+      parameters:
+        - $ref: "#/components/parameters/ProfileId"
+      responses:
+        "200":
+          description: Команда зупинки відправлена.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  profile_id: { type: string }
+                  stopped: { type: boolean }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+
+  /profiles/{id}/cookies:
+    get:
+      tags: [Profiles]
+      summary: Експортувати cookies
+      description: |
+        Читає сховище cookies Chromium профілю та повертає всі cookies
+        **у розшифрованому вигляді**. Працює як для запущеного, так і для
+        зупиненого профілю. Порожній масив, якщо профіль жодного разу не запускався.
+      parameters:
+        - $ref: "#/components/parameters/ProfileId"
+      responses:
+        "200":
+          description: Cookies.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  cookies:
+                    type: array
+                    items: { $ref: "#/components/schemas/Cookie" }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "500":
+          description: Помилка читання або розшифрування БД cookies.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+    post:
+      tags: [Profiles]
+      summary: Імпортувати cookies
+      description: |
+        Записує cookies у сховище профілю (повторно шифруючи за схемою
+        Chromium v10). Профіль **повинен бути зупинений** — запущений браузер
+        перезапише сховище при виході та затре імпорт.
+      parameters:
+        - $ref: "#/components/parameters/ProfileId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [cookies]
+              properties:
+                cookies:
+                  type: array
+                  items: { $ref: "#/components/schemas/Cookie" }
+      responses:
+        "200":
+          description: Імпортовано.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  imported: { type: integer, description: Кількість записаних cookies. }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+        "409":
+          description: Профіль запущений — спочатку зупиніть його.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+        "500":
+          description: Помилка запису БД cookies.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+
+  /folders:
+    get:
+      tags: [Folders]
+      summary: Список папок
+      description: Унікальні непорожні теги папок серед постійних профілів.
+      responses:
+        "200":
+          description: Назви папок.
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { type: string }
+                example: ["work", "scrapers"]
+        "401": { $ref: "#/components/responses/Unauthorized" }
+
+  /folders/{folder}:
+    patch:
+      tags: [Folders]
+      summary: Перейменувати папку
+      description: Перевішує тег на всіх профілях у папці. Повертає кількість задіяних профілів.
+      parameters:
+        - name: folder
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name]
+              properties:
+                name: { type: string, description: Нова назва папки. }
+      responses:
+        "200":
+          description: Перейменовано.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  renamed_to: { type: string }
+                  profiles: { type: integer, description: Кількість перетегованих профілів. }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+    delete:
+      tags: [Folders]
+      summary: Видалити папку
+      description: |
+        Видаляє тег папки. При `delete_profiles=true` профілі всередині теж
+        видаляються; інакше вони переходять до «Усі» (тег знімається).
+      parameters:
+        - name: folder
+          in: path
+          required: true
+          schema: { type: string }
+        - name: delete_profiles
+          in: query
+          required: false
+          description: Видалити профілі з папки (за замовчуванням false = зняти тег).
+          schema: { type: boolean, default: false }
+      responses:
+        "200":
+          description: Видалено.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  deleted_folder: { type: string }
+                  delete_profiles: { type: boolean }
+                  profiles: { type: integer, description: Кількість задіяних профілів. }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+
+  /folders/{folder}/profiles:
+    post:
+      tags: [Folders]
+      summary: Створити профіль у папці
+      description: |
+        Те саме, що `POST /profiles`, але папка береться з шляху
+        (переоприділяє `folder` у тілі запиту).
+      parameters:
+        - name: folder
+          in: path
+          required: true
+          schema: { type: string }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/CreateProfileRequest" }
+      responses:
+        "200":
+          description: Метадані створеного профілю.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ProfileMeta" }
+        "400":
+          description: Відсутній або не є об'єктом `fingerprint`, або нерозбірлива строка проксі.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+
+  /fingerprints:
+    get:
+      tags: [Fingerprints]
+      summary: Список відбитків бібліотеки
+      description: Бібліотека відбитків на диску (GPU-пресети), що постачається/імпортується лаунчером.
+      responses:
+        "200":
+          description: Записи бібліотеки.
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/LibraryEntry" }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+
+  /running:
+    get:
+      tags: [Profiles]
+      summary: Список запущених профілів
+      description: Профілі з живим процесом браузера, включаючи CDP-ендпоінт при запуску через API.
+      responses:
+        "200":
+          description: Запущені профілі.
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/RunningProfile" }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+
+  /proxies:
+    get:
+      tags: [Proxies]
+      summary: Список збережених проксі
+      description: Проксі, збережені у сховищі лаунчера. **Облікові дані (логін/пароль) не повертаються.**
+      responses:
+        "200":
+          description: Коротка інформація про проксі.
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/ProxySummary" }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+    post:
+      tags: [Proxies]
+      summary: Додати проксі
+      description: |
+        Додає проксі у сховище (з дедуплікацією за ендпоінтом). Передайте
+        рядок `proxy` або явні поля `host`/`port` (+ `kind`/`username`/`password`).
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: "#/components/schemas/AddProxyRequest" }
+      responses:
+        "200":
+          description: Коротка інформація про збережений проксі.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/ProxySummary" }
+        "400":
+          description: Нерозбірливий проксі / не вказані host та port.
+          content:
+            application/json:
+              schema: { $ref: "#/components/schemas/Error" }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+
+  /proxies/{id}:
+    delete:
+      tags: [Proxies]
+      summary: Видалити проксі
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Видалено.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  deleted: { type: boolean, example: true }
+                  id: { type: string }
+        "401": { $ref: "#/components/responses/Unauthorized" }
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: Постійний JWT з Settings → Automation API.
+
+  parameters:
+    ProfileId:
+      name: id
+      in: path
+      required: true
+      description: UUID профілю.
+      schema: { type: string, format: uuid }
+
+  responses:
+    Unauthorized:
+      description: Відсутній або недійсний Bearer-токен.
+
+  schemas:
+    Error:
+      type: object
+      properties:
+        error: { type: string }
+      required: [error]
+
+    FingerprintEnvelope:
+      type: object
+      properties:
+        fingerprint: { $ref: "#/components/schemas/Fingerprint" }
+      required: [fingerprint]
+
+    Fingerprint:
+      type: object
+      description: |
+        Нативний FingerprintConfig. Задокументовані підоб'єкти — найпоширеніші;
+        об'єкт відкритий і зберігається ендпоінтами створення
+        дослівно, тому будь-яке поле тут буде передано без змін.
+      additionalProperties: true
+      properties:
+        name: { type: string }
+        notes: { type: string }
+        seed:
+          type: integer
+          description: 0 = режим лише перевизначень (типовий випадок).
+        navigator:
+          type: object
+          additionalProperties: true
+          properties:
+            user_agent: { type: string }
+            platform: { type: string, example: "Win32" }
+            hardware_concurrency: { type: integer, example: 12 }
+            device_memory: { type: integer, enum: [8, 16, 32], example: 16 }
+            language: { type: string }
+            do_not_track: { type: boolean }
+        screen:
+          type: object
+          additionalProperties: true
+          properties:
+            width: { type: integer }
+            height: { type: integer }
+            avail_width: { type: integer }
+            avail_height: { type: integer }
+            color_depth: { type: integer, example: 24 }
+            device_pixel_ratio: { type: number, example: 2 }
+            color_gamut: { type: string, enum: ["", srgb, p3, rec2020] }
+        client_hints:
+          type: object
+          description: Сімейство Sec-CH-UA (у browser.vision називається `hints`).
+          additionalProperties: true
+          properties:
+            platform: { type: string }
+            platform_version: { type: string }
+            architecture: { type: string, example: "x86" }
+            bitness: { type: string, example: "64" }
+            mobile: { type: boolean }
+        webgl:
+          type: object
+          additionalProperties: true
+          properties:
+            unmasked_vendor: { type: string }
+            unmasked_renderer: { type: string }
+        webgpu:
+          type: object
+          additionalProperties: true
+        webrtc:
+          type: string
+          description: Режим обробки WebRTC.
+          enum: [auto, tcp_only, block]
+        noise:
+          $ref: "#/components/schemas/NoisePrefs"
+        network:
+          type: object
+          properties:
+            blocked_ports:
+              type: array
+              items: { type: integer }
+              description: Захист від сканування портів локальної мережі (ports_protection).
+        timezone:
+          type: string
+          description: Ім'я за IANA або "auto" — буде визначено через прив'язаний проксі при запуску.
+
+    NoisePrefs:
+      type: object
+      description: |
+        Налаштування антифінгерпринт-шуму за векторами. Кожен блок: `{enabled, seed}`
+        (+ специфічні параметри). `enabled:false` = наскрізна передача.
+      properties:
+        canvas: { $ref: "#/components/schemas/NoiseBlock" }
+        webgl:
+          allOf: [{ $ref: "#/components/schemas/NoiseBlock" }]
+          properties:
+            intensity: { type: number }
+        audio:
+          allOf: [{ $ref: "#/components/schemas/NoiseBlock" }]
+          properties:
+            intensity: { type: number }
+        client_rects:
+          allOf: [{ $ref: "#/components/schemas/NoiseBlock" }]
+          properties:
+            max_offset: { type: number }
+        sensors: { $ref: "#/components/schemas/NoiseBlock" }
+        fonts:
+          allOf: [{ $ref: "#/components/schemas/NoiseBlock" }]
+          description: |
+            `enabled:true` приховує невелике детерміноване підмножество
+            несуттєвих шрифтів для кожного профілю (решта реальних шрифтів
+            хоста проходять наскрізь).
+
+    NoiseBlock:
+      type: object
+      properties:
+        enabled: { type: boolean }
+        seed:
+          type: integer
+          description: Ентропія на профіль; 0 = обчислити автоматично.
+
+    CreateProfileRequest:
+      type: object
+      required: [fingerprint]
+      properties:
+        name: { type: string }
+        notes: { type: string }
+        proxy_id:
+          type: string
+          description: Прив'язати проксі зі сховища (за id).
+        proxy:
+          type: string
+          description: |
+            Прив'язати проксі рядком (`host:port:user:pass` або
+            `scheme://user:pass@host:port`). Для **постійного** профілю проксі
+            додається у сховище (дедуплікація за ендпоінтом) та проходить
+            повний тест (UDP + гео), потім прив'язується за id — відображається
+            у списку проксі, результат QUIC/WebRTC кешується. Для **тимчасового**
+            профілю проксі прикріплюється інлайн (не зберігається). Ігнорується,
+            якщо задано `proxy_id`.
+          example: "socks5://user:pass@1.2.3.4:1080"
+        folder:
+          type: string
+          description: Тег папки (ігнорується для /folders/{folder}/profiles — там пріоритет у шляху).
+        fingerprint:
+          allOf: [{ $ref: "#/components/schemas/Fingerprint" }]
+          description: Зберігається дослівно. Отримайте з /fingerprint/new та за потреби відредагуйте.
+
+    EditProfileRequest:
+      type: object
+      description: Усі поля необов'язкові — змінюється лише передане.
+      properties:
+        name: { type: string }
+        notes: { type: string }
+        folder: { type: string, description: '"" прибирає профіль з папки (переводить до «Усі»).' }
+        proxy_id: { type: string, description: '"" від''єднує проксі.' }
+        proxy:
+          type: string
+          description: Рядок проксі — зберігається (дедуплікація) + повний тест, потім прив'язується.
+        fingerprint:
+          allOf: [{ $ref: "#/components/schemas/Fingerprint" }]
+          description: При наявності ЗАМІНЮЄ збережений відбиток дослівно.
+
+    TempProfileRequest:
+      type: object
+      properties:
+        fingerprint_id:
+          type: string
+          description: Запис бібліотеки, на якому ґрунтується профіль; при відсутності — випадковий під `platform`.
+        platform:
+          type: string
+          enum: [Windows, macOS, Linux]
+          description: Використовується для вибору випадкового відбитка, якщо `fingerprint_id` не вказано; при відсутності обох — ОС хоста.
+        proxy:
+          type: string
+          description: Інлайн-рядок проксі (не зберігається у сховищі).
+        name: { type: string }
+        folder: { type: string }
+
+    ProfileMeta:
+      type: object
+      description: Метадані профілю в лаунчері (повертаються при створенні).
+      properties:
+        id: { type: string, format: uuid }
+        name: { type: string }
+        notes: { type: string }
+        proxy_id: { type: string, nullable: true }
+        last_launched_at: { type: string, nullable: true, description: ISO-8601 або null. }
+        created_at: { type: string, nullable: true }
+        pinned: { type: boolean }
+        folder: { type: string }
+
+    ProfileListItem:
+      allOf:
+        - $ref: "#/components/schemas/ProfileMeta"
+        - type: object
+          properties:
+            running: { type: boolean }
+            pid: { type: integer, format: int64, nullable: true }
+            cdp:
+              nullable: true
+              allOf: [{ $ref: "#/components/schemas/CdpInfo" }]
+
+    StoredProfile:
+      type: object
+      description: |
+        Повний профіль на диску: оболонка `_meta` плюс розгорнутий
+        FingerprintConfig (всі поля `Fingerprint` на верхньому рівні).
+        `running`/`cdp` присутні лише під час роботи профілю.
+      additionalProperties: true
+      properties:
+        _meta:
+          type: object
+          properties:
+            id: { type: string, format: uuid }
+            proxy_id: { type: string, nullable: true }
+            inline_proxy:
+              nullable: true
+              allOf: [{ $ref: "#/components/schemas/ProxyEntry" }]
+            last_launched_at: { type: string, nullable: true }
+            created_at: { type: string, nullable: true }
+            pinned: { type: boolean }
+            folder: { type: string }
+            temporary: { type: boolean }
+        running: { type: boolean }
+        cdp:
+          nullable: true
+          allOf: [{ $ref: "#/components/schemas/CdpInfo" }]
+
+    CdpInfo:
+      type: object
+      description: CDP-ендпоінт запущеного профілю.
+      properties:
+        port: { type: integer, description: Порт remote-debugging, обраний Chrome. }
+        http_url:
+          type: string
+          example: "http://127.0.0.1:53217"
+          description: REST-база (/json, /json/version).
+        web_socket_debugger_url:
+          type: string
+          example: "ws://127.0.0.1:53217/devtools/browser/ab12-..."
+          description: WS-ендпоінт рівня браузера для Puppeteer/Playwright `connect`.
+
+    RunningProfile:
+      type: object
+      properties:
+        profile_id: { type: string }
+        pid: { type: integer, format: int64 }
+        cdp:
+          nullable: true
+          allOf: [{ $ref: "#/components/schemas/CdpInfo" }]
+
+    LibraryEntry:
+      type: object
+      properties:
+        id: { type: string }
+        label: { type: string }
+        platform: { type: string, enum: [Windows, macOS, Linux] }
+        chrome: { type: string, description: Рядок версії Chrome. }
+        gpu: { type: string }
+        builtin: { type: boolean, description: Входить у поставляємий стартовий набір. }
+
+    AddProxyRequest:
+      type: object
+      description: Рядок проксі АБО явні поля (рядок має пріоритет).
+      properties:
+        proxy:
+          type: string
+          description: "`scheme://user:pass@host:port` або `host:port:user:pass`."
+        kind: { type: string, enum: [socks5, http, https] }
+        host: { type: string }
+        port: { type: integer }
+        username: { type: string }
+        password: { type: string }
+        name: { type: string }
+        country: { type: string }
+        notes: { type: string }
+
+    ProxySummary:
+      type: object
+      description: Збережений проксі без облікових даних.
+      properties:
+        id: { type: string }
+        name: { type: string }
+        kind: { type: string, enum: [socks5, http, https] }
+        host: { type: string }
+        port: { type: integer }
+        country: { type: string, description: 'Інформаційний тег (наприклад, "US").' }
+
+    Cookie:
+      type: object
+      description: |
+        Cookie у зручному для інструментів вигляді (сумісний з форматами
+        EditThisCookie / Puppeteer — `httpOnly`/`sameSite` приймаються
+        як псевдоніми при імпорті).
+      required: [domain, name, value]
+      properties:
+        domain:
+          type: string
+          description: Хост cookie (Chromium `host_key`), наприклад ".example.com".
+        name: { type: string }
+        value: { type: string }
+        path: { type: string, default: "/" }
+        expires:
+          type: number
+          nullable: true
+          description: Unix-секунди; null/відсутній = сесійний cookie.
+        secure: { type: boolean, default: false }
+        http_only: { type: boolean, default: false }
+        same_site:
+          type: string
+          enum: [Strict, Lax, None, unspecified]
+          description: Регістронезалежно при імпорті.
+
+    ProxyEntry:
+      type: object
+      description: Повний запис проксі (як вбудовано в `_meta.inline_proxy`).
+      properties:
+        id: { type: string }
+        name: { type: string }
+        kind: { type: string, enum: [socks5, http, https] }
+        host: { type: string }
+        port: { type: integer }
+        username: { type: string }
+        password: { type: string }
+        country: { type: string }
+        notes: { type: string }
