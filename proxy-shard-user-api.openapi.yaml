@@ -1,0 +1,1645 @@
+openapi: 3.0.3
+info:
+  title: ProxyShard User API Billing
+  version: 1.0.0
+  description: >
+    Усі методи вимагають заголовок Authorization: Bearer <API_KEY> для шляхів,
+    починаються з /user/api/.
+  x-gitbook-description-document:
+    object: document
+    data:
+      schemaVersion: 9
+    nodes:
+      - object: block
+        type: paragraph
+        isVoid: false
+        data: {}
+        nodes:
+          - object: text
+            leaves:
+              - object: leaf
+                text: >-
+                  Усі методи вимагають заголовок Authorization: Bearer <API_KEY>
+                  для шляхів, що починаються з /user/api/.
+                marks: []
+            key: W9AMVuV3X2nr
+        key: N826mpAA6bPi
+    key: 3pQjnI1fT5Tx
+  x-gitbook-description-html: >-
+    <p>Всі методи вимагають заголовок Authorization: Bearer <API_KEY> для
+    шляхів, що починаються з /user/api/.</p>
+tags:
+  - name: Datacenter & ISP Proxies
+    description: Операції для датацентрових та ISP проксі
+    x-gitbook-description-document:
+      object: document
+      data:
+        schemaVersion: 9
+      nodes:
+        - object: block
+          type: paragraph
+          isVoid: false
+          data: {}
+          nodes:
+            - object: text
+              leaves:
+                - object: leaf
+                  text: Операції для датацентрових та ISP проксі
+                  marks: []
+              key: Y5DyHZExD0Z1
+          key: TNYN9BzKcb7R
+      key: FV8JUezeGRVG
+    x-gitbook-description-html: <p>Операції для датацентрових та ISP проксі</p>
+  - name: Residential Proxies
+    description: Операції для резидентських проксі
+    x-gitbook-description-document:
+      object: document
+      data:
+        schemaVersion: 9
+      nodes:
+        - object: block
+          type: paragraph
+          isVoid: false
+          data: {}
+          nodes:
+            - object: text
+              leaves:
+                - object: leaf
+                  text: Операції для резидентських проксі
+                  marks: []
+              key: rR2I6Lv0N6kX
+          key: iBD5gLwqAKCi
+      key: ZeCc5kz7S5s6
+    x-gitbook-description-html: <p>Операції для резидентських проксі</p>
+  - name: General
+    description: Загальні операції (профіль, замовлення, довідники)
+    x-gitbook-description-document:
+      object: document
+      data:
+        schemaVersion: 9
+      nodes:
+        - object: block
+          type: paragraph
+          isVoid: false
+          data: {}
+          nodes:
+            - object: text
+              leaves:
+                - object: leaf
+                  text: Загальні операції (профіль, замовлення, довідники)
+                  marks: []
+              key: LL5lIQ1Nofxb
+          key: 6zcCj8DYlgFj
+      key: o5kyefuuGtq2
+    x-gitbook-description-html: <p>Загальні операції (профіль, замовлення, довідники)</p>
+servers:
+  - url: https://user-api.proxyshard.com
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+  schemas:
+    ApiSuccess:
+      type: object
+      properties:
+        success:
+          type: boolean
+      required:
+        - success
+    ApiError:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: false
+        message:
+          type: string
+      required:
+        - success
+        - message
+    PurchaseRequest:
+      type: object
+      properties:
+        product:
+          type: string
+          example: Datacenter Proxy
+        location:
+          type: string
+          nullable: true
+          example: DE
+        cycle:
+          type: string
+          example: monthly
+        quantity:
+          type: integer
+          minimum: 1
+          default: 1
+          example: 10
+        promo_code:
+          type: string
+          nullable: true
+          example: SAVE10
+        auto_renewal:
+          type: boolean
+          default: false
+      required:
+        - product
+        - cycle
+    PurchaseRequestDcIsp:
+      type: object
+      description: Покупка для Datacenter/ISP – поле location обов'язкове.
+      properties:
+        product:
+          type: string
+          enum:
+            - Datacenter Proxy
+            - ISP Proxy
+          example: Datacenter Proxy
+        location:
+          type: string
+          example: DE
+        cycle:
+          type: string
+          example: monthly
+        quantity:
+          type: integer
+          minimum: 1
+          default: 1
+          example: 10
+        promo_code:
+          type: string
+          nullable: true
+        auto_renewal:
+          type: boolean
+          default: false
+      required:
+        - product
+        - location
+        - cycle
+      x-gitbook-description-html: <p>Покупка для Datacenter/ISP - поле location обов'язково.</p>
+    PurchaseRequestResidentialStandard:
+      type: object
+      description: >-
+        Покупка Standart Residential Proxy — location не потрібно; цикл
+        фіксований (lifetime).
+      properties:
+        product:
+          type: string
+          enum:
+            - Standart Residential Proxy
+          example: Standart Residential Proxy
+        quantity:
+          type: integer
+          minimum: 1
+          default: 1
+          example: 1
+        promo_code:
+          type: string
+          nullable: true
+      required:
+        - product
+      x-gitbook-description-html: >-
+        <p>Покупка Standart Residential Proxy — location не потрібно; цикл
+        фіксований (lifetime).</p>
+    PurchaseRequestResidentialPremium:
+      type: object
+      description: >-
+        Купівля для Premium Residential Proxy – location не потрібна; цикл
+        фіксований (lifetime).
+      properties:
+        product:
+          type: string
+          enum:
+            - Premium Residential Proxy
+          example: Premium Residential Proxy
+        quantity:
+          type: integer
+          minimum: 1
+          default: 1
+          example: 1
+        promo_code:
+          type: string
+          nullable: true
+      required:
+        - product
+      x-gitbook-description-html: >-
+        <p>Покупка для Premium Residential Proxy — location не вимагається; цикл
+        фіксований (lifetime).</p>
+    PurchaseRequestResidentialUnmetered:
+      type: object
+      description: Купівля для Unmetered Residential proxy – підтримує авто-продовження.
+      properties:
+        product:
+          type: string
+          enum:
+            - Unmetered Residential proxy
+          example: Unmetered Residential proxy
+        cycle:
+          type: string
+          example: monthly
+        promo_code:
+          type: string
+          nullable: true
+        auto_renewal:
+          type: boolean
+          default: false
+      required:
+        - product
+        - cycle
+      x-gitbook-description-html: >-
+        <p>Покупка для Unmetered Residential proxy - підтримує
+        авто-продовження.</p>
+    PurchaseResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        message:
+          type: string
+          example: Order paid successfully
+        order_id:
+          type: integer
+      required:
+        - success
+        - message
+        - order_id
+    ActiveProxyItem:
+      type: object
+      properties:
+        ip:
+          type: string
+        username:
+          type: string
+        password:
+          type: string
+        http_port:
+          type: integer
+        socks_port:
+          type: integer
+        until:
+          type: string
+          description: ISO8601/string date
+          x-gitbook-description-html: <p>ISO8601/string date</p>
+        status:
+          type: string
+      required:
+        - ip
+        - username
+        - password
+        - http_port
+        - socks_port
+        - until
+        - status
+    AvailableCountRequest:
+      type: object
+      properties:
+        country:
+          type: string
+          example: DE
+        product:
+          type: string
+          example: dc
+      required:
+        - country
+        - product
+    AvailableCountResponse:
+      type: object
+      properties:
+        country:
+          type: string
+        product:
+          type: string
+        amount:
+          type: integer
+      required:
+        - country
+        - product
+        - amount
+    ApiMeResponse:
+      type: object
+      properties:
+        email:
+          type: string
+        active_orders:
+          type: integer
+        wallet_balance:
+          type: integer
+          description: у центах
+          x-gitbook-description-html: <p>в центах</p>
+      required:
+        - email
+        - active_orders
+        - wallet_balance
+    ProductWithCycles:
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+          nullable: true
+        location:
+          type: string
+          nullable: true
+        cycles:
+          type: array
+          items:
+            type: string
+      required:
+        - name
+        - cycles
+    AddBandwidthRequest:
+      type: object
+      properties:
+        amount:
+          type: integer
+          example: 5
+          description: Обсяг у ГБ
+          x-gitbook-description-html: <p>Обсяг у ГБ</p>
+        promo_code:
+          type: string
+          nullable: true
+      required:
+        - amount
+    GetSubUsersRequest:
+      type: object
+      properties:
+        offset:
+          type: integer
+          example: 0
+          description: Зміщення (за замовчуванням 0)
+          x-gitbook-description-html: <p>Зміщення (за замовчуванням 0)</p>
+        limit:
+          type: integer
+          example: 20
+          description: Розмір сторінки (за замовчуванням 20)
+          x-gitbook-description-html: <p>Розмір сторінки (за замовчуванням 20)</p>
+    EditSubUserPayload:
+      type: object
+      properties:
+        name:
+          type: string
+      required:
+        - name
+    CreateSubUserPayload:
+      type: object
+      properties:
+        proxy_type:
+          type: string
+          example: standart
+        name:
+          type: string
+        data:
+          type: integer
+          example: 5
+          description: Обсяг у ГБ
+          x-gitbook-description-html: <p>Обсяг у ГБ</p>
+      required:
+        - proxy_type
+        - name
+        - data
+    ChangeSubUserPasswordPayload:
+      type: object
+      properties:
+        proxy_type:
+          type: string
+          example: standart
+      required:
+        - proxy_type
+    ModifyTrafficPayload:
+      type: object
+      properties:
+        proxy_type:
+          type: string
+          example: standart
+        data:
+          type: integer
+          example: 5
+          description: Обсяг у ГБ
+          x-gitbook-description-html: <p>Обсяг у ГБ</p>
+      required:
+        - proxy_type
+        - data
+    Country:
+      type: object
+      properties:
+        code:
+          type: string
+          maxLength: 10
+          description: ISO country code
+          x-gitbook-description-html: <p>ISO country code</p>
+        name:
+          type: string
+          maxLength: 255
+          description: Country name
+          x-gitbook-description-html: <p>Country name</p>
+      required:
+        - code
+        - name
+    Region:
+      type: object
+      properties:
+        code:
+          type: string
+          maxLength: 10
+          description: Region code (state/province code)
+          x-gitbook-description-html: <p>Region code (state/province code)</p>
+        name:
+          type: string
+          maxLength: 255
+          description: Region name (state/province name)
+          x-gitbook-description-html: <p>Region name (state/province name)</p>
+        country:
+          $ref: '#/components/schemas/Country'
+      required:
+        - code
+        - name
+        - country
+    City:
+      type: object
+      properties:
+        code:
+          type: string
+          maxLength: 50
+          description: City code (usually slug format)
+          x-gitbook-description-html: <p>City code (usually slug format)</p>
+        name:
+          type: string
+          maxLength: 255
+          description: City name
+          x-gitbook-description-html: <p>City name</p>
+        country:
+          $ref: '#/components/schemas/Country'
+        region:
+          type: object
+          nullable: true
+          properties:
+            code:
+              type: string
+              maxLength: 10
+              description: Region code
+              x-gitbook-description-html: <p>Region code</p>
+            name:
+              type: string
+              maxLength: 255
+              description: Region name
+              x-gitbook-description-html: <p>Region name</p>
+          required:
+            - code
+            - name
+      required:
+        - code
+        - name
+        - country
+    PagedCountriesResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Country'
+      required:
+        - count
+        - results
+    PagedRegionsResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Region'
+      required:
+        - count
+        - results
+    PagedCitiesResponse:
+      type: object
+      properties:
+        count:
+          type: integer
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/City'
+      required:
+        - count
+        - results
+paths:
+  /user/api/orders/purchase:
+    post:
+      tags:
+        - General
+      security:
+        - bearerAuth: []
+      summary: Створити та сплатити замовлення
+      description: |
+        Купівля на ім'я продукту, локації та циклу.
+        Для Datacenter/ISP - location обов'язковий.
+        Для Standart Residential Proxy location не потрібно.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - $ref: '#/components/schemas/PurchaseRequestDcIsp'
+                - $ref: '#/components/schemas/PurchaseRequestResidentialStandard'
+                - $ref: '#/components/schemas/PurchaseRequestResidentialPremium'
+                - $ref: '#/components/schemas/PurchaseRequestResidentialUnmetered'
+                - $ref: '#/components/schemas/PurchaseRequest'
+            examples:
+              datacenter:
+                value:
+                  product: Datacenter Proxy
+                  location: DE
+                  cycle: monthly
+                  quantity: 10
+                  auto_renewal: true
+              isp:
+                value:
+                  product: ISP Proxy
+                  location: US
+                  cycle: monthly
+                  quantity: 5
+              residentialStandard:
+                value:
+                  product: Standart Residential Proxy
+                  quantity: 1
+              residentialPremium:
+                value:
+                  product: Premium Residential Proxy
+                  quantity: 1
+              residentialNew:
+                value:
+                  product: Residential Proxy NEW
+                  cycle: monthly
+                  quantity: 1
+              unmeteredResidential:
+                value:
+                  product: Unmetered Residential proxy
+                  cycle: monthly
+                  auto_renewal: true
+              mobile:
+                value:
+                  product: Mobile Proxy Plan Name
+                  cycle: day
+                  quantity: 1
+      responses:
+        '200':
+          description: Успішно
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PurchaseResponse'
+          x-gitbook-description-html: <p>Успішно</p>
+        '400':
+          description: Помилка валідації/балансу/недолік стоку
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+          x-gitbook-description-html: <p>Помилка валідації/балансу/недолік стоку</p>
+        '401':
+          description: Неавторизований
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+          x-gitbook-description-html: <p>Неавторизований</p>
+      x-gitbook-description-document:
+        object: document
+        data:
+          schemaVersion: 9
+        nodes:
+          - object: block
+            type: paragraph
+            isVoid: false
+            data: {}
+            nodes:
+              - object: text
+                leaves:
+                  - object: leaf
+                    text: >-
+                      Купівля на ім'я продукту, локації та циклу. Для
+                      Datacenter/ISP - location обов'язковий. Для Standart
+                      Residential Proxy – location не потрібно.
+                    marks: []
+                key: a6YDYJfLO9R9
+            key: S5jpGa8ot9FH
+        key: 7j57RKNQ66xt
+      x-gitbook-description-html: >-
+        <p>Покупка на ім'я продукту, локації та циклу. Для Datacenter/ISP -
+        location обов'язковий. Для Standart Residential Proxy — location не
+        потрібно.</p>
+  /user/api/orders/change-billing-cycle/{order_id}:
+    post:
+      tags:
+        - General
+      security:
+        - bearerAuth: []
+      summary: Змінити білінг-цикл замовлення
+      description: >
+        Змінює цикл оплати за назвою циклу. Тільки для Datacenter & ISP
+        проксі.
+
+        Якщо промокод недоступний для вибраного циклу, він буде автоматично
+        скинутий.
+      parameters:
+        - in: path
+          name: order_id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                cycle:
+                  type: string
+                  example: monthly
+              required:
+                - cycle
+      responses:
+        '200':
+          description: Успішно
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+                  order:
+                    type: object
+          x-gitbook-description-html: <p>Успішно</p>
+        '400':
+          description: Неправильний продукт чи цикл
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+          x-gitbook-description-html: <p>Невірний продукт або цикл</p>
+        '401':
+          description: Неавторизований
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+          x-gitbook-description-html: <p>Неавторизований</p>
+        '403':
+          description: Цикл недоступний для цього користувача
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+          x-gitbook-description-html: <p>Цикл недоступний для цього користувача</p>
+      x-gitbook-description-document:
+        object: document
+        data:
+          schemaVersion: 9
+        nodes:
+          - object: block
+            type: paragraph
+            isVoid: false
+            data: {}
+            nodes:
+              - object: text
+                leaves:
+                  - object: leaf
+                    text: >-
+                      Змінює цикл оплати за назвою циклу. Тільки для
+                      Datacenter & ISP проксі. Якщо промокод недоступний для
+                      вибраного циклу, він буде автоматично скинутий.
+                    marks: []
+                key: FCRCqYnCRIMJ
+            key: CstYjsmMFFpH
+        key: RctxTbOKuya7
+      x-gitbook-description-html: >-
+        <p>Змінює цикл оплати за назвою циклу. Тільки для Datacenter &
+        ISP проксі. Якщо промокод недоступний для вибраного циклу, він буде
+        автоматично скинуто.</p>
+  /user/api/orders/edit-auto-renewal/{order_id}:
+    post:
+      tags:
+        - General
+      security:
+        - bearerAuth: []
+      summary: Змінити авто-продовження замовлення
+      description: |
+        Увімкнути/вимкнути авто-продовження. Тільки для Datacenter & ISP проксі.
+      parameters:
+        - in: path
+          name: order_id
+          required: true
+          schema:
+            type: integer
+        - in: query
+          name: auto_renewal
+          required: true
+          schema:
+            type: boolean
+            example: true
+      responses:
+        '200':
+          description: Успішно
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+          x-gitbook-description-html: <p>Успішно</p>
+        '400':
+          description: Неправильний продукт для операції
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+          x-gitbook-description-html: <p>Невірний продукт для операції</p>
+        '401':
+          description: Неавторизований
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+          x-gitbook-description-html: <p>Неавторизований</p>
+      x-gitbook-description-document:
+        object: document
+        data:
+          schemaVersion: 9
+        nodes:
+          - object: block
+            type: paragraph
+            isVoid: false
+            data: {}
+            nodes:
+              - object: text
+                leaves:
+                  - object: leaf
+                    text: >-
+                      Увімкнути/вимкнути авто-продовження. Тільки для Datacenter &
+                      ISP проксі.
+                    marks: []
+                key: K9SC5NGtClVi
+            key: wsP9craixrO9
+        key: lPUU4UXDZMgV
+      x-gitbook-description-html: >-
+        <p>Увімкнути/вимкнути авто-продовження. Тільки для Datacenter & ISP
+        проксі.</p>
+  /user/api/proxies/active:
+    get:
+      tags:
+        - Datacenter & ISP Proxies
+      security:
+        - bearerAuth: []
+      summary: Отримати активні проксі на замовлення
+      parameters:
+        - in: query
+          name: order_id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Список проксі
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ActiveProxyItem'
+                  order_tag:
+                    type: string
+                    nullable: true
+                required:
+                  - success
+                  - data
+          x-gitbook-description-html: <p>Список проксі</p>
+        '403':
+          description: Метод недоступний для цього замовлення
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+          x-gitbook-description-html: <p>Метод недоступний для цього замовлення</p>
+  /user/api/proxies/products:
+    get:
+      tags:
+        - General
+      security:
+        - bearerAuth: []
+      summary: Отримати продукти та їх цикли
+      description: Повертає продукти API з назвами доступних циклів.
+      responses:
+        '200':
+          description: Список продуктів
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  products:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/ProductWithCycles'
+                required:
+                  - success
+                  - products
+          x-gitbook-description-html: <p>Список продуктів</p>
+      x-gitbook-description-document:
+        object: document
+        data:
+          schemaVersion: 9
+        nodes:
+          - object: block
+            type: paragraph
+            isVoid: false
+            data: {}
+            nodes:
+              - object: text
+                leaves:
+                  - object: leaf
+                    text: Повертає продукти API з назвами доступних циклів.
+                    marks: []
+                key: ae0gjXUIoxK0
+            key: H8DZM6car1fH
+        key: dPLJyH3Xi2mm
+      x-gitbook-description-html: <p>Повертає продукти для API з назвами доступних циклів.</p>
+  /user/api/proxies/available-count:
+    get:
+      tags:
+        - General
+      security:
+        - bearerAuth: []
+      summary: Дізнатися про проксі
+      description: Повертає доступну сумарну кількість для всіх продуктів.
+      responses:
+        '200':
+          description: Успішно
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AvailableCountResponse'
+          x-gitbook-description-html: <p>Успішно</p>
+      x-gitbook-description-document:
+        object: document
+        data:
+          schemaVersion: 9
+        nodes:
+          - object: block
+            type: paragraph
+            isVoid: false
+            data: {}
+            nodes:
+              - object: text
+                leaves:
+                  - object: leaf
+                    text: >-
+                      Повертає сумарну доступну кількість для всіх
+                      продуктів.
+                    marks: []
+                key: rZiZPAWJWDci
+            key: 89ELMwrVTwTZ
+        key: hs4oQPezyl5t
+      x-gitbook-description-html: <p>Повертає сумарну доступну кількість для всіх продуктів.</p>
+  /user/api/me:
+    get:
+      tags:
+        - General
+      security:
+        - bearerAuth: []
+      summary: Інформація про користувача
+      responses:
+        '200':
+          description: Дані профілю
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiMeResponse'
+          x-gitbook-description-html: <p>Дані профілю</p>
+  /user/api/orders:
+    get:
+      tags:
+        - General
+      security:
+        - bearerAuth: []
+      summary: Список замовлень
+      parameters:
+        - in: query
+          name: status
+          required: true
+          description: active | on-hold | cancelled | all
+          schema:
+            type: string
+          x-gitbook-description-html: <p>active | on-hold | cancelled | all</p>
+        - in: query
+          name: offset
+          required: false
+          description: Зміщення вибірки (за умовчанням 0)
+          schema:
+            type: integer
+            minimum: 0
+            example: 0
+          x-gitbook-description-html: <p>Зміщення вибірки (за замовчуванням 0)</p>
+        - in: query
+          name: limit
+          required: false
+          description: Розмір сторінки (1..100, за замовчуванням 20)
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            example: 20
+          x-gitbook-description-html: <p>Розмір сторінки (1..100, за замовчуванням 20)</p>
+      responses:
+        '200':
+          description: Список замовлень
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  orders:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        order_id:
+                          type: integer
+                        product_id:
+                          type: integer
+                        product_name:
+                          type: string
+                        cycle_id:
+                          type: integer
+                        cycle_name:
+                          type: string
+                        expires_at:
+                          type: string
+                          nullable: true
+                          description: ISO8601 час закінчення
+                          x-gitbook-description-html: <p>ISO8601 час закінчення</p>
+                        auto_renewal:
+                          type: boolean
+                          nullable: true
+                        tag:
+                          type: string
+                          nullable: true
+                      required:
+                        - order_id
+                        - product_id
+                        - product_name
+                        - cycle_id
+                        - cycle_name
+                  count:
+                    type: integer
+                    description: Кількість замовлень у поточній вибірці
+                    x-gitbook-description-html: <p>Кількість замовлень у поточній вибірці</p>
+                  prev:
+                    type: string
+                    nullable: true
+                    description: URI попередньої сторінки
+                    x-gitbook-description-html: <p>URI попередньої сторінки</p>
+                  next:
+                    type: string
+                    nullable: true
+                    description: URI наступної сторінки
+                    x-gitbook-description-html: <p>URI наступної сторінки</p>
+                required:
+                  - success
+                  - orders
+          x-gitbook-description-html: <p>Список замовлень</p>
+  /user/api/orders/{id}:
+    get:
+      tags:
+        - General
+      security:
+        - bearerAuth: []
+      summary: Отримати інформацію про замовлення
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Інформація про замовлення
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  order:
+                    type: object
+                    properties:
+                      order_id:
+                        type: integer
+                      product_name:
+                        type: string
+                      cycle_name:
+                        type: string
+                      quantity:
+                        type: integer
+                      price_paid:
+                        type: integer
+                      status:
+                        type: string
+                      created_at:
+                        type: string
+                        nullable: true
+                      expires_at:
+                        type: string
+                        nullable: true
+                      promo_code:
+                        type: string
+                        nullable: true
+                      auto_renewal:
+                        type: boolean
+                        nullable: true
+                      tag:
+                        type: string
+                        nullable: true
+                required:
+                  - success
+                  - order
+          x-gitbook-description-html: <p>Інформація про замовлення</p>
+  /user/api/orders/{id}/renew:
+    post:
+      tags:
+        - General
+      security:
+        - bearerAuth: []
+      summary: Продовжити замовлення
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Успішно
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSuccess'
+          x-gitbook-description-html: <p>Успішно</p>
+        '400':
+          description: Недостатній баланс/валідація
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiError'
+          x-gitbook-description-html: <p>Недостатній баланс/валідація</p>
+  /user/api/orders/{id}/add-bandwidth:
+    post:
+      tags:
+        - Residential Proxies
+      security:
+        - bearerAuth: []
+      summary: Купити додатковий трафік (Residential)
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddBandwidthRequest'
+      responses:
+        '200':
+          description: Успішно
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSuccess'
+          x-gitbook-description-html: <p>Успішно</p>
+  /user/api/orders/{id}/tag:
+    post:
+      tags:
+        - General
+      security:
+        - bearerAuth: []
+      summary: Змінити тег замовлення
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tag:
+                  type: string
+                  example: none
+              required:
+                - tag
+      responses:
+        '200':
+          description: Успішно
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiSuccess'
+          x-gitbook-description-html: <p>Успішно</p>
+  /user/api/proxies/sub-users:
+    get:
+      tags:
+        - Residential Proxies
+      security:
+        - bearerAuth: []
+      summary: Список саб-користувачів
+      parameters:
+        - in: query
+          name: proxy_type
+          required: true
+          description: Тип проксі (standard | premium)
+          schema:
+            type: string
+            example: standart
+          x-gitbook-description-html: <p>Тип проксі (standart | premium)</p>
+        - in: query
+          name: offset
+          required: false
+          schema:
+            type: integer
+            example: 0
+        - in: query
+          name: limit
+          required: false
+          schema:
+            type: integer
+            example: 20
+      responses:
+        '200':
+          description: Успішно
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        user_id:
+                          type: string
+                        first_name:
+                          type: string
+                        proxy_password:
+                          type: string
+                        data:
+                          type: integer
+                        data_spent:
+                          type: integer
+                      required:
+                        - user_id
+                        - first_name
+                        - proxy_password
+                        - data
+                        - data_spent
+          x-gitbook-description-html: <p>Успішно</p>
+  /user/api/proxies/sub-user/{user_id}:
+    get:
+      tags:
+        - Residential Proxies
+      security:
+        - bearerAuth: []
+      summary: Отримати саб-користувача за ID
+      parameters:
+        - in: path
+          name: user_id
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: proxy_type
+          required: true
+          description: Тип проксі (standard | premium)
+          schema:
+            type: string
+            example: standart
+          x-gitbook-description-html: <p>Тип проксі (standart | premium)</p>
+      responses:
+        '200':
+          description: Успішно
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        user_id:
+                          type: string
+                        first_name:
+                          type: string
+                        proxy_password:
+                          type: string
+                        data:
+                          type: integer
+                        data_spent:
+                          type: integer
+                      required:
+                        - user_id
+                        - first_name
+                        - proxy_password
+                        - data
+                        - data_spent
+          x-gitbook-description-html: <p>Успішно</p>
+    patch:
+      tags:
+        - Residential Proxies
+      security:
+        - bearerAuth: []
+      summary: Редагувати саб-користувача (ім'я/пакет)
+      parameters:
+        - in: path
+          name: user_id
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: proxy_type
+          required: true
+          description: Тип проксі (standard | premium)
+          schema:
+            type: string
+            example: standart
+          x-gitbook-description-html: <p>Тип проксі (standart | premium)</p>
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EditSubUserPayload'
+      responses:
+        '200':
+          description: Успішно
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: object
+          x-gitbook-description-html: <p>Успішно</p>
+    delete:
+      tags:
+        - Residential Proxies
+      security:
+        - bearerAuth: []
+      summary: Видалити саб-користувача
+      parameters:
+        - in: path
+          name: user_id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Успішно
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: object
+          x-gitbook-description-html: <p>Успішно</p>
+  /user/api/proxies/sub-user:
+    post:
+      tags:
+        - Residential Proxies
+      security:
+        - bearerAuth: []
+      summary: Створити саб-користувача
+      parameters:
+        - in: query
+          name: proxy_type
+          required: true
+          description: Тип проксі (standard | premium)
+          schema:
+            type: string
+            example: standart
+          x-gitbook-description-html: <p>Тип проксі (standart | premium)</p>
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                data:
+                  type: integer
+              required:
+                - name
+                - data
+      responses:
+        '200':
+          description: Успішно
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        user_id:
+                          type: string
+                        first_name:
+                          type: string
+                        proxy_password:
+                          type: string
+                        data:
+                          type: integer
+                        data_spent:
+                          type: integer
+                      required:
+                        - user_id
+                        - first_name
+                        - proxy_password
+                        - data
+                        - data_spent
+          x-gitbook-description-html: <p>Успішно</p>
+  /user/api/proxies/sub-user/{user_id}/data/add:
+    post:
+      tags:
+        - Residential Proxies
+      security:
+        - bearerAuth: []
+      summary: Додати трафік саб-користувачу
+      parameters:
+        - in: path
+          name: user_id
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: proxy_type
+          required: true
+          description: Тип проксі (standard | premium)
+          schema:
+            type: string
+            example: standart
+          x-gitbook-description-html: <p>Тип проксі (standart | premium)</p>
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: integer
+                  example: 5
+                  description: Обсяг у ГБ
+                  x-gitbook-description-html: <p>Обсяг у ГБ</p>
+              required:
+                - data
+      responses:
+        '200':
+          description: Успішно
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: object
+          x-gitbook-description-html: <p>Успішно</p>
+  /user/api/proxies/sub-user/{user_id}/data/subtract:
+    post:
+      tags:
+        - Residential Proxies
+      security:
+        - bearerAuth: []
+      summary: Списати трафік у саб-користувача
+      parameters:
+        - in: path
+          name: user_id
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: proxy_type
+          required: true
+          description: Тип проксі (standard | premium)
+          schema:
+            type: string
+            example: standart
+          x-gitbook-description-html: <p>Тип проксі (standart | premium)</p>
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: integer
+                  example: 5
+                  description: Обсяг у ГБ
+                  x-gitbook-description-html: <p>Обсяг у ГБ</p>
+              required:
+                - data
+      responses:
+        '200':
+          description: Успішно
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: object
+          x-gitbook-description-html: <p>Успішно</p>
+  /user/api/proxies/sub-user/{user_id}/password:
+    post:
+      tags:
+        - Residential Proxies
+      security:
+        - bearerAuth: []
+      summary: Змінити пароль саб-користувача
+      parameters:
+        - in: path
+          name: user_id
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: proxy_type
+          required: true
+          description: Тип проксі (standard | premium)
+          schema:
+            type: string
+            example: standart
+          x-gitbook-description-html: <p>Тип проксі (standart | premium)</p>
+      responses:
+        '200':
+          description: Успішно
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    type: object
+          x-gitbook-description-html: <p>Успішно</p>
+  /user/api/proxies/countries:
+    get:
+      tags:
+        - Residential Proxies
+      security:
+        - bearerAuth: []
+      summary: Список країн
+      parameters:
+        - in: query
+          name: proxy_type
+          required: true
+          description: Тип проксі (standard | premium)
+          schema:
+            type: string
+            example: standart
+          x-gitbook-description-html: <p>Тип проксі (standart | premium)</p>
+      responses:
+        '200':
+          description: Успішно
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PagedCountriesResponse'
+          x-gitbook-description-html: <p>Успішно</p>
+  /user/api/proxies/regions:
+    get:
+      tags:
+        - Residential Proxies
+      security:
+        - bearerAuth: []
+      summary: Список регіонів
+      parameters:
+        - in: query
+          name: proxy_type
+          required: true
+          description: Тип проксі (standard | premium)
+          schema:
+            type: string
+            example: standart
+          x-gitbook-description-html: <p>Тип проксі (standart | premium)</p>
+        - in: query
+          name: country_code
+          required: true
+          description: ISO код країни
+          schema:
+            type: string
+            example: DE
+          x-gitbook-description-html: <p>ISO код країни</p>
+      responses:
+        '200':
+          description: Успішно
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PagedRegionsResponse'
+          x-gitbook-description-html: <p>Успішно</p>
+  /user/api/proxies/cities:
+    get:
+      tags:
+        - Residential Proxies
+      security:
+        - bearerAuth: []
+      summary: Список міст
+      parameters:
+        - in: query
+          name: proxy_type
+          required: true
+          description: Тип проксі (standard | premium)
+          schema:
+            type: string
+            example: standart
+          x-gitbook-description-html: <p>Тип проксі (standart | premium)</p>
+        - in: query
+          name: country_code
+          required: true
+          description: ISO код країни
+          schema:
+            type: string
+            example: DE
+          x-gitbook-description-html: <p>ISO код країни</p>
+        - in: query
+          name: region_code
+          required: true
+          description: Код регіону (штату/провінції)
+          schema:
+            type: string
+            example: BE
+          x-gitbook-description-html: <p>Код регіону (штату/провінції)</p>
+      responses:
+        '200':
+          description: Успішно
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PagedCitiesResponse'
+          x-gitbook-description-html: <p>Успішно</p>
