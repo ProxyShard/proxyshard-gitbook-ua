@@ -13,7 +13,7 @@ icon: hand
 Через проксі недоступні:
 
 * Банківські сайти (онлайн-банкінг, особисті кабінети банків)
-* Державні портали та сайти
+* Державні портали та сайти, а також сайти в доменних зонах `.gov` і `.edu`
 * Платіжні процесори: <mark style="color:purple;">Stripe</mark>, <mark style="color:purple;">PayPal</mark> (у тому числі <mark style="color:purple;">Yahoo</mark>)
 
 Це вимога регуляторів, спрямовану обмеження шахрайських дій. Блокування **не поширюється** на крипто-сервіси та платіжні системи на кшталт бірж.
@@ -23,6 +23,11 @@ icon: hand
 
 Stripe, PayPal доступні на Датацентр та ISP проксі
 {% endhint %}
+
+Додаткові обмеження на резидентських проксі:
+
+* На [Premium Residential](residential-proxies/premium-residential.md) недоступний `apple.com`.
+* На [Standard Residential](residential-proxies/standard-residential.md) та [Unlimited Residential](residential-proxies/unlimited-residential-proxy.md) недоступні сервіси Microsoft.
 
 ***
 
@@ -56,6 +61,12 @@ UDP не працює на [Резидентських проксі](residential
 | Україна :flag\_ua:        | Life (Lifecell) |
 
 На всіх інших локаціях та операторах зміна p0f працює у штатному режимі.
+
+***
+
+## Ліміт підключень на DC та ISP проксі
+
+На [Датацентр проксі](datacenter-proxies.md) та [ISP проксі](isp-proxies.md) діє ліміт: **2 500 підключень на один IP**.
 
 ***
 

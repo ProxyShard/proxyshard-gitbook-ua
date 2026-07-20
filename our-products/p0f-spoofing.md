@@ -67,13 +67,12 @@ icon: fingerprint
 
 ## Де доступно
 
-Підміна p0f доступна на таких продуктах:
+Підміна p0f і фільтрування пристроїв доступні на таких продуктах:
 
 * [Датацентрові проксі](datacenter-proxies.md)
 * [ISP проксі](isp-proxies.md)
 * [Мобільні проксі](mobile-proxies.md)
-
-[Резидентські проксі](residential-proxies/) не підтримують підміну p0f. На [Premium Residential](residential-proxies/premium-residential.md) доступна лише фільтрація пристроїв за параметром Device OS.
+* [Premium Residential](residential-proxies/premium-residential.md) - фільтрування пристроїв за параметром [Device OS](residential-proxies/#opis-poliv-nalashtuvan), без підміни p0f
 
 {% hint style="warning" %}
 На деяких [мобільних проксі](mobile-proxies.md) підміна p0f недоступна. Повний список обмежень дивіться на сторінці [Обмеження](restrictions.md).
