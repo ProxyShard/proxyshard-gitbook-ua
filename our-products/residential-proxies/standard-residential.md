@@ -4,7 +4,7 @@ icon: house-signal
 
 # Standard Residential
 
-<mark style="color:purple;">Standard Residential</mark> — базовий пул резидентських проксі ProxyShard. Проксі розміщені на реальних домашніх пристроях, що пройшли стандартні фільтри відбору. Підтримують <mark style="color:purple;">UDP</mark>, що робить їх оптимальним вибором для завдань з <mark style="color:purple;">WebRTC</mark>.
+<mark style="color:purple;">Standard Residential</mark> - базовий пул резидентських проксі ProxyShard. Проксі розміщені на реальних домашніх пристроях, що пройшли стандартні фільтри відбору. Підтримують <mark style="color:purple;">UDP</mark>, що робить їх оптимальним вибором для завдань з <mark style="color:purple;">WebRTC</mark>.
 
 {% embed url="https://dashboard.proxyshard.com/en/residential-main" %}
 
@@ -12,7 +12,7 @@ icon: house-signal
 
 | Параметр                    | Значення                       |
 | --------------------------- | ------------------------------ |
-| Розмір пулу                 | 300 000 — 400 000 пристроїв    |
+| Розмір пулу                 | 300 000 - 400 000 пристроїв    |
 | Макс. кількість з'єднань    | 35 000                         |
 | Макс. швидкість на замовлення | 75 Mbps                      |
 | Підтримка UDP               | ✓ (недоступно в локації США)   |
@@ -28,7 +28,7 @@ icon: house-signal
 - Робота з платформами, що блокують датацентрові IP
 
 {% hint style="info" %}
-Потрібно прибрати обмеження за трафіком? Дивіться [Unlimited Residential](unlimited-residential-proxy.md) — той самий пул, але без підрахунку гігабайтів.\
+Потрібно прибрати обмеження за трафіком? Дивіться [Unlimited Residential](unlimited-residential-proxy.md) - той самий пул, але без підрахунку гігабайтів.\
 Потрібен максимально великий і чистий пул? Дивіться [Premium Residential](premium-residential.md).
 {% endhint %}
 

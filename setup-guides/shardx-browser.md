@@ -6,7 +6,7 @@ icon: browser
 # ShardX Launcher
 
 {% hint style="info" %}
-ShardX Launcher поширюється за ліцензією MIT як безкоштовний інструмент для особистого використання. Програма надається «як є». Ми регулярно випускаємо оновлення, але підтримку в лайв-чаті не надаємо — за серйозних проблем, будь ласка, створіть баг-репорт на [GitHub](https://github.com/ProxyShard/ShardBrowser/issues).
+ShardX Launcher поширюється за ліцензією MIT як безкоштовний інструмент для особистого використання. Програма надається «як є». Ми регулярно випускаємо оновлення, але підтримку в лайв-чаті не надаємо - за серйозних проблем, будь ласка, створіть баг-репорт на [GitHub](https://github.com/ProxyShard/ShardBrowser/issues).
 {% endhint %}
 
 ## Системні вимоги
@@ -20,7 +20,7 @@ ShardX Launcher поширюється за ліцензією MIT як безк
 | Процесор        | Двоядерний 64-бит, підтримка SSE3                 | Чотириядерний і вище                                |
 | ОЗП             | 4 ГБ                                              | 8 ГБ (16 ГБ при роботі з багатьма профілями)        |
 | Місце на диску  | 1 ГБ                                              | 5 ГБ+                                               |
-| Середовище      | Microsoft Edge WebView2                           | —                                                   |
+| Середовище      | Microsoft Edge WebView2                           | -                                                   |
 
 ### macOS
 
@@ -47,9 +47,9 @@ ShardX Launcher поширюється за ліцензією MIT як безк
 
 <figure><img src="../.gitbook/assets/shardx-win-download.png" alt=""><figcaption>Виберіть .exe або .msi у розділі Assets</figcaption></figure>
 
-Запустіть завантажений файл. <mark style="color:purple;">Windows SmartScreen</mark> може показати попередження — натисніть <mark style="color:purple;">**Докладніше**</mark>, потім <mark style="color:purple;">**Виконати в будь-якому разі**</mark>.
+Запустіть завантажений файл. <mark style="color:purple;">Windows SmartScreen</mark> може показати попередження - натисніть <mark style="color:purple;">**Докладніше**</mark>, потім <mark style="color:purple;">**Виконати в будь-якому разі**</mark>.
 
-<figure><img src="../.gitbook/assets/shardx-win-smartscreen.png" alt=""><figcaption>SmartScreen — натисніть «Run anyway»</figcaption></figure>
+<figure><img src="../.gitbook/assets/shardx-win-smartscreen.png" alt=""><figcaption>SmartScreen - натисніть «Run anyway»</figcaption></figure>
 
 Встановлювач завершить роботу за кілька секунд.
 
@@ -74,7 +74,7 @@ ShardX Launcher поширюється за ліцензією MIT як безк
 ### Зняття блокування Gatekeeper
 
 {% hint style="warning" %}
-Цей крок обов'язковий. macOS блокує всі непідписані застосунки — без нього програма не відкриється.
+Цей крок обов'язковий. macOS блокує всі непідписані застосунки - без нього програма не відкриється.
 {% endhint %}
 
 Відкрийте <mark style="color:purple;">**Термінал**</mark> одним із двох способів:
@@ -91,7 +91,7 @@ ShardX Launcher поширюється за ліцензією MIT як безк
 xattr -dr com.apple.quarantine "/Applications/ShardX Launcher.app"
 ```
 
-<figure><img src="../.gitbook/assets/shardx-mac-xattr-command.png" alt=""><figcaption>Команда виконається без виводу — це нормально</figcaption></figure>
+<figure><img src="../.gitbook/assets/shardx-mac-xattr-command.png" alt=""><figcaption>Команда виконається без виводу - це нормально</figcaption></figure>
 
 Після цього відкрийте застосунок через <mark style="color:purple;">Spotlight</mark> (`⌘ + Пробіл` → `shardx`) або з папки <mark style="color:purple;">Applications</mark>.
 
@@ -132,9 +132,9 @@ scheme://user:pass@host:port
 
 <figure><img src="../.gitbook/assets/shardx-setup-check-proxy.png" alt=""><figcaption>Натисніть «Test all» для перевірки, потім «Import»</figcaption></figure>
 
-Після тесту кожен проксі отримає статус. Проксі з міткою <mark style="color:purple;">**UDP**</mark> підтримують <mark style="color:purple;">SOCKS5 UDP</mark>, а отже і <mark style="color:purple;">WebRTC</mark> — що дуже корисно при роботі з серйозними антифрод-системами. Якщо мітки <mark style="color:purple;">**UDP**</mark> немає, профіль браузера автоматично переходить у режим <mark style="color:purple;">**TCP-only**</mark>: IP не витече, однак трафік може виглядати підозріло для просунутих антифрод-систем. Ми наполегливо рекомендуємо використовувати [проксі з підтримкою UDP](../our-products/about-udp/).
+Після тесту кожен проксі отримає статус. Проксі з міткою <mark style="color:purple;">**UDP**</mark> підтримують <mark style="color:purple;">SOCKS5 UDP</mark>, а отже і <mark style="color:purple;">WebRTC</mark> - що дуже корисно при роботі з серйозними антифрод-системами. Якщо мітки <mark style="color:purple;">**UDP**</mark> немає, профіль браузера автоматично переходить у режим <mark style="color:purple;">**TCP-only**</mark>: IP не витече, однак трафік може виглядати підозріло для просунутих антифрод-систем. Ми наполегливо рекомендуємо використовувати [проксі з підтримкою UDP](../our-products/about-udp/).
 
-Натисніть <mark style="color:purple;">**Import**</mark> — проксі з'явиться у списку зі статусом <mark style="color:purple;">**Active**</mark>.
+Натисніть <mark style="color:purple;">**Import**</mark> - проксі з'явиться у списку зі статусом <mark style="color:purple;">**Active**</mark>.
 
 <figure><img src="../.gitbook/assets/shardx-setup-proxy-done.png" alt=""><figcaption>Проксі додано</figcaption></figure>
 
@@ -146,7 +146,7 @@ scheme://user:pass@host:port
 
 <figure><img src="../.gitbook/assets/shardx-setup-profiles-empty.png" alt=""><figcaption>Розділ Browsers</figcaption></figure>
 
-Параметри за замовчуванням змінювати не потрібно — ShardX сам згенерує унікальний <mark style="color:purple;">відбиток (fingerprint)</mark>. Обов'язково виберіть проксі у полі <mark style="color:purple;">**Proxy**</mark> внизу форми.
+Параметри за замовчуванням змінювати не потрібно - ShardX сам згенерує унікальний <mark style="color:purple;">відбиток (fingerprint)</mark>. Обов'язково виберіть проксі у полі <mark style="color:purple;">**Proxy**</mark> внизу форми.
 
 <figure><img src="../.gitbook/assets/shardx-setup-new-profile.png" alt=""><figcaption>Виберіть проксі і натисніть «Create profile»</figcaption></figure>
 
@@ -158,7 +158,7 @@ scheme://user:pass@host:port
 
 ## Запуск профілю
 
-Натисніть <mark style="color:purple;">**Start**</mark> — браузер запуститься з ізольованим відбитком і проксі.
+Натисніть <mark style="color:purple;">**Start**</mark> - браузер запуститься з ізольованим відбитком і проксі.
 
 <figure><img src="../.gitbook/assets/shardx-setup-done.png" alt=""><figcaption>Профіль запущено</figcaption></figure>
 
@@ -176,7 +176,7 @@ scheme://user:pass@host:port
 
 ### macOS: «ShardX Launcher пошкоджено і не можна відкрити»
 
-Стандартне блокування <mark style="color:purple;">Gatekeeper</mark>. Дотримуйтесь кроків у розділі [Зняття блокування Gatekeeper](#znyattya-blokuvannya-gatekeeper) — там описані обидва способи відкрити Термінал і команда для зняття карантину.
+Стандартне блокування <mark style="color:purple;">Gatekeeper</mark>. Дотримуйтесь кроків у розділі [Зняття блокування Gatekeeper](#znyattya-blokuvannya-gatekeeper) - там описані обидва способи відкрити Термінал і команда для зняття карантину.
 
 ---
 

@@ -4,7 +4,7 @@ icon: crown
 
 # Premium Residential
 
-<mark style="color:purple;">Premium Residential</mark> — пул із жорсткішими критеріями відбору пристроїв. Розмір пулу приблизно в 10–15 разів більший за Standard: від 3,8 до 4,6 млн IP-адрес. Пропонує розширений геотаргетинг аж до вибору оператора.
+<mark style="color:purple;">Premium Residential</mark> - пул із жорсткішими критеріями відбору пристроїв. Розмір пулу приблизно в 10–15 разів більший за Standard: від 3,8 до 4,6 млн IP-адрес. Пропонує розширений геотаргетинг аж до вибору оператора.
 
 {% embed url="https://dashboard.proxyshard.com/en/residential-premium" %}
 
@@ -12,7 +12,7 @@ icon: crown
 
 | Параметр                    | Значення                             |
 | --------------------------- | ------------------------------------ |
-| Розмір пулу                 | 3 800 000 — 4 600 000 пристроїв      |
+| Розмір пулу                 | 3 800 000 - 4 600 000 пристроїв      |
 | Підтримка UDP               | ✗                                    |
 | [Фільтрація Device OS (p0f)](README.md#opis-poliv-nalashtuvan) | ✓ |
 | Безлімітний тариф           | ✗                                    |
@@ -21,7 +21,7 @@ icon: crown
 | Вартість                    | **$3 / ГБ**                          |
 
 {% hint style="warning" %}
-Premium Residential не підтримує <mark style="color:purple;">UDP</mark> і не має безлімітного тарифу. Якщо для завдання важливий UDP або WebRTC — обирайте [Standard](standard-residential.md) або [Unlimited](unlimited-residential-proxy.md).
+Premium Residential не підтримує <mark style="color:purple;">UDP</mark> і не має безлімітного тарифу. Якщо для завдання важливий UDP або WebRTC - обирайте [Standard](standard-residential.md) або [Unlimited](unlimited-residential-proxy.md).
 {% endhint %}
 
 ## Доступні країни
