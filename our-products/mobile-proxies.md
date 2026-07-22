@@ -62,11 +62,17 @@ icon: signal
 
 <figure><img src="../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
 
+{% hint style="warning" %}
+Після покупки активуйте порт: натисніть <mark style="color:purple;">**Restart**</mark> у замовленні або перейдіть за персональним посиланням <mark style="color:purple;">**Reset URL**</mark>. До активації проксі не працюватиме.
+{% endhint %}
+
+<figure><img src="../.gitbook/assets/mobile_pred.png" alt="Попередження про активацію мобільного проксі" width="492"><figcaption></figcaption></figure>
+
 ## Опис полів замовлення
 
 Розглянемо поля <mark style="color:purple;">замовлення</mark>:
 
-<figure><img src="../.gitbook/assets/image (20) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/mobile_order2.png" alt="Поля замовлення мобільного проксі"><figcaption></figcaption></figure>
 
 <mark style="color:purple;">Proxy info</mark> - Найменування продукту
 
