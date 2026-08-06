@@ -26,8 +26,7 @@ Stripe, PayPal доступні на Датацентр та ISP проксі
 
 Додаткові обмеження на резидентських проксі:
 
-* На [Premium Residential](residential-proxies/premium-residential.md) недоступний `apple.com`.
-* На [Standard Residential](residential-proxies/standard-residential.md) та [Unlimited Residential](residential-proxies/unlimited-residential-proxy.md) недоступні сервіси Microsoft.
+* На [Standard Residential](residential-proxies/standard-residential.md) / [Unlimited Residential](residential-proxies/unlimited-residential-proxy.md) / [Premium Residential](residential-proxies/premium-residential.md) недоступні сервіси Microsoft та Apple.
 
 ***
 
