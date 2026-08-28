@@ -49,6 +49,7 @@
 * [Пошук замовлень (Product tag)](site-navigation/order-search-product-tag.md)
 * [Рахунки](site-navigation/invoices.md)
 * [Мої замовлення](site-navigation/my-orders.md)
+* [Команди](site-navigation/teamspaces.md)
 * [Реферальна програма](site-navigation/referral-program.md)
 
 ## Питання та відповіді <a href="#questions-and-answers" id="questions-and-answers"></a>
