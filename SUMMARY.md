@@ -30,11 +30,10 @@
 
 * [Підміна мережевого відбитка (p0f)](our-products/p0f-spoofing.md)
 * [Про протокол UDP](our-products/about-udp/README.md)
-  * [Як встановити Tampermonkey і скрипт для дебагу WebRTC](our-products/about-udp/tampermonkey-webrtc-debug.md)
-  * [Як працює витік через WebRTC](our-products/about-udp/how-webrtc-leak-works.md)
+  * [Як виникає витік через WebRTC](our-products/about-udp/how-webrtc-leak-works.md)
   * [Де перевірити витік WebRTC](our-products/about-udp/webrtc-leak-check-tools.md)
-  * [Чому одного TCP-проксі недостатньо](our-products/about-udp/why-tcp-proxy-not-enough.md)
   * [Чому блокування WebRTC не рятує від виявлення](our-products/about-udp/why-blocking-webrtc-doesnt-help.md)
+  * [Як встановити Tampermonkey і скрипт для налагодження WebRTC](our-products/about-udp/tampermonkey-webrtc-debug.md)
   * [Результати наших польових тестів](our-products/about-udp/field-test-results.md)
   * [Програмні рішення для ввімкнення WebRTC](our-products/about-udp/webrtc-software-solutions.md)
 
