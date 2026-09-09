@@ -1,4 +1,8 @@
-# Octo Browser для iOS
+---
+icon: octopus
+---
+
+# Octo Browser для iOS та Android
 
 {% hint style="warning" %}
 Проксі працює лише всередині запущеного профілю Octo Browser. Інші застосунки на пристрої продовжують використовувати звичайне інтернет-з'єднання.
@@ -6,9 +10,11 @@
 
 ## Встановлення Octo Browser
 
-Завантажте Octo Browser з App Store.
+Завантажте Octo Browser з App Store або Google Play.
 
 {% embed url="https://apps.apple.com/us/app/octo-browser/id6762627194" %}
+
+{% embed url="https://play.google.com/store/apps/details?id=net.octobrowser.mobile&pli=1" %}
 
 ## Реєстрація та вхід
 
