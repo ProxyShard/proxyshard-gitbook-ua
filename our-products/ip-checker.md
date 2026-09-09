@@ -8,27 +8,27 @@ icon: magnifying-glass
 
 {% embed url="https://proxyshard.com/ip-checker" %}
 
-<figure><img src="../.gitbook/assets/image (41).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/ip-checker-overview.png" alt=""><figcaption></figcaption></figure>
 
 ***
 
 ## Основні поля
 
-### My IP
+### My IP address
 
 Ваша поточна зовнішня IP-адреса, яку бачать всі сайти. Поруч відображається прапор країни та кнопка копіювання. Якщо проксі підключено правильно, тут має бути <mark style="color:purple;">IP проксі-сервера </mark>, а не ваша справжня адреса.
 
-### Browser Score
+### Risk score
 
-Числовий показник: скільки проблем із анонімністю виявлено. **Чим менше, тим краще.**
+Числова оцінка ризику, розрахована за виявленими проблемами з анонімністю. **Що менше, то краще.**
 
 {% hint style="info" %}
-Натисніть **"View details"**, щоб побачити повний звіт за кожним параметром.
+Відкрийте докладну діагностику, щоб переглянути звіт за кожним параметром.
 {% endhint %}
 
 ***
 
-## General IP Info
+## General info
 
 ### Provider
 
@@ -40,7 +40,7 @@ icon: magnifying-glass
 Найважливіше поле. Якщо відображається **"WebRTC is leaked"**, ваш реальний IP видно сайтам при активному проксі. Докладніше: [Як працює витік через WebRTC](about-udp/how-webrtc-leak-works.md)
 {% endhint %}
 
-<mark style="color:purple;">WebRTC</mark> – браузерний протокол для P2P-з'єднань. Він може розкривати реальний IP в обхід проксі та VPN. Поле показує IP, який визначив <mark style="color:purple;">WebRTC</mark>. Якщо він відрізняється від **My IP**, значить витік є.
+<mark style="color:purple;">WebRTC</mark> - браузерний протокол для P2P-з'єднань. Він може розкривати реальну IP-адресу в обхід проксі та VPN. Поле показує IP-адресу, яку визначив <mark style="color:purple;">WebRTC</mark>. Якщо вона відрізняється від **My IP address**, є витік.
 
 | Статус | Що це означає |
 | ------------------- | ------------------------------------ |
@@ -68,7 +68,9 @@ Reverse DNS запис для вашого IP (PTR-запис). Показує, 
 
 ## Browser Status Report
 
-Розкривається за кнопкою **"View details"**. Показує результати детального аналізу браузера та мережі, розбиті за рівнями критичності:
+<figure><img src="../.gitbook/assets/ip-checker-diagnostics.png" alt=""><figcaption></figcaption></figure>
+
+Докладна діагностика показує результати аналізу браузера та мережі за рівнями критичності. Щоб переглянути відомості про виявлену проблему, натисніть **View troubles** на відповідній картці.
 
 | Рівень | Що означає |
 | ------------ | -------------------------------------------------- |
@@ -173,7 +175,7 @@ Reverse DNS запис для вашого IP (PTR-запис). Показує, 
 ## Як читати результат
 
 {% hint style="success" %}
-**Все добре:** My IP = IP проксі, WebRTC не виявлено або заблоковано, Browser Score = 0, ISP type = `residential`.
+**Усе гаразд:** My IP address = IP проксі, WebRTC не виявлено або заблоковано, Risk score = 0, ISP type = `residential`.
 {% endhint %}
 
 {% hint style="warning" %}
