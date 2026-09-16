@@ -2,39 +2,68 @@
 icon: '1'
 ---
 
-# Приклад придбання Датацентр проксі
+# Приклад придбання датацентр-проксі
 
 ## Купівля проксі
 
-При придбанні [<mark style="color:purple;">Датацентр</mark>](https://dashboard.proxyshard.com/datacenter-proxy) проксі вкажіть:
+Щоб придбати [датацентр-проксі](https://dashboard.proxyshard.com/datacenter-proxy):
 
-* Країну проксі
-* Цикл оренди (тиждень\місяць\півроку\рік)
-* Кількість проксі
-* Перемикати автопродовження (при активації, кожен цикл оренди буде списувати кошти автоматично, можливе відключення всередині замовлення)
-* Промокод, за наявності.
+1. Відкрийте розділ `Datacenter Proxy`.
+2. У полі `Proxy region` виберіть країну проксі.
+3. У полі `Billing cycle` виберіть період оплати.
+4. У полі `Number of proxies` укажіть кількість проксі.
+5. Увімкніть `Auto renew`, якщо хочете автоматично продовжувати замовлення.
+6. За потреби увімкніть `Enable p0f settings`.
+7. У полі `Total slots` укажіть кількість слотів для p0f.
+8. Якщо у вас є промокод, введіть його в поле `Promocode` і натисніть `Apply`.
+9. Перевірте вартість замовлення та натисніть `Buy now`.
 
-<figure><img src="../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/datacenter-purchase-form_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/datacenter-purchase-form_white.png" alt="Форма купівлі датацентр-проксі">
+  </picture>
+</figure>
 
-Після придбання, замовлення автоматично відкриється і буде доступне в панелі "<mark style="color:purple;">Active Product</mark>" або в "[<mark style="color:purple;">My orders</mark>](https://dashboard.proxyshard.com/products)"
+## Оплата замовлення
 
-<figure><img src="../../.gitbook/assets/image (50).png" alt=""><figcaption></figcaption></figure>
+Після натискання `Buy now` відкриється рахунок зі статусом `Unpaid`. Перевірте суму в рядку `Total amount`, а потім натисніть `Pay with Wallet`.
+
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/datacenter-invoice-payment_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/datacenter-invoice-payment_white.png" alt="Оплата рахунку з балансу ProxyShard">
+  </picture>
+</figure>
+
+Після оплати замовлення з'явиться в блоці `Active products` і в розділі [`My orders`](https://dashboard.proxyshard.com/products). Для оплаченого замовлення відображається статус `Active`.
+
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/datacenter-active-products_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/datacenter-active-products_white.png" alt="Список активних датацентр-проксі">
+  </picture>
+</figure>
 
 {% hint style="warning" %}
-Проксі почнуть працювати протягом 1-2 хвилин, цей час потрібен для синхронізації замовлення
+Проксі почнуть працювати протягом 1-2 хвилин. Цей час потрібен для синхронізації замовлення.
 {% endhint %}
 
-## Продовження Датацентр проксі
+## Продовження датацентр-проксі
 
-Продовження продукту можливе автоматично та ручне\
-\
-За автоматичної оплати, за 1-2 години, замовлення спробує автоматично провести продовження. \
-Якщо коштів для продовження вистачає, то проксі автоматично продовжуються, при нестачі коштів, проксі перестають працювати і чекатимуть поповнення рахунку в <mark style="color:purple;"> протягом трьох днів </mark>.\
-\
-При відключеній функції автоматичного продовження, проксі чекатимуть (Статус <mark style="color:$warning;">On-Hold</mark>) ручної оплати, для цього потрібно натиснути ![](<../../.gitbook/assets/image (55).png>)
+Замовлення можна продовжувати автоматично або вручну.
 
-<figure><img src="../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
+Якщо ввімкнено `Auto renew`, система спробує продовжити замовлення за 1-2 години до завершення оплаченого періоду. Якщо коштів на балансі достатньо, оплата спишеться автоматично, а проксі продовжать працювати.
+
+Якщо автоматичне продовження вимкнено або на балансі недостатньо коштів, замовлення отримає статус `On-hold`. Для ручного продовження відкрийте замовлення, натисніть ![](<../../.gitbook/assets/datacenter-renew-button.png>) та оплатіть новий рахунок.
+
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/datacenter-order-details_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/datacenter-order-details_white.png" alt="Ручне продовження датацентр-проксі">
+  </picture>
+</figure>
 
 {% hint style="danger" %}
-Проксі зі статусом "<mark style="color:$danger;">Cancelled</mark>" продовжити неможливо, цей статус настає після закінчення трьох днів з моменту несплати замовлення.
+Замовлення зі статусом `Canceled` продовжити неможливо. Цей статус надається через три дні після несплати замовлення.
 {% endhint %}
