@@ -4,23 +4,29 @@ icon: dollar-sign
 
 # Поповнення балансу
 
-Поповнення коштів є найважливішим моментом під час роботи з сайтом.\
-Баланс використовується для придбання всіх продуктів на сайті, а також для продовження замовлень.\
-\
-На даний момент підтримуються поповнення:
-\- <mark style="color:purple;">Криптовалютою </mark>, через Cryptomus\
-\- <mark style="color:purple;">Банківською карткою</mark>, через Stripe\
-\
-Щоб перейти до поповнення балансу гаманця, натисніть "[Wallet](https://dashboard.proxyshard.com/en/wallet)""
+Баланс використовується для придбання продуктів, продовження замовлень та оплати додаткового трафіку. Поповнити його можна банківською карткою або через Google Pay за допомогою Stripe, а також криптовалютою через Cryptomus.
 
-На сторінці поповнення, ви можете вказати кількість коштів та метод оплати.
+Щоб поповнити баланс:
 
-<figure><img src="../.gitbook/assets/image (43).png" alt=""><figcaption></figcaption></figure>
+1. Відкрийте розділ [`Wallet`](https://dashboard.proxyshard.com/en/wallet).
+2. Вкажіть суму в полі `Top up balance amount`.
+3. Виберіть спосіб оплати в полі `Payment method`.
+4. Натисніть `Top up your balance` і завершіть оплату.
 
-Вибір методу поповнення:
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/wallet-top-up-form_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/wallet-top-up-form_white.png" alt="Поповнення балансу ProxyShard">
+  </picture>
+</figure>
 
-<figure><img src="../.gitbook/assets/wallet_up.png" alt=""><figcaption></figcaption></figure>
+У списку `Payment method` доступні `Credit Card / Google Pay` і `Cryptomus (Crypto)`.
 
-На сторінці поповнення є історія поповнень, де можна дивитися оплачені рахунки і вивантажити по кожному рахунок PDF файл.
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/wallet-payment-methods_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/wallet-payment-methods_white.png" alt="Вибір способу оплати">
+  </picture>
+</figure>
 
-<figure><img src="../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+У блоці `History` відображаються сума, статус і дата кожного поповнення. Натисніть `Open`, щоб відкрити рахунок і за потреби завантажити його у форматі PDF.

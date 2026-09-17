@@ -2,20 +2,34 @@
 icon: magnifying-glass
 ---
 
-# Пошук замовлень (Product tag)
+# Пошук замовлень за Product tag
 
-У кожному замовленні є можливість встановлення <mark style="color:purple;">Protuct-Tag</mark>
+Кожному замовленню можна призначити власний `Product tag`. Тег допомагає швидко знайти замовлення за зрозумілою назвою.
 
-<figure><img src="../.gitbook/assets/image (255).png" alt="" width="506"><figcaption></figcaption></figure>
+1. Відкрийте замовлення та введіть тег у поле `Product tag`.
+2. Натисніть `Apply`.
 
-У лівій частині замовлення вказується довільне ім'я, у цьому прикладі вказується "<mark style="color:$info;">test\_tag1</mark>"
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/product-tag-setup_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/product-tag-setup_white.png" alt="Налаштування Product tag">
+  </picture>
+</figure>
 
-Потім у "<mark style="color:purple;">Active product</mark>" або "<mark style="color:purple;">My order</mark>" можна побачити, як застосувався тег до замовлення.
+Призначений тег відображається поруч із номером замовлення в блоці `Active products`.
 
-<figure><img src="../.gitbook/assets/image (256).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/product-tag-active-search_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/product-tag-active-search_white.png" alt="Пошук замовлення в Active products">
+  </picture>
+</figure>
 
-За допомогою поля "Search" ![](<../.gitbook/assets/image (258).png>) можна знайти замовлення за тегом
+Введіть тег у поле `Search` і натисніть `Search`. Пошук доступний як на сторінці вибраного продукту, так і в розділі [`My orders`](https://dashboard.proxyshard.com/products).
 
-<figure><img src="../.gitbook/assets/image (259).png" alt="" width="563"><figcaption></figcaption></figure>
-
-Пошук замовлень можливий як на сторінці з продуктом, так і у списку [замовлень ](https://dashboard.proxyshard.com/products)
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/product-tag-orders-search_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/product-tag-orders-search_white.png" alt="Пошук замовлення за тегом у My orders">
+  </picture>
+</figure>

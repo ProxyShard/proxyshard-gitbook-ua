@@ -2,13 +2,13 @@
 icon: '1'
 ---
 
-# Приклад придбання датацентр-проксі
+# Придбання ISP / датацентрових проксі
 
 ## Купівля проксі
 
-Щоб придбати [датацентр-проксі](https://dashboard.proxyshard.com/datacenter-proxy):
+Щоб придбати [датацентр-проксі](https://dashboard.proxyshard.com/datacenter-proxy) або [ISP-проксі](https://dashboard.proxyshard.com/isp-proxy):
 
-1. Відкрийте розділ `Datacenter Proxy`.
+1. Відкрийте розділ `Datacenter Proxy` або `ISP Proxy` залежно від потрібного типу проксі.
 2. У полі `Proxy region` виберіть країну проксі.
 3. У полі `Billing cycle` виберіть період оплати.
 4. У полі `Number of proxies` укажіть кількість проксі.
@@ -21,7 +21,7 @@ icon: '1'
 <figure>
   <picture>
     <source srcset="../../.gitbook/assets/datacenter-purchase-form_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../.gitbook/assets/datacenter-purchase-form_white.png" alt="Форма купівлі датацентр-проксі">
+    <img src="../../.gitbook/assets/datacenter-purchase-form_white.png" alt="Форма купівлі проксі">
   </picture>
 </figure>
 
@@ -41,7 +41,7 @@ icon: '1'
 <figure>
   <picture>
     <source srcset="../../.gitbook/assets/datacenter-active-products_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../.gitbook/assets/datacenter-active-products_white.png" alt="Список активних датацентр-проксі">
+    <img src="../../.gitbook/assets/datacenter-active-products_white.png" alt="Список активних замовлень">
   </picture>
 </figure>
 
@@ -49,7 +49,7 @@ icon: '1'
 Проксі почнуть працювати протягом 1-2 хвилин. Цей час потрібен для синхронізації замовлення.
 {% endhint %}
 
-## Продовження датацентр-проксі
+## Продовження замовлення
 
 Замовлення можна продовжувати автоматично або вручну.
 
@@ -60,7 +60,7 @@ icon: '1'
 <figure>
   <picture>
     <source srcset="../../.gitbook/assets/datacenter-order-details_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../.gitbook/assets/datacenter-order-details_white.png" alt="Ручне продовження датацентр-проксі">
+    <img src="../../.gitbook/assets/datacenter-order-details_white.png" alt="Ручне продовження замовлення">
   </picture>
 </figure>
 

@@ -4,9 +4,14 @@ icon: arrow-up-wide-short
 
 # Мої замовлення
 
-Ця сторінка дозволяє переглянути всі замовлення облікового запису.
+У розділі `My orders` зібрано всі замовлення облікового запису. Вкладки у верхній частині сторінки дають змогу відфільтрувати їх за типом продукту, а меню `All statuses` за статусом.
 
-<figure><img src="../.gitbook/assets/image (22) (1).png" alt=""><figcaption></figcaption></figure>
+Для пошуку за номером або `Product tag` введіть значення в поле `Search` і натисніть `Search`. Кнопка `Open` відкриває вибране замовлення.
 
-За допомогою різних фільтрів та вкладок можна переглянути всі замовлення
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/orders-list_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/orders-list_white.png" alt="Список і фільтри замовлень">
+  </picture>
+</figure>
 

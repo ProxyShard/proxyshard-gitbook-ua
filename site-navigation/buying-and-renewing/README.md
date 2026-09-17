@@ -5,19 +5,22 @@ icon: coin-vertical
 # Придбання та продовження проксі
 
 {% hint style="info" %}
-Щоб придбати замовлення, на балансі мають бути [кошти](../top-up-balance.md).
+Для оплати замовлення на балансі мають бути [кошти](../top-up-balance.md).
 {% endhint %}
 
-## **Приклади придбання та керування замовленням**
+## Придбання та керування замовленнями
 
-Для придбання замовлення, потрібно вибрати будь-який з продуктів, що цікавлять:
+Виберіть потрібний тип проксі в бічному меню:
 
-<figure><img src="../../.gitbook/assets/new_pokupka_zakaza.png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/proxy-product-navigation_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/proxy-product-navigation_white.png" alt="Розділи для придбання проксі">
+  </picture>
+</figure>
 
-#### [**Приклад для Datacenter proxy**](buying-datacenter-proxies.md)
+#### [**Придбання ISP / датацентрових проксі**](buying-datacenter-proxies.md)
 
-#### [**Приклад для ISP**](buying-isp-proxies.md)
+#### [**Придбання резидентських проксі**](buying-residential-proxies.md)
 
-#### [**Приклад для Residential proxy**](buying-residential-proxies.md)
-
-#### [**Приклад для Mobile proxy**](buying-mobile-proxies.md)
+#### [**Придбання мобільних проксі**](buying-mobile-proxies.md)

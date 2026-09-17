@@ -21,7 +21,12 @@ icon: wave-square
 
 <br>
 
-<figure><img src="../../.gitbook/assets/webrtc-leak (1).svg" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/webrtc-leak_black.svg" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/webrtc-leak_white.svg" alt="Сценарії роботи WebRTC через проксі">
+  </picture>
+</figure>
 
 ### Сценарій 1. Проксі передає UDP, адреси збігаються
 

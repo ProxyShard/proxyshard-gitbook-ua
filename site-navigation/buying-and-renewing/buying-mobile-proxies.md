@@ -2,42 +2,72 @@
 icon: '4'
 ---
 
-# Приклад придбання Мобільних проксі
+# Придбання мобільних проксі
 
 ## Купівля проксі
 
-При придбанні <mark style="color:purple;">Мобільних проксі</mark> проксі виберіть відповідний тариф (для сортування списку, можна використовувати фільтр по країнах) та вкажіть термін оренди, як представлено на скріншоті нижче
+Щоб оформити замовлення:
 
-<figure><img src="../../.gitbook/assets/image (9) (1).png" alt="" width="563"><figcaption></figcaption></figure>
+1. Відкрийте розділ `Mobile Proxy`.
+2. Виберіть країну за допомогою `Country filter`.
+3. У картці потрібного оператора виберіть період оренди.
+4. Натисніть `Buy`.
 
-Після придбання, замовлення автоматично відкриється і буде доступне в панелі "<mark style="color:purple;">Active Product</mark>" або в "[<mark style="color:purple;">My orders</mark>](https://dashboard.proxyshard.com/products)"
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/mobile-purchase-form_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/mobile-purchase-form_white.png" alt="Придбання мобільних проксі">
+  </picture>
+</figure>
 
-<figure><img src="../../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>
+## Оплата замовлення
 
-## Старт роботи
+Перевірте суму рахунку та натисніть `Pay with Wallet`.
 
-<figure><img src="../../.gitbook/assets/mobile_order.png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/mobile-invoice-payment_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/mobile-invoice-payment_white.png" alt="Оплата мобільних проксі з балансу">
+  </picture>
+</figure>
 
-{% hint style="danger" %}
-**Щоб проксі почали працювати, після придбання перейдіть за посиланням **<mark style="color:purple;">**Reset URL**</mark>** або натисніть кнопку** ![](<../../.gitbook/assets/image (13) (1).png>)**.**\
-\
-_Також за відсутності дій на проксі більше трьох годин вони відключаються, і їх потрібно активувати повторно._
+Після оплати замовлення з'явиться в блоці `Active products` і в розділі [`My orders`](https://dashboard.proxyshard.com/products). Натисніть `Open`, щоб перейти до його налаштувань.
+
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/mobile-active-products_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/mobile-active-products_white.png" alt="Активне замовлення мобільних проксі">
+  </picture>
+</figure>
+
+## Початок роботи
+
+Щоб активувати проксі після придбання, скопіюйте `Reset URL` і відкрийте посилання або натисніть `Restart`.
+
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/mobile-order-restart_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/mobile-order-restart_white.png" alt="Активація мобільних проксі">
+  </picture>
+</figure>
+
+{% hint style="warning" %}
+Після трьох годин бездіяльності проксі стає неактивним. Щоб відновити роботу, знову відкрийте `Reset URL` або натисніть `Restart`.
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/mobile_pred.png" alt="" width="492"><figcaption></figcaption></figure>
+Опис налаштувань і полів замовлення доступний у [розділі про мобільні проксі](../../our-products/mobile-proxies.md).
 
-{% hint style="info" %}
-Про налаштування та опис полів ви можете ознайомитись за посиланням [](../../our-products/mobile-proxies.md)]
-{% endhint %}
+## Продовження замовлення
 
-## Продовження Мобільних проксі
+Якщо ввімкнено `Auto renew`, замовлення продовжується автоматично за умови достатнього балансу. Якщо автоматичне продовження вимкнено, після завершення оплаченого періоду замовлення отримає статус `On-hold`. Відкрийте замовлення та натисніть `Renew`, щоб продовжити його вручну.
 
-Продовження продукту можливе лише вручну.\
-\
-При відключеній функції автоматичного продовження, проксі чекатимуть (Статус <mark style="color:$warning;">On-Hold</mark>) ручної оплати, для цього потрібно натиснути ![](<../../.gitbook/assets/image (55).png>)
-
-<figure><img src="../../.gitbook/assets/image (21) (1).png" alt="" width="463"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/mobile-order-renewal_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/mobile-order-renewal_white.png" alt="Продовження замовлення мобільних проксі">
+  </picture>
+</figure>
 
 {% hint style="danger" %}
-Проксі зі статусом "<mark style="color:$danger;">Cancelled</mark>" продовжити неможливо, цей статус настає після закінчення трьох днів з моменту несплати замовлення.
+Замовлення зі статусом `Canceled` продовжити не можна. Цей статус призначається через три дні після несплати замовлення.
 {% endhint %}
