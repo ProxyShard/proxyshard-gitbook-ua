@@ -32,13 +32,13 @@ icon: fingerprint
 | **iOS** | Відбиток iOS |
 | **Android** | Відбиток Android |
 
-### Дашборд ISP проксі з підтримкою p0f
+### Дашборд ISP і Datacenter проксі з підтримкою p0f
 
-<figure><img src="../.gitbook/assets/p0f-dashboard.png" alt=""><figcaption><p>Вкладка p0f в налаштуваннях ISP проксі</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/p0f-dashboard.png" alt=""><figcaption><p>Вкладка p0f у налаштуваннях ISP і Datacenter проксі</p></figcaption></figure>
 
 ### Панель вибору відбитка
 
-Нижче наведено скріншот прикладу налаштування p0f із замовлення ISP проксі
+На скріншоті показано замовлення ISP проксі. Така сама панель налаштування p0f доступна в замовленнях Datacenter.
 
 <figure><img src="../.gitbook/assets/p0f-panel.png" alt=""><figcaption><p>Вибір ОС для заміни мережевого відбитка</p></figcaption></figure>
 
@@ -72,7 +72,7 @@ icon: fingerprint
 * [Датацентрові проксі](datacenter-proxies.md)
 * [ISP проксі](isp-proxies.md)
 * [Мобільні проксі](mobile-proxies.md)
-* [Premium Residential](residential-proxies/premium-residential.md) - фільтрування пристроїв за параметром [Device OS](residential-proxies/#opis-poliv-nalashtuvan), без підміни p0f
+* [Premium Residential](residential-proxies/premium-residential.md) - фільтрування пристроїв за параметром [Device OS](residential-proxies/#nalashtuvannya-proksi), без підміни p0f
 
 {% hint style="warning" %}
 На деяких [мобільних проксі](mobile-proxies.md) підміна p0f недоступна. Повний список обмежень дивіться на сторінці [Обмеження](restrictions.md).

@@ -4,15 +4,17 @@ icon: fire
 
 # ISP проксі
 
-<mark style="color:purple;">ISP проксі</mark> як і <mark style="color:purple;">Датацентр</mark> видаються лише одному користувачу, без спільного використання адреси кількома користувачами та інших прихованих обмежень. Адреси відносяться до типу <mark style="color:purple;">IPv4</mark> та мають підтримку <mark style="color:purple;">UDP</mark>.
+<mark style="color:purple;">ISP проксі</mark>, як і <mark style="color:purple;">датацентрові проксі</mark>, надаються одному користувачу без прихованого спільного використання. Це адреси <mark style="color:purple;">IPv4</mark> із підтримкою <mark style="color:purple;">UDP</mark>.
 
-<mark style="color:purple;">ISP проксі</mark> мають усі плюси, як у <mark style="color:purple;">Residential</mark> проксі та <mark style="color:purple;">Datacenter</mark>. Вони такі ж стабільні та статичні, як <mark style="color:purple;">Datacenter</mark>, але при цьому використовують IP-адреси, зареєстровані на домашніх Інтернет-провайдерах, як у <mark style="color:purple;">Residential</mark> проксі.
+<mark style="color:purple;">ISP проксі</mark> поєднують переваги <mark style="color:purple;">Residential</mark> і <mark style="color:purple;">Datacenter</mark>. Вони такі ж стабільні та статичні, як Datacenter, але використовують IP-адреси, зареєстровані в домашніх інтернет-провайдерів.
 
-Це робить їх одним із найкращих варіантів для роботи з Tier-1 сайтами та сервісами, чутливими до типу <mark style="color:purple;">IP</mark>. А з підтримкою <mark style="color:purple;">UDP</mark> вони стають абсолютно недетектованими.
-\
-Нещодавнє оновлення на <mark style="color:purple;">ISP</mark> проксі додало можливість зміни відбитка (<mark style="color:purple;">p0f</mark>)
+Це робить їх зручним варіантом для Tier-1 сайтів і сервісів, чутливих до типу <mark style="color:purple;">IP</mark>. Підтримка <mark style="color:purple;">UDP</mark> також дає змогу використовувати їх для WebRTC та інших сценаріїв з UDP-трафіком.
+
+ISP проксі підтримують підміну мережевого відбитка <mark style="color:purple;">p0f</mark>.
 
 {% embed url="https://dashboard.proxyshard.com/en/isp-proxy" %}
+
+Покрокова інструкція з придбання та оплати: [Придбання ISP / датацентрових проксі](../site-navigation/buying-and-renewing/buying-datacenter-proxies.md).
 
 ## Характеристики
 
@@ -21,8 +23,8 @@ icon: fire
 | Тип IP         | IPv4 (домашній провайдер)          |
 | Шеринг         | Ні - один IP на одного користувача |
 | Ліміт підключень | 2 500 на IP                      |
-| Підтримка UDP  | ✓                                  |
-| Підтримка p0f  | ✓ (+$0.6 / IP на місяць)           |
+| [Підтримка UDP](about-udp/) | ✓                          |
+| [Підтримка p0f](p0f-spoofing.md) | ✓ (+$0.6 / IP на місяць) |
 | Вартість       | **$2** / IP на місяць              |
 
 ## Доступні локації
@@ -38,49 +40,53 @@ icon: fire
 Список локацій постійно розширюється.
 {% endhint %}
 
-## **Як вони працюють?**
+## Як придбати
 
-У самому замовленні ви можете знайти кілька важливих пунктів і опцій, розглянемо їх:
+1. Відкрийте розділ `ISP Proxy`.
+2. У полі `Proxy region` виберіть країну.
+3. У полі `Number of proxies` вкажіть кількість проксі.
+4. Увімкніть `Auto renew`, якщо замовлення потрібно продовжувати автоматично.
+5. За потреби увімкніть `Enable p0f settings`.
+6. У полі `Total slots` вкажіть, для скількох проксі потрібна підміна p0f.
+7. Якщо у вас є промокод, введіть його в поле `Promocode` і натисніть `Apply`.
+8. Перевірте вартість і натисніть `Buy now`.
 
-Придбати ви можете на сторінці [ISP proxy](https://dashboard.proxyshard.com/en/isp-proxy), в ньому вам потрібно вказати <mark style="color:purple;">Країну</mark>, <mark style="color:purple;">Термін оренди</mark> та <mark style="color:purple;">Кількість</mark>. При необхідності можна активувати <mark style="color:purple;">Auto renew</mark>, для автоматичного продовження.
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/isp-purchase-form_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/isp-purchase-form_white.png" alt="Придбання ISP-проксі">
+  </picture>
+</figure>
 
-<figure><img src="../.gitbook/assets/image (57).png" alt=""><figcaption></figcaption></figure>
+Оплату та продовження замовлення описано в інструкції [Придбання ISP / датацентрових проксі](../site-navigation/buying-and-renewing/buying-datacenter-proxies.md).
 
 {% hint style="info" %}
-Після придбання проксі почнуть працювати протягом 1-2 хвилин, оскільки потрібна синхронізація бази даних із сервером проксі.
+Після оплати зачекайте 1-2 хвилини, поки замовлення синхронізується і проксі почнуть працювати.
 {% endhint %}
 
-## Опис полів замовлення
+## Поля замовлення
 
-Розглянемо поля <mark style="color:purple;">Замовлення</mark>:
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/isp-order-details_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/isp-order-details_white.png" alt="Поля замовлення ISP-проксі">
+  </picture>
+</figure>
 
-<mark style="color:purple;">User ID</mark> - Це User використовується для внутрішньої ідентифікації вашого замовлення, іноді ми його просимо при зверненні до технічної підтримки.
-
-<mark style="color:purple;">Status</mark> - статус замовлення, може мати статуси:
-
-* <mark style="color:green;">**Active**</mark> - Активне замовлення
-* <mark style="color:orange;">**On-Hold**</mark> - Очікування оплати замовлення при закінченні терміну оренди
-* <mark style="color:red;">**Cancelled**</mark> - Скасоване замовлення
+* `Status` показує стан замовлення: `Active`, `On-hold` або `Canceled`.
+* `Product tag` додає мітку для пошуку замовлення у списках.
+* `User ID` використовується для внутрішньої ідентифікації замовлення та може знадобитися під час звернення до підтримки.
+* `Proxy Region` показує вибрану країну.
+* `p0f slots` показує кількість активних слотів p0f та їх зміну в наступному платіжному періоді.
+* `Username` і `Password` містять дані авторизації. Кнопка `Regenerate` створює новий пароль, після чого старі рядки підключення перестають працювати.
+* `Billing cycle`, `Next due date`, `Price` і `Next charge` показують термін оренди та дані наступного платежу.
+* `Auto-renew proxy` керує автоматичним продовженням. Ті самі налаштування доступні через `Manage renewal`.
+* Кнопки `p0f` і `Buy p0f slots` відкривають налаштування підміни відбитка та придбання додаткових слотів.
+* У блоці `Proxy List` можна вибрати `HTTP` або `SOCKS5`, змінити формат рядка, скопіювати список через `Copy all` або завантажити його через `Export All`.
 
 {% hint style="danger" %}
-Замовлення зі статусом "<mark style="color:$danger;">**Cancelled**</mark>" неможливо відновити через три дні після завершення оренди.
+Замовлення зі статусом `Canceled` відновити не можна. Цей статус призначається через три дні після несплати.
 {% endhint %}
-
-<mark style="color:purple;">Price</mark> - Вартість продукту на місяць
-
-<mark style="color:purple;">Username</mark> - Логін проксі
-
-<mark style="color:purple;">Password</mark> - Пароль проксі
-
-<mark style="color:purple;">Next Due Date</mark> - Наступна дата списання
-
-<mark style="color:purple;">Copy proxy</mark> - кнопка для копіювання проксі в буфер обміну
-
-<mark style="color:purple;">HTTP/SOCKS</mark> - Вибір типу протоколу проксі
-
-<mark style="color:purple;">Re-generate</mark> - Зміна пароля на проксі
-
-<mark style="color:purple;">Auto renew</mark> - перемикач для активації/деактивації продовження продукту щомісяця <mark style="color:purple;">(засоби списуються з балансу облікового запису в термін, вказаний при придбанні)</mark>
 
 ## Для яких завдань підходить
 
@@ -102,5 +108,5 @@ icon: fire
 * **Кількість доступних локацій** - вкрай складна інтеграція з реальними провайдерами, але ми постійно розширюємо список
 
 {% hint style="info" %}
-Про те, як можна налаштувати проксі, ви можете у нашому розділі "[Інструкція з використання ](../setup-guides/getting-started.md)"
+Приклади налаштування проксі зібрані в розділі [Інструкція з використання](../setup-guides/getting-started.md).
 {% endhint %}

@@ -125,7 +125,7 @@ UDP підтримується на **всіх** продуктах, крім:
 * <mark style="color:purple;">**TTL**</mark> (Time-To-Live) - час «життя» сесії у секундах. Після закінчення TTL проксі-ланцюг створюється заново, і ви отримуєте нову IP. Діапазон від 60 до 86400 секунд.
 * <mark style="color:purple;">**Sticky / Random**</mark> - режим сесії. <mark style="color:purple;">Sticky</mark> намагається утримувати одну й ту саму IP у межах TTL, <mark style="color:purple;">Random</mark> видає випадкову IP при кожному новому підключенні.
 
-Повний опис усіх параметрів замовлення резидентських проксі: [Як використовувати Residential проксі](../../our-products/residential-proxies/how-to-use-residential-proxies.md).
+Повний опис усіх параметрів замовлення резидентських проксі: [Налаштування резидентських проксі](../../our-products/residential-proxies/#nalashtuvannya-proksi).
 
 ***
 

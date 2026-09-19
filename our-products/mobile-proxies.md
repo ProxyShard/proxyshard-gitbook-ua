@@ -22,6 +22,8 @@ icon: signal
 
 {% embed url="https://dashboard.proxyshard.com/en/mobile-proxy" %}
 
+Покрокова інструкція з придбання та активації: [Придбання мобільних проксі](../site-navigation/buying-and-renewing/buying-mobile-proxies.md).
+
 ## Характеристики
 
 | Параметр       | Значення                              |
@@ -29,8 +31,8 @@ icon: signal
 | Тип IP         | Мобільний IPv4                        |
 | Шеринг         | Ні - один порт на одного користувача  |
 | Трафік         | Безлімітний                           |
-| Підтримка UDP  | ✓                                     |
-| Підтримка p0f  | ✓ (не на всіх локаціях, див. вище)    |
+| [Підтримка UDP](about-udp/) | ✓                             |
+| [Підтримка p0f](p0f-spoofing.md) | ✓ (не на всіх локаціях, див. вище) |
 | Вартість       | від **$4** / день · від **$55** / місяць |
 
 ## Доступні локації
@@ -56,56 +58,50 @@ icon: signal
 Список регулярно розширюється. Актуальні локації та вартість - на сторінці купівлі [Mobile proxy](https://dashboard.proxyshard.com/en/mobile-proxy).
 {% endhint %}
 
-## **Як вони працюють?**
+## Як придбати
 
-Для початку роботи вам потрібно [**придбати**](https://dashboard.proxyshard.com/en/mobile-proxy) замовлення. Для цього перейдіть на сторінку ![](<../.gitbook/assets/image (58).png>)і виберіть потрібну країну та оператора
+1. Відкрийте розділ `Mobile Proxy`.
+2. Виберіть країну через `Country filter`.
+3. У картці потрібного оператора виберіть термін оренди.
+4. Натисніть `Buy`.
 
-<figure><img src="../.gitbook/assets/image (59).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/mobile-purchase-form_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/mobile-purchase-form_white.png" alt="Придбання мобільних проксі">
+  </picture>
+</figure>
+
+Оплата, перша активація та продовження описані в інструкції [Придбання мобільних проксі](../site-navigation/buying-and-renewing/buying-mobile-proxies.md).
+
+## Поля та керування замовленням
+
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/mobile-order-settings_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/mobile-order-settings_white.png" alt="Поля замовлення мобільного проксі">
+  </picture>
+</figure>
+
+1. `Signature` вибирає мережеву сигнатуру. Доступні `w`, `w10`, `w7`, `linux`, `android`, `macos` та `ios`. Після зміни сигнатури обов'язково натисніть `Restart`.
+2. `Auto-reset` автоматично перезапускає підключення через вибраний проміжок часу.
+3. `Restart` активує порт або змінює IP. Цю саму дію можна виконати через персональний `Reset URL`.
+4. `Auto renew` вмикає автоматичне продовження замовлення за достатнього балансу.
+5. `Re-generate credentials` створює нові дані авторизації. Після цього старі рядки підключення припиняють працювати.
+
+Інші поля:
+
+* `Product tag` задає мітку для пошуку замовлення у списках.
+* `Proxy info` показує країну, оператора та тип тарифу.
+* `Order status` показує стан замовлення: `Active`, `On-hold` або `Canceled`.
+* `Proxy status` показує стан порту: `Active` або `Disconnected`.
+* `Username` і `Password` містять дані авторизації.
+* `Billing cycle`, `Next due date` і `Price` показують термін оренди та наступний платіж.
+* У `Proxy List` можна вибрати формат рядка, скопіювати список через `Copy all` або завантажити його через `Export All`.
 
 {% hint style="warning" %}
-Після покупки активуйте порт: натисніть <mark style="color:purple;">**Restart**</mark> у замовленні або перейдіть за персональним посиланням <mark style="color:purple;">**Reset URL**</mark>. До активації проксі не працюватиме.
+Після придбання та після трьох годин без активності порт потрібно активувати через `Restart` або `Reset URL`. Поки `Proxy status` показує `Disconnected`, проксі не працює.
 {% endhint %}
-
-<figure><img src="../.gitbook/assets/mobile_pred.png" alt="Попередження про активацію мобільного проксі" width="492"><figcaption></figcaption></figure>
-
-## Опис полів замовлення
-
-Розглянемо поля <mark style="color:purple;">замовлення</mark>:
-
-<figure><img src="../.gitbook/assets/mobile_order2.png" alt="Поля замовлення мобільного проксі"><figcaption></figcaption></figure>
-
-<mark style="color:purple;">Proxy info</mark> - Найменування продукту
-
-<mark style="color:purple;">Reset URL</mark> - Посилання для зміни IP адреси на підключенні
-
-<mark style="color:purple;">Login</mark> - Логін проксі
-
-<mark style="color:purple;">Password</mark> - Пароль проксі
-
-<mark style="color:purple;">Order status</mark> - статус замовлення, може мати статуси:
-
-* <mark style="color:green;">**Active**</mark> - Активне замовлення
-* <mark style="color:orange;">**On-Hold**</mark> - Очікування оплати замовлення при закінченні терміну оренди
-* <mark style="color:red;">**Cancelled**</mark> - Скасоване замовлення
-
-<mark style="color:purple;">Proxy status</mark> - статус замовлення, може мати статуси:
-
-* <mark style="color:green;">**Active**</mark> - Активне замовлення
-* <mark style="color:$danger;">Disconnected</mark> - Вимкнений, не активний порт
-
-{% hint style="danger" %}
-**Після купівлі або відсутності активності на порту, потрібно його **<mark style="color:$success;">**активувати**</mark>**, якщо статус проксі - **<mark style="color:$danger;">**Disconnected**</mark>**, то поки ви їх не активуєте, вони працювати не будуть!**
-
-**Активувати проксі можна через** <mark style="color:purple;">**Reset URL**</mark> **або кнопку** <mark style="color:purple;">**Restart Proxy**</mark>**.**
-{% endhint %}
-
-<mark style="color:purple;">Next Due Date</mark> - Наступна дата списання
-
-<mark style="color:purple;">Copy proxy</mark> - кнопка для копіювання проксі в буфер обміну
-
-<mark style="color:purple;">Re-generate</mark> - Зміна пароля на проксі\
-\
-<mark style="color:purple;">Restart</mark> - Запуск або зміна IP, аналогічна <mark style="color:purple;">Reset URL</mark> адресою
 
 ## Для яких завдань підходить
 
@@ -131,5 +127,5 @@ icon: signal
 * **Одна сесія одночасно** - один порт тримає один IP. Якщо потрібно підключити кілька пристроїв _одночасно_ (не по черзі, а саме в один момент) - придбайте окремий порт або розгляньте [Резидентські проксі](residential-proxies/README.md)
 
 {% hint style="info" %}
-Про те, як можна налаштувати проксі, ви можете у нашому розділі "[Інструкція з використання ](../setup-guides/getting-started.md)"
+Приклади налаштування проксі зібрані в розділі [Інструкція з використання](../setup-guides/getting-started.md).
 {% endhint %}

@@ -8,7 +8,12 @@ icon: magnifying-glass
 
 {% embed url="https://proxyshard.com/ip-checker" %}
 
-<figure><img src="../.gitbook/assets/ip-checker-overview.png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/ip-checker-overview_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/ip-checker-overview_white.png" alt="Огляд IP Checker">
+  </picture>
+</figure>
 
 ***
 
@@ -68,7 +73,12 @@ Reverse DNS запис для вашого IP (PTR-запис). Показує, 
 
 ## Browser Status Report
 
-<figure><img src="../.gitbook/assets/ip-checker-diagnostics.png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/ip-checker-diagnostics_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/ip-checker-diagnostics_white.png" alt="Детальна діагностика IP Checker">
+  </picture>
+</figure>
 
 Докладна діагностика показує результати аналізу браузера та мережі за рівнями критичності. Щоб переглянути відомості про виявлену проблему, натисніть **View troubles** на відповідній картці.
 

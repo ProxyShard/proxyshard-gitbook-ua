@@ -30,15 +30,17 @@ Stripe, PayPal доступні на Датацентр та ISP проксі
 
 ***
 
-## UDP на резидентських проксі (US)
+## UDP на резидентських проксі
 
 {% hint style="danger" %}
-UDP не працює на [Резидентських проксі](residential-proxies/) (**в тому числі і безлімітні**) у локації **US** :flag\_us:
+UDP не працює на [Standard Residential](residential-proxies/standard-residential.md) і [Unlimited Residential](residential-proxies/unlimited-residential-proxy.md) у локації **US** :flag\_us:
 {% endhint %}
 
 Це не наше обмеження. На початку 2026 провайдери в США заборонили вхідні UDP-з'єднання без попередньої ініціації зсередини мережі. Через це UDP Associate на проксі перестав працювати у цьому регіоні.
 
-На решті локацій UDP працює без проблем.
+На інших локаціях Standard і Unlimited підтримують UDP з урахуванням загальних обмежень портів.
+
+На [Premium Residential](residential-proxies/premium-residential.md) UDP доступний у всіх локаціях, крім окремих міст і пристроїв на базі macOS/iOS.
 
 ***
 
