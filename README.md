@@ -2,7 +2,14 @@
 icon: hand-wave
 ---
 
-# Proxyshard GitBook
+# ProxyShard GitBook
+
+<figure>
+  <picture>
+    <source srcset=".gitbook/assets/docs-cover_black.svg" media="(prefers-color-scheme: dark)">
+    <img src=".gitbook/assets/docs-cover_white.svg" alt="Документація ProxyShard">
+  </picture>
+</figure>
 
 Тут ви знайдете все, що потрібно для роботи з нашими проксі: опис продуктів, інструкції з налаштування, відповіді на часті запитання та документацію API.
 
