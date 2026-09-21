@@ -30,14 +30,12 @@ icon: circle-question
 
 ## 2. На яких продуктах працює UDP?
 
-UDP підтримується на **всіх** продуктах, крім:
+UDP підтримується на Datacenter, ISP, Mobile, Standard Residential, Unlimited Residential і Premium Residential з урахуванням таких обмежень:
 
-* **Резидентських** та **безлімітних резидентських** проксі у локації <mark style="color:purple;">**США**</mark> :flag\_us: (обмеження з боку американських провайдерів з початку 2026 року)
-* **Преміальних резидентських** проксі на **всіх локаціях**
+* На **Standard Residential** та **Unlimited Residential** UDP повністю недоступний у локації <mark style="color:purple;">**США**</mark> :flag\_us:. В інших локаціях тимчасово дозволені лише цільові порти `8443`, `8080`, `3478` і `19302`.
+* На **Premium Residential** UDP доступний, крім окремих міст і деяких пристроїв macOS/iOS. Обмеження портів Standard та Unlimited на Premium не поширюється.
 
-На Datacenter, ISP, Mobile та не-US резидентських проксі UDP працює у штатному режимі.
-
-Детальніше: [Про протокол UDP](../../our-products/about-udp/).
+Актуальні винятки наведені на сторінках [Про протокол UDP](../../our-products/about-udp/) та [Обмеження](../../our-products/restrictions.md).
 
 ***
 
