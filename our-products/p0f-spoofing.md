@@ -32,15 +32,42 @@ icon: fingerprint
 | **iOS** | Відбиток iOS |
 | **Android** | Відбиток Android |
 
-### Дашборд ISP і Datacenter проксі з підтримкою p0f
+### ISP і Datacenter проксі
 
-<figure><img src="../.gitbook/assets/p0f-dashboard.png" alt=""><figcaption><p>Вкладка p0f у налаштуваннях ISP і Datacenter проксі</p></figcaption></figure>
+Відкрийте замовлення, натисніть `p0f` і виберіть потрібну ОС для кожної IP-адреси. Налаштування працює однаково для ISP і Datacenter проксі.
 
-### Панель вибору відбитка
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/p0f-datacenter-isp_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/p0f-datacenter-isp_white.png" alt="Налаштування p0f для ISP і Datacenter проксі">
+  </picture>
+</figure>
 
-На скріншоті показано замовлення ISP проксі. Така сама панель налаштування p0f доступна в замовленнях Datacenter.
+### Мобільні проксі
 
-<figure><img src="../.gitbook/assets/p0f-panel.png" alt=""><figcaption><p>Вибір ОС для заміни мережевого відбитка</p></figcaption></figure>
+У полі `Signature` виберіть ОС, відбитку якої має відповідати проксі. Після зміни налаштування перезапустіть проксі кнопкою `Restart`.
+
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/p0f-mobile_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/p0f-mobile_white.png" alt="Вибір мережевого відбитка для мобільного проксі">
+  </picture>
+</figure>
+
+Підміна p0f доступна не в усіх мобільних локаціях. Актуальний список наведено на сторінці [Обмеження](restrictions.md).
+
+### Premium Residential
+
+У Premium Residential параметр `Device OS` фільтрує проксі за операційною системою пристрою. Це фільтрація пулу, а не підміна мережевого відбитка.
+
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/p0f-premium-residential_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/p0f-premium-residential_white.png" alt="Фільтрація Premium Residential за Device OS">
+  </picture>
+</figure>
+
+Доступність `Device OS` залежить від локації. Подробиці наведено на сторінці [Обмеження](restrictions.md).
 
 {% hint style="warning" %}
 Перед зміною p0f обов'язково закрийте всі з'єднання через проксі. Проксі не працюватиме, доки старі з'єднання не будуть закриті. Після зміни p0f зачекайте 2-3 хвилини і потім підключайтеся.

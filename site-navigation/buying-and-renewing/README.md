@@ -19,8 +19,10 @@ icon: coin-vertical
   </picture>
 </figure>
 
-#### [**Придбання ISP / датацентрових проксі**](buying-datacenter-proxies.md)
+#### [**Придбання датацентрових проксі**](buying-datacenter-proxies.md)
 
 #### [**Придбання резидентських проксі**](buying-residential-proxies.md)
+
+#### [**Придбання ISP-проксі**](buying-isp-proxies.md)
 
 #### [**Придбання мобільних проксі**](buying-mobile-proxies.md)

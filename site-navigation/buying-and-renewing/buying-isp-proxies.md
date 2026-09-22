@@ -4,37 +4,55 @@ icon: server
 
 # Придбання ISP-проксі
 
-## Купівля проксі
-
-При придбанні [<mark style="color:purple;">ISP</mark>](https://dashboard.proxyshard.com/isp-proxy) проксі вкажіть:
-
-* Країну проксі
-* Цикл оренди (тиждень\місяць\півроку\рік)
-* Кількість проксі
-* Перемикати автопродовження (при активації, кожен цикл оренди буде списувати кошти автоматично, можливе відключення всередині замовлення)
-* Промокод, за наявності.
-
-<figure><img src="../../.gitbook/assets/image (49).png" alt="" width="563"><figcaption></figcaption></figure>
-
-Після придбання, замовлення автоматично відкриється і буде доступне в панелі "<mark style="color:purple;">Active Product</mark>" або в "[<mark style="color:purple;">My orders</mark>](https://dashboard.proxyshard.com/products)"
-
-<figure><img src="../../.gitbook/assets/image (50).png" alt="" width="563"><figcaption></figcaption></figure>
-
-{% hint style="warning" %}
-Проксі почнуть працювати протягом 1-2 хвилин, цей час потрібен для синхронізації замовлення
+{% hint style="info" %}
+Для оплати замовлення на балансі мають бути [кошти](../top-up-balance.md).
 {% endhint %}
 
-## Продовження ISP проксі
+## Придбання проксі
 
-Продовження продукту можливе автоматично та ручне\
-\
-За автоматичної оплати, за 1-2 години, замовлення спробує автоматично провести продовження. \
-Якщо коштів для продовження вистачає, то проксі автоматично продовжуються, при нестачі коштів, проксі перестають працювати і чекатимуть поповнення рахунку в <mark style="color:purple;"> протягом трьох днів </mark>.\
-\
-При відключеній функції автоматичного продовження, проксі чекатимуть (Статус <mark style="color:$warning;">On-Hold</mark>) ручної оплати, для цього потрібно натиснути ![](<../../.gitbook/assets/image (55).png>)
+Щоб придбати [ISP-проксі](https://dashboard.proxyshard.com/isp-proxy):
 
-<figure><img src="../../.gitbook/assets/image (52).png" alt="" width="521"><figcaption></figcaption></figure>
+1. Відкрийте розділ `ISP Proxy`.
+2. У полі `Proxy region` виберіть країну проксі.
+3. У полі `Billing cycle` виберіть період оплати.
+4. У полі `Number of proxies` укажіть кількість проксі.
+5. Увімкніть `Auto renew`, якщо хочете автоматично продовжувати замовлення.
+6. За потреби увімкніть `Enable p0f settings` і вкажіть кількість слотів у полі `Total slots`.
+7. Якщо у вас є промокод, введіть його в поле `Promocode` і натисніть `Apply`.
+8. Перевірте вартість замовлення та натисніть `Buy now`.
+
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/isp-purchase-form_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/isp-purchase-form_white.png" alt="Форма придбання ISP-проксі">
+  </picture>
+</figure>
+
+## Оплата й активація
+
+Після натискання `Buy now` відкриється рахунок зі статусом `Unpaid`. Перевірте суму в рядку `Total amount`, потім натисніть `Pay with Wallet`. Оплата відбувається так само, як в [інструкції для датацентрових проксі](buying-datacenter-proxies.md#oplata-zamovlennya).
+
+Після оплати замовлення з'явиться в блоці `Active products` і в розділі [`My orders`](https://dashboard.proxyshard.com/products).
+
+{% hint style="warning" %}
+Проксі почнуть працювати протягом 1-2 хвилин. Цей час потрібен для синхронізації замовлення.
+{% endhint %}
+
+## Керування та продовження замовлення
+
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/isp-order-details_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/isp-order-details_white.png" alt="Керування замовленням ISP-проксі">
+  </picture>
+</figure>
+
+Якщо ввімкнено `Auto renew`, система спробує продовжити замовлення за 1-2 години до завершення оплаченого періоду. За достатнього балансу кошти спишуться автоматично.
+
+Якщо автоматичне продовження вимкнено або на балансі недостатньо коштів, замовлення отримає статус `On-hold`. Для ручного продовження відкрийте замовлення, натисніть `Renew` і сплатіть рахунок.
+
+Опис `Status`, `Product tag`, даних доступу, налаштувань p0f та інших полів наведено в розділі [Поля замовлення](../../our-products/isp-proxies.md#polya-zamovlennya).
 
 {% hint style="danger" %}
-Проксі зі статусом "<mark style="color:$danger;">Cancelled</mark>" продовжити неможливо, цей статус настає після закінчення трьох днів з моменту несплати замовлення.
+Замовлення зі статусом `Canceled` продовжити не можна. Цей статус призначається через три дні після несплати.
 {% endhint %}

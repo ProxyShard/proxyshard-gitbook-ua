@@ -40,8 +40,9 @@
 
 * [Поповнення балансу](site-navigation/top-up-balance.md)
 * [Придбання та продовження проксі](site-navigation/buying-and-renewing/README.md)
-  * [Придбання ISP / датацентрових проксі](site-navigation/buying-and-renewing/buying-datacenter-proxies.md)
+  * [Придбання датацентрових проксі](site-navigation/buying-and-renewing/buying-datacenter-proxies.md)
   * [Придбання резидентських проксі](site-navigation/buying-and-renewing/buying-residential-proxies.md)
+  * [Придбання ISP-проксі](site-navigation/buying-and-renewing/buying-isp-proxies.md)
   * [Придбання мобільних проксі](site-navigation/buying-and-renewing/buying-mobile-proxies.md)
 * [Пошук замовлень (Product tag)](site-navigation/order-search-product-tag.md)
 * [Рахунки](site-navigation/invoices.md)
