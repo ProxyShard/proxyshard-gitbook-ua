@@ -1,60 +1,95 @@
 ---
-description: Проксі для Opera
+description: Налаштування проксі для Opera
 ---
 
 # ZeroOmega
 
-## **Установка та налаштування** ZeroOmega
+## Встановлення ZeroOmega
 
 {% hint style="warning" %}
-Дане рішення не підтримує тунелювання UDP! Дуже радимо розглянути для цих цілей [<mark style="color:green;">Vision</mark>](../../antidetect-browsers/vision-browser.md)
+ZeroOmega працює лише з TCP-трафіком. Для роботи з UDP використовуйте [Vision Browser](../../antidetect-browsers/vision-browser.md).
 {% endhint %}
 
-Оскільки Opera підтримує Chrome-розширення, ми рекомендуємо скористатися **ZeroOmega**
+Встановіть [ZeroOmega](https://chromewebstore.google.com/detail/pfnededegaaopdmhkdmcofjmoldfiped) із Chrome Web Store.
 
-Для браузера Opera є розширення [**ZeroOmega**](https://chromewebstore.google.com/detail/Proxy%20SwitchyOmega%203%20\(ZeroOmega\)/pfnededegaaopdmhkdmcofjmoldfiped)**,** здійсніть його встановлення
+{% embed url="https://chromewebstore.google.com/detail/pfnededegaaopdmhkdmcofjmoldfiped" %}
 
-{% embed url="https://chromewebstore.google.com/detail/Proxy%20SwitchyOmega%203%20(ZeroOmega)/pfnededegaaopdmhkdmcofjmoldfiped" %}
+<figure>
+  <picture>
+    <source srcset="../../../.gitbook/assets/opera-zeroomega-web-store_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../../.gitbook/assets/opera-zeroomega-web-store_white.png" alt="Встановлення ZeroOmega в Opera">
+  </picture>
+</figure>
 
-<figure><img src="../../../.gitbook/assets/Image00002 (3).PNG" alt=""><figcaption></figcaption></figure>
+Після встановлення відкрийте меню розширень і закріпіть ZeroOmega на панелі браузера.
 
-Після встановлення розширення, у вас праворуч зверху стане доступне встановлене розширення, натисніть на нього і для зручності користування закріпіть розширення.
+<figure>
+  <picture>
+    <source srcset="../../../.gitbook/assets/opera-zeroomega-extensions-menu_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../../.gitbook/assets/opera-zeroomega-extensions-menu_white.png" alt="Закріплення ZeroOmega на панелі Opera">
+  </picture>
+</figure>
 
-<figure><img src="../../../.gitbook/assets/Image00004 (3).PNG" alt=""><figcaption></figcaption></figure>
+Відкрийте ZeroOmega та виберіть `Options`.
 
-\
-Відкрийте параметри розширення
+<figure><img src="../../../.gitbook/assets/opera-zeroomega-popup-options.png" alt="Відкриття налаштувань ZeroOmega"><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/Image00003 (3).PNG" alt=""><figcaption></figcaption></figure>
+У розділі `Profiles` натисніть `New profile...`.
 
-В інтерфейсі налаштування ZeroOmega створіть новий профіль та надайте йому будь-яке ім'я
+<div align="center"><figure>
+  <picture>
+    <source srcset="../../../.gitbook/assets/opera-zeroomega-new-profile_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../../.gitbook/assets/opera-zeroomega-new-profile_white.png" alt="Створення профілю ZeroOmega">
+  </picture>
+</figure></div>
 
-<div align="center"><figure><img src="../../../.gitbook/assets/image (134).png" alt=""><figcaption></figcaption></figure></div>
+Введіть назву профілю, виберіть `Proxy Profile` і натисніть `Create`.
 
-Тут вкажіть довільне ім'я профілю
+<figure>
+  <picture>
+    <source srcset="../../../.gitbook/assets/opera-zeroomega-new-profile-dialog_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../../.gitbook/assets/opera-zeroomega-new-profile-dialog_white.png" alt="Назва й тип профілю ZeroOmega">
+  </picture>
+</figure>
 
-<figure><img src="../../../.gitbook/assets/image (135).png" alt=""><figcaption></figcaption></figure>
+У налаштуваннях профілю виберіть протокол і вкажіть адресу сервера та порт із `Proxy List` вашого замовлення. Щоб додати логін і пароль, натисніть значок замка.
 
-Далі відкриється інтерфейс налаштування серверів, тут вам необхідно взяти із замовлення в "Proxy list" самі проксі та вручну вставити IP (або DNS) сервера, порт, логін та пароль.\
-Логін та пароль задаються кнопкою зі значком замка 🔒.
+<figure>
+  <picture>
+    <source srcset="../../../.gitbook/assets/opera-zeroomega-proxy-server_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../../.gitbook/assets/opera-zeroomega-proxy-server_white.png" alt="Адреса й порт проксі в ZeroOmega">
+  </picture>
+</figure>
 
-<figure><img src="../../../.gitbook/assets/image (136).png" alt=""><figcaption></figcaption></figure>
+Введіть логін і пароль проксі, потім підтвердьте зміни.
 
-Тут потрібно вставити логін і пароль проксі.
-
-<figure><img src="../../../.gitbook/assets/image (137).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../../.gitbook/assets/opera-zeroomega-proxy-auth_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../../.gitbook/assets/opera-zeroomega-proxy-auth_white.png" alt="Авторизація проксі в ZeroOmega">
+  </picture>
+</figure>
 
 {% hint style="info" %}
-**З прикладом налаштування проксі ви можете ознайомитись у розділі [Інструкція з налаштування](../../getting-started.md)**
+Формат даних і приклад замовлення описані в розділі [Початок роботи](../../getting-started.md).
 {% endhint %}
 
-Потім застосуйте налаштування
+Натисніть `Apply changes`, щоб зберегти профіль.
 
-<figure><img src="../../../.gitbook/assets/image (138).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../../.gitbook/assets/opera-zeroomega-apply-changes_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../../.gitbook/assets/opera-zeroomega-apply-changes_white.png" alt="Збереження профілю ZeroOmega">
+  </picture>
+</figure>
 
-У спливаючому вікні розширення виберіть проксі, які ви налаштували раніше
+Відкрийте ZeroOmega на панелі браузера та виберіть створений профіль.
 
-<figure><img src="../../../.gitbook/assets/Image00001 (3).PNG" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../../.gitbook/assets/opera-zeroomega-profile-active_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../../.gitbook/assets/opera-zeroomega-profile-active_white.png" alt="Активний профіль ZeroOmega">
+  </picture>
+</figure>
 
-**Готово! Ви закінчили налаштування проксі через розширення.**\
-**Тепер ви можете розпочати використання проксі.**
+Проксі підключено та готово до роботи в Opera.

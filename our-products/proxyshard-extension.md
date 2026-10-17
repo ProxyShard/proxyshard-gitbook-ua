@@ -31,7 +31,7 @@ icon: puzzle-piece
 
 ### Chrome, Edge, Opera, Brave, Yandex та інші Chromium-браузери
 
-{% embed url="https://chromewebstore.google.com/detail/proxyshard-%E2%80%93-smart-proxy/ohlcikccaeapbfpmejhckfjjddkcflbe" %}
+{% embed url="https://chromewebstore.google.com/detail/ohlcikccaeapbfpmejhckfjjddkcflbe" %}
 
 ### Mozilla Firefox
 
@@ -68,7 +68,7 @@ icon: puzzle-piece
 
 ## Налаштування для Резидентських проксі
 
-1. Відкрийте ваше замовлення на сторінці [**Residential proxy**](https://dashboard.proxyshard.com/residential-main) та задайте параметри проксі (країна, регіон, протокол, TTL, порт тощо).
+1. Відкрийте ваше замовлення на сторінці [**Residential proxy**](https://dashboard.proxyshard.com/en/residential-main) та задайте параметри проксі (країна, регіон, протокол, TTL, порт тощо).
 2. Натисніть <mark style="color:purple;">**Generate proxy**</mark>, згенерований проксі з'явиться у блоці <mark style="color:purple;">Proxy List</mark> праворуч.
 3. Скопіюйте рядок підключення кнопкою <mark style="color:purple;">**Copy all**</mark>.
 4. Відкрийте розширення ProxyShard (закріплену іконку праворуч від адресного рядка).

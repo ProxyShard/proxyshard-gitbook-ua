@@ -11,7 +11,7 @@ icon: puzzle-piece
 Під час першого встановлення розширення з Chrome Web Store Edge може запропонувати «**Дозволити розширення з інших магазинів**», підтвердьте цей дозвіл.
 {% endhint %}
 
-{% embed url="https://chromewebstore.google.com/detail/proxyshard-%E2%80%93-smart-proxy/ohlcikccaeapbfpmejhckfjjddkcflbe" %}
+{% embed url="https://chromewebstore.google.com/detail/ohlcikccaeapbfpmejhckfjjddkcflbe" %}
 
 ## Детальна інструкція
 

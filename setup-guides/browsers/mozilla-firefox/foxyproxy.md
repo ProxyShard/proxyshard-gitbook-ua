@@ -1,47 +1,68 @@
 ---
-description: Проксі для Mozilla Firefox
+description: Налаштування проксі для Mozilla Firefox
 ---
 
 # FoxyProxy
 
-## Установка розширення FoxyProxy
+## Встановлення FoxyProxy
 
 {% hint style="warning" %}
-Дане рішення не підтримує тунелювання UDP!
+FoxyProxy працює лише з TCP-трафіком.
 {% endhint %}
 
-Перейдіть до [посилання](https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/?utm_source=addons.mozilla.org\&utm_medium=referral\&utm_content=search) для завантаження розширення "<mark style="color:purple;">FoxyProxy</mark>"
+Встановіть [FoxyProxy Standard](https://addons.mozilla.org/firefox/addon/foxyproxy-standard/) із Firefox Add-ons.
 
-{% embed url="https://addons.mozilla.org/en-US/firefox/addon/foxyproxy-standard/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search" %}
+{% embed url="https://addons.mozilla.org/firefox/addon/foxyproxy-standard/" %}
 
-<figure><img src="../../../.gitbook/assets/image (93).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../../.gitbook/assets/foxyproxy-addon-page_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../../.gitbook/assets/foxyproxy-addon-page_white.png" alt="FoxyProxy Standard у Firefox Add-ons">
+  </picture>
+</figure>
 
-Встановіть та відкрийте параметри розширення
+Після встановлення відкрийте FoxyProxy та перейдіть до налаштувань розширення.
 
-<figure><img src="../../../.gitbook/assets/Image00001 (2).PNG" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../../.gitbook/assets/foxyproxy-options-popup-disable_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../../.gitbook/assets/foxyproxy-options-popup-disable_white.png" alt="Відкриття налаштувань FoxyProxy">
+  </picture>
+</figure>
 
+## Налаштування проксі
 
+Відкрийте `Proxies` і натисніть `Add`.
 
-## **Налаштування розширення**
-
-Перейдіть у вкладку "<mark style="color:purple;">Proxies</mark>" і через кнопку "<mark style="color:purple;">Add</mark>" додайте нове проксі-з'єднання
-
-<figure><img src="../../../.gitbook/assets/Image00002 (2).PNG" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../../.gitbook/assets/foxyproxy-add-proxy-form_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../../.gitbook/assets/foxyproxy-add-proxy-form_white.png" alt="Додавання проксі у FoxyProxy">
+  </picture>
+</figure>
 
 {% hint style="info" %}
-**З прикладом налаштування проксі ви можете ознайомитись у розділі [Інструкція з налаштування](../../getting-started.md)**
+Формат даних і приклад замовлення описані в розділі [Початок роботи](../../getting-started.md).
 {% endhint %}
 
-## **Установка проксі підключення**
+Укажіть назву профілю в полі `Title`. Виберіть тип проксі та заповніть поля `Hostname`, `Port`, `Username` і `Password` даними з `Proxy List` вашого замовлення. Натисніть `Save`.
 
-Встановіть проксі із замовлення у відповідні поля (IP/Hostname:PORT:USERNAME:PASSWORD), Title та тип протоколу. Потім натисніть кнопку "<mark style="color:purple;">Save</mark>"
+<figure>
+  <picture>
+    <source srcset="../../../.gitbook/assets/foxyproxy-proxy-config-filled_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../../.gitbook/assets/foxyproxy-proxy-config-filled_white.png" alt="Заповнений профіль проксі у FoxyProxy">
+  </picture>
+</figure>
 
-<figure><img src="../../../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+## Підключення
 
-## **Завершення налаштування та підключення**
+Відкрийте FoxyProxy та виберіть створений профіль.
 
-Відкрийте повторне розширення та вкажіть раніше створене підключення.
+<figure>
+  <picture>
+    <source srcset="../../../.gitbook/assets/foxyproxy-options-popup-proxyshard_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../../.gitbook/assets/foxyproxy-options-popup-proxyshard_white.png" alt="Вибір профілю проксі у FoxyProxy">
+  </picture>
+</figure>
 
-<figure><img src="../../../.gitbook/assets/Image00004 (2).PNG" alt=""><figcaption></figcaption></figure>
-
-**Тепер все готове, ви можете приступати до використання проксі.**
+Проксі підключено та готово до роботи в Mozilla Firefox.

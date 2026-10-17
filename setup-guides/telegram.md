@@ -5,53 +5,84 @@ icon: telegram
 
 # Telegram
 
-### Налаштування проксі для Desktop версії Telegram
+## Telegram Desktop
 
-Щоб настроїти проксі в <mark style="color:purple;">Telegram</mark>, перейдіть до пункту Settings.
+Відкрийте `Settings`.
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/telegram-desktop-menu-settings_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/telegram-desktop-menu-settings_white.png" alt="Перехід до налаштувань Telegram Desktop">
+  </picture>
+</figure>
 
-Потім відкрийте "Розширені" налаштування
+Перейдіть до `Advanced`.
 
-<figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/telegram-desktop-settings-advanced_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/telegram-desktop-settings-advanced_white.png" alt="Розділ Advanced у Telegram Desktop">
+  </picture>
+</figure>
 
-Виберіть тип підключення "TCP"
+У розділі `Network and proxy` відкрийте `Connection type`.
 
-<figure><img src="../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/telegram-desktop-connection-type_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/telegram-desktop-connection-type_white.png" alt="Тип підключення в Telegram Desktop">
+  </picture>
+</figure>
 
-Далі вкажіть підключення до проксі
-
-Виберіть зручний для вас протокол підключення, за замовчуванням це HTTP
+Виберіть `Use custom proxy`, натисніть `Add proxy` і вкажіть протокол. Заповніть поля адреси, порту, логіна й пароля даними з `Proxy List` вашого замовлення.
 
 {% hint style="info" %}
-**З прикладом налаштування проксі ви можете ознайомитись у розділі [Інструкція з налаштування](getting-started.md)**
+Формат даних і приклад замовлення описані в розділі [Початок роботи](getting-started.md).
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/telegram-desktop-use-custom-proxy_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/telegram-desktop-use-custom-proxy_white.png" alt="Налаштування проксі в Telegram Desktop">
+  </picture>
+</figure>
 
-Потім перевірте підключення та збережіть
+Збережіть налаштування та переконайтеся, що поруч із проксі відображається статус `Connected`.
 
-<figure><img src="../.gitbook/assets/image (225).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/telegram-desktop-proxy-connected_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/telegram-desktop-proxy-connected_white.png" alt="Підключений проксі в Telegram Desktop">
+  </picture>
+</figure>
 
-**Готово! Тепер ви можете користуватись Telegram з нашими проксі.**
+## Telegram для iOS
 
-### Налаштування проксі для мобільної версії Telegram
+Відкрийте `Settings` і виберіть `Data and Storage`.
 
-Для налаштування проксі на телефоні потрібно відкрити налаштування та вибрати пункт "Data and Storage"
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/telegram-ios-settings-data-storage_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/telegram-ios-settings-data-storage_white.png" alt="Розділ Data and Storage у Telegram для iOS">
+  </picture>
+</figure>
 
-<figure><img src="../.gitbook/assets/photo_2026-04-11_02-42-22.jpg" alt="" width="375"><figcaption></figcaption></figure>
+Відкрийте `Proxy`, потім натисніть `Add Proxy`.
 
-Після вибрати пункт "Proxy"
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/telegram-ios-connection-proxy_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/telegram-ios-connection-proxy_white.png" alt="Налаштування проксі в Telegram для iOS">
+  </picture>
+</figure>
 
-<figure><img src="../.gitbook/assets/photo_2026-04-11_02-42-30.jpg" alt="" width="375"><figcaption></figcaption></figure>
+Виберіть `SOCKS5` і заповніть поля `Server`, `Port`, `Username` та `Password` даними з `Proxy List` вашого замовлення.
 
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/telegram-ios-proxy-socks5-form_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/telegram-ios-proxy-socks5-form_white.png" alt="Налаштування SOCKS5-проксі в Telegram для iOS">
+  </picture>
+</figure>
 
-
-Вкажіть протокол SOCKS5 та впишіть дані для підключення до проксі
-
-
-
-<figure><img src="../.gitbook/assets/photo_2026-04-11_02-40-30.jpg" alt="" width="375"><figcaption></figcaption></figure>
-
-Обов'язково збережіть налаштування і далі можна використовувати проксі всередині _Telegram._
-
+Збережіть налаштування та ввімкніть створений проксі.

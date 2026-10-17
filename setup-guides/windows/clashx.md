@@ -1,163 +1,135 @@
-# ClashX
+# Clash for Windows
 
 {% hint style="success" %}
-Дане рішення підтримує тунелювання UDP!
+Clash for Windows підтримує проксіювання TCP- і UDP-трафіку в режимі TUN.
 {% endhint %}
 
-## Налаштування **ClashX**
+## Завантаження та запуск
 
-Вам необхідно перейти на офіційний GitHub проекту ClashX та завантажити необхідну версію архіву для вашої ОС. У прикладі наведено налаштування на Windows ([Clash.for.Windows-0.20.39-win.7z](https://github.com/lantongxue/clash_for_windows_pkg/releases/download/0.20.39/Clash.for.Windows-0.20.39-win.7z)).
+Відкрийте [сторінку релізів Clash for Windows](https://github.com/lantongxue/clash_for_windows_pkg/releases) і завантажте `Clash.for.Windows-0.20.39-win.7z`.
 
-{% embed url="https://github.com/lantongxue/clash_for_windows_pkg/releases" %}
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/clashx-github-download_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/clashx-github-download_white.png" alt="Завантаження Clash for Windows з GitHub">
+  </picture>
+</figure>
 
-<figure><img src="../../.gitbook/assets/image (170).png" alt=""><figcaption></figcaption></figure>
+Розпакуйте архів в окрему папку.
 
-## **Запуск ClashX**
+<figure><img src="../../.gitbook/assets/clashx-extract-archive.png" alt="Розпакування архіву Clash for Windows"><figcaption></figcaption></figure>
 
-Потім необхідно розпакувати архів і запустити від імені _<mark style="color:red;">**адміністратора**</mark>_ "Clash for Windows.exe" як наведено на прикладі нижче:
+Запустіть `Clash for Windows.exe` від імені адміністратора. Це потрібно для встановлення та роботи системного мережевого драйвера.
 
-<figure><img src="../../.gitbook/assets/image (172).png" alt="" width="563"><figcaption><p>Розпакування архіву на робочий стіл</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/clashx-run-as-administrator.png" alt="Запуск Clash for Windows від імені адміністратора"><figcaption></figcaption></figure>
 
-<figure><img src="../../.gitbook/assets/image (162).png" alt="" width="375"><figcaption><p>Запуск від імені адміністратора</p></figcaption></figure>
+## Налаштування профілю
 
-## **Налаштування програми**
+1. Відкрийте `Profiles`.
+2. Натисніть значок `<>` біля `config.yaml`.
 
-Після запуску програми необхідно перейти в "<mark style="color:purple;">Profiles</mark>" та відкрити редактор файлу <mark style="color:purple;">config.yaml</mark>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/clashx-profiles-edit-config_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/clashx-profiles-edit-config_white.png" alt="Відкриття редактора config.yaml">
+  </picture>
+</figure>
 
-<figure><img src="../../.gitbook/assets/image (159).png" alt="" width="375"><figcaption></figcaption></figure>
-
-## **Налаштування конфігураційного файлу**
-
-Наведіть конфігурацію файлу як у прикладі нижче, вказавши ваші проксі із замовлення:
+Додайте проксі до блоку `proxies:` і введіть дані із замовлення. У прикладі використовується SOCKS5.
 
 ```yaml
 proxies:
-  - name: "ProxyShard-Germany-testname"
+  - name: "ProxyShard-Germany"
     type: socks5
     server: 123.123.123.123
-    port: 1234
+    port: 41733
     username: proxy_login
-    password: password_login
+    password: proxy_password
     udp: true
 
 proxy-groups:
-  - name: "Auto"
+  - name: "ProxyShard"
     type: select
     proxies:
-      - ProxyShard-Germany-testname
+      - ProxyShard-Germany
 
 rules:
-  - PROCESS-NAME,chrome.exe,Auto
+  - PROCESS-NAME,chrome.exe,ProxyShard
   - MATCH,DIRECT
 ```
 
-Зрештою у вас має вийде приблизно так:
+`name` задає назву підключення. У `server`, `port`, `username` і `password` введіть дані проксі. Параметр `udp: true` вмикає UDP для цього сервера.
 
-<figure><img src="../../.gitbook/assets/image (158).png" alt="" width="563"><figcaption><p>Приклад конфігурації</p></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/clashx-profile-config-proxies_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/clashx-profile-config-proxies_white.png" alt="Налаштування проксі у config.yaml">
+  </picture>
+</figure>
 
 {% hint style="info" %}
-**З прикладом налаштування проксі ви можете ознайомитись у розділі [Інструкція з налаштування](../getting-started.md)**
+Розташування даних підключення описано в [загальній інструкції](../getting-started.md).
 {% endhint %}
 
-<pre><code>proxies:
-  - name: "ProxyShard-Germany-testname" | Тут ви задаєте ім'я проксі
-    тип: socks5 | Тип протоколу
-    server: 123.123.123.123 | Адреса або домен проксі
-    port: 1234 | Порт проксі
-    username: proxy_login | Логін проксі
-    password: password_login | Пароль проксі
-    udp: true                                  
-proxy-groups:
-  - name: "Auto"
-    type: select
-    proxies:
-      - ProxyShard-Germany-testname              
+## Активація та перевірка
 
-rules:
-  - PROCESS-NAME,<a data-footnote-ref href="#user-content-fn-1">chrome.exe</a>,Auto | Вибір певної програми для проксування
-  - MATCH,DIRECT | У нашому прикладі використовується браузер хрому,
-                      | але це може бути будь-яка ваша програма, наприклад discord.exe
-                      | - MATCH,DIRECT : Вказує, що весь трафік який не є хромом
-                      | буде перенаправлено не на проксі, а на ваш основний інтерфейс
-</code></pre>
+1. Відкрийте `Proxies`.
+2. Виберіть режим `Global`.
+3. Натисніть `Check` біля сервера ProxyShard.
 
-## **Перевірка конфігурації**
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/clashx-proxies-global-select_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/clashx-proxies-global-select_white.png" alt="Вибір Global і перевірка проксі">
+  </picture>
+</figure>
 
-Після налаштування конфігурації, вам необхідно відкрити Proxies і вибрати опцію Global і провести перевірку вашого налаштованого конфігу з 4 пункту.
+Якщо з'єднання доступне, на картці з'явиться час відгуку.
 
-<figure><img src="../../.gitbook/assets/image (160).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/clashx-proxy-ping-result.png" alt="Успішна перевірка проксі у Clash for Windows"><figcaption></figcaption></figure>
 
-Якщо перевірка не пройшла і у вас "Failed", звіртеся з конфігураційним файлом і переконайтеся, що всі вказані дані від проксі вірно введені. Якщо налаштування правильні, ви отримаєте успішне виведення перевірки як на скріншоті знизу.
+## Кілька проксі
 
-<figure><img src="../../.gitbook/assets/image (161).png" alt=""><figcaption></figcaption></figure>
+Додайте кожен сервер окремим елементом у `proxies:` і перелічіть їхні назви в групі `ProxyShard`. Після збереження сервери з'являться в розділі `Proxies`, де між ними можна перемикатися.
 
-## **Встановлення та включення TAP-інтерфейсу**
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/clashx-proxies-multiple-list_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/clashx-proxies-multiple-list_white.png" alt="Кілька проксі у Clash for Windows">
+  </picture>
+</figure>
 
-Далі перейдіть на "General" і здійсніть встановлення TAP-інтерфейсу на свій комп'ютер, він створить новий інтерфейс, до якого буде прив'язана проксі.
+## Увімкнення TUN Mode
 
-Після встановлення TUN-інтерфейсу вам необхідно включити TUN Mode, як на скріншоті у 4-й рамці
+1. Відкрийте `General`.
+2. У рядку `TAP Device` натисніть `Manage`, потім `Install`.
+3. Увімкніть `TUN Mode`, щоб спрямувати системний трафік через вибраний проксі.
 
-<figure><img src="../../.gitbook/assets/image (163).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/clashx-general-tap-tun-setup_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/clashx-general-tap-tun-setup_white.png" alt="Встановлення мережевого адаптера та ввімкнення TUN Mode">
+  </picture>
+</figure>
 
-## **Перевірка працездатності**
+## Перевірка підключення
 
-Якщо все успішно запустилося, ви можете відкрити вашу цікаву програму, для якої ви налаштовували конфіг (4 пункт) і можна радіти роботі ваших програм з можливістю проксування UDP трафіку! <br>
+Відкрийте [ProxyShard IP Checker](https://proxyshard.com/tools/ip-checker) і переконайтеся, що відображається IP-адреса проксі.
 
-У нашому прикладі проксіювання виконувалося для Chrome, і результат можна перевірити на [чекерах](../../our-products/about-udp/webrtc-leak-check-tools.md).
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/clashx-ip-checker-result_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/clashx-ip-checker-result_white.png" alt="Перевірка IP-адреси після налаштування Clash for Windows">
+  </picture>
+</figure>
 
-<figure><img src="../../.gitbook/assets/image (164).png" alt="" width="563"><figcaption></figcaption></figure>
+Додатково перевірте WebRTC через BrowserLeaks.
 
-<figure><img src="../../.gitbook/assets/image (165).png" alt="" width="563"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/clashx-browserleaks-check_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/clashx-browserleaks-check_white.png" alt="Перевірка WebRTC через BrowserLeaks">
+  </picture>
+</figure>
 
-Якщо перевірка або проксіювання [не працює ](../../faq-and-support/faq/proxy-not-working.md), переконайтеся, що ви точно запустили ClashX від імені адміністратора і з 4 по 6 пункт виконано правильно.
-
-## **Додатково. Додавання безлічі проксі та перемикання між ними**
-
-Вам необхідно, для можливості швидкого перемикання між проксі, доповнити новими конфігурацію проксі з пункту 4. Імена "ProxyShard-DE-testname1" є довільними і можна вказати на ваш вибір.
-
-Головним моментом після додавання є вказівка ​​проксі також і для "proxy-group", як показано нижче:
-
-```yaml
-proxies:
-  - name: "ProxyShard-DE-testname1"
-    type: socks5
-    server: 123.123.123.123
-    port: 42651
-    username: LOgin
-    password: pasSSWORD
-    udp: true
-    
-  - name: "ProxyShard-NL-testname2"
-    type: socks5
-    server: 123.123.123.123
-    port: 42651
-    username: LOgin
-    password: pasSSWORD
-    udp: true
-
-  - name: "ProxyShard-RO-testname3"
-    type: socks5
-    server: 123.123.123.123
-    port: 42651
-    username: LOgin
-    password: pasSSWORD
-    udp: true
-
-proxy-groups:
-  - name: "Auto"
-    type: select
-    proxies:
-      - ProxyShard-DE-testname1
-      - ProxyShard-NL-testname2
-      - ProxyShard-RO-testname3
-
-rules:
-  - PROCESS-NAME,chrome.exe,Auto
-  - MATCH,DIRECT
-```
-
-Якщо ви всі вірно вказали, у вас з'являться додаткові точки підключення в "Proxies" і в залежності від вибраного профілю налаштувань (просто натиснути на будь-яку), буде здійснено підключення.
-
-<figure><img src="../../.gitbook/assets/image (166).png" alt=""><figcaption></figcaption></figure>
-
-[^1]: додаток для проксування
+Якщо з'єднання не працює, перевірте дані в `config.yaml`, повторно запустіть програму від імені адміністратора та скористайтеся [інструкцією з діагностики](../../faq-and-support/faq/proxy-not-working.md).

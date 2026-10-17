@@ -7,7 +7,7 @@ icon: puzzle-piece
 
 Наше фірмове розширення <mark style="color:purple;">**ProxyShard – Smart Proxy Manager**</mark> встановлюється у Brave напряму з **Chrome Web Store**, браузер використовує рушій Chromium і сумісний з усіма Chrome-розширеннями.
 
-{% embed url="https://chromewebstore.google.com/detail/proxyshard-%E2%80%93-smart-proxy/ohlcikccaeapbfpmejhckfjjddkcflbe" %}
+{% embed url="https://chromewebstore.google.com/detail/ohlcikccaeapbfpmejhckfjjddkcflbe" %}
 
 ## Детальна інструкція
 

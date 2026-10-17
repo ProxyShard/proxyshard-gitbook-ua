@@ -4,50 +4,74 @@ icon: clipboard-list
 
 # Інструкція з налаштування
 
-## **Додавання списку проксі із замовлення в програми**
+Перед налаштуванням програми відкрийте потрібне [замовлення](https://dashboard.proxyshard.com/products) і підготуйте дані підключення.
 
-Щоб додати проксі в різні програми, відкрийте своє [замовлення](https://dashboard.proxyshard.com/products) на сайті та скопіюйте проксі:
-
-{% hint style="warning" %}
-**Зверніть увагу: в усіх прикладах підключення виконується через** <mark style="color:purple;">**SOCKS5**</mark>.\
-\
-**Для того щоб дізнатися порт підключення для:**\
-\
-<mark style="color:purple;">**Datacenter\ISP**</mark> - встановіть перемикач на <mark style="color:purple;">SOCKS5</mark> у полі <mark style="color:purple;">Proxy list</mark>
-
-<p align="center"><img src="../.gitbook/assets/image (40).png" alt=""></p>
-
-<mark style="color:purple;">**Residential proxy**</mark> - У налаштуваннях замовлення вказати "<mark style="color:purple;">Protocol</mark>" - <mark style="color:purple;">SOCKS5</mark>
-
-<p align="center"><img src="../.gitbook/assets/image (42).png" alt="" data-size="original"></p>
-
-<mark style="color:purple;">**Mobile proxy**</mark> - додаткові дії в замовленні не потрібні: один порт працює і через <mark style="color:purple;">HTTP</mark>, і через <mark style="color:purple;">SOCKS5</mark>
+{% hint style="info" %}
+У прикладах нижче використовується `SOCKS5`. Якщо програма підтримує лише HTTP, виберіть `HTTP` у налаштуваннях замовлення та вкажіть відповідний порт.
 {% endhint %}
 
-## Приклад для <mark style="color:purple;">Датацентр/ISP</mark> проксі
+## Резидентські проксі
 
-Відкрийте [замовлення](https://dashboard.proxyshard.com/products) та скопіюйте проксі з <mark style="color:purple;">Proxy List</mark>.
+1. У блоці `Proxy settings` виберіть країну та налаштуйте `Session`, `Relay` і `Protocol`.
+2. Натисніть `Generate proxy`.
+3. Скопіюйте готовий рядок із блоку `Proxy List`.
 
-<figure><img src="../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/residential-proxy-setup_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/residential-proxy-setup_white.png" alt="Генерація резидентського проксі">
+  </picture>
+</figure>
 
-212.14.123.184 - IP адреса підключення до проксі
+## Датацентр- та ISP-проксі
 
-22334 - Port підключення до проксі
+Відкрийте замовлення і скопіюйте рядок підключення з блоку `Proxy List`.
 
-KDKKKEI - Login підключення проксі
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/static-proxy-setup_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/static-proxy-setup_white.png" alt="Дані підключення для датацентр- та ISP-проксі">
+  </picture>
+</figure>
 
-KDKKEIID3 - Password проксі
+## Формат рядка підключення
 
+Стандартний формат: `server:port:login:password`.
 
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/proxy-format-breakdown_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/proxy-format-breakdown_white.png" alt="Структура рядка підключення до проксі">
+  </picture>
+</figure>
 
-## Приклад для <mark style="color:purple;">Резидентських проксі</mark>:
+| Поле | Опис |
+|---|---|
+| `Server / Host` | IP-адреса або домен проксі-сервера |
+| `Port` | Порт підключення |
+| `Login` | Ім'я користувача. Для резидентських проксі воно також може містити параметри таргетингу |
+| `Password` | Пароль доступу |
 
-Вкажіть потрібні параметри проксі, наприклад країну/протокол, і натисніть "<mark style="color:purple;">Generate proxy</mark>"
+Якщо програма не приймає повний рядок, введіть ці значення в окремі поля.
 
-<figure><img src="../.gitbook/assets/image (260).png" alt=""><figcaption></figcaption></figure>
+## Вибір протоколу
 
-Скопіюйте отримані проксі з <mark style="color:purple;">Proxy List</mark> або скопіюйте окремі поля підключення, якщо програма не підтримує вставку рядком.
+Для датацентр- та ISP-проксі перемкніть формат у блоці `Proxy List`.
 
-Нижче наведено скріншот, де показано, які поля відповідають за "Server":"Port":"Login":"Password"
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/proxy-protocol-toggle_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/proxy-protocol-toggle_white.png" alt="Перемикання протоколу в Proxy List">
+  </picture>
+</figure>
 
-<figure><img src="../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+Для резидентських проксі виберіть протокол у полі `Protocol` перед генерацією рядка.
+
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/proxy-protocol-select_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/proxy-protocol-select_white.png" alt="Вибір протоколу резидентського проксі">
+  </picture>
+</figure>
+
+Мобільні проксі приймають HTTP- і SOCKS5-підключення на виданому порту. Додатково перемикати формат у замовленні не потрібно.

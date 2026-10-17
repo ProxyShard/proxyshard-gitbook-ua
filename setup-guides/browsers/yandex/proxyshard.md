@@ -7,7 +7,7 @@ icon: puzzle-piece
 
 Наше фірмове розширення <mark style="color:purple;">**ProxyShard – Smart Proxy Manager**</mark> встановлюється у Яндекс.Браузер напряму з **Chrome Web Store**, ніяких додаткових кроків не потрібно.
 
-{% embed url="https://chromewebstore.google.com/detail/proxyshard-%E2%80%93-smart-proxy/ohlcikccaeapbfpmejhckfjjddkcflbe" %}
+{% embed url="https://chromewebstore.google.com/detail/ohlcikccaeapbfpmejhckfjjddkcflbe" %}
 
 ## Детальна інструкція
 

@@ -1,60 +1,85 @@
 ---
-description: Проксі для Chrome
+description: Налаштування проксі для Chrome
 ---
 
 # ZeroOmega
 
-## **Установка та налаштування** ZeroOmega
+## Встановлення ZeroOmega
 
 {% hint style="warning" %}
-Дане рішення не підтримує тунелювання UDP! Дуже радимо розглянути для цих цілей [<mark style="color:green;">Vision</mark>](../../antidetect-browsers/vision-browser.md)
+ZeroOmega працює лише з TCP-трафіком. Для роботи з UDP використовуйте [Vision Browser](../../antidetect-browsers/vision-browser.md).
 {% endhint %}
 
-Для браузера Chrome є розширення [**ZeroOmega**](https://chromewebstore.google.com/detail/Proxy%20SwitchyOmega%203%20\(ZeroOmega\)/pfnededegaaopdmhkdmcofjmoldfiped)**,** здійсніть його встановлення
+Встановіть [ZeroOmega](https://chromewebstore.google.com/detail/pfnededegaaopdmhkdmcofjmoldfiped) із Chrome Web Store.
 
-{% embed url="https://chromewebstore.google.com/detail/Proxy%20SwitchyOmega%203%20(ZeroOmega)/pfnededegaaopdmhkdmcofjmoldfiped" %}
+{% embed url="https://chromewebstore.google.com/detail/pfnededegaaopdmhkdmcofjmoldfiped" %}
 
-Після встановлення розширення, у вас праворуч зверху стане доступне встановлене розширення, натисніть на нього і для зручності користування закріпіть розширення.
+Після встановлення відкрийте меню розширень і закріпіть ZeroOmega на панелі браузера.
 
-<figure><img src="../../../.gitbook/assets/image (132).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/chrome-extensions-pin-zeroomega.png" alt="Закріплення ZeroOmega на панелі Chrome"><figcaption></figcaption></figure>
 
-\
-Відкрийте параметри розширення.
+Відкрийте ZeroOmega та виберіть `Параметры`.
 
-<figure><img src="../../../.gitbook/assets/image (133).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../../.gitbook/assets/chrome-zeroomega-open-options_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../../.gitbook/assets/chrome-zeroomega-open-options_white.png" alt="Відкриття налаштувань ZeroOmega">
+  </picture>
+</figure>
 
-## **Налаштування проксі в розширенні**
+## Налаштування проксі
 
-В інтерфейсі налаштування ZeroOmega створіть новий профіль та надайте йому будь-яке ім'я
+У розділі профілів натисніть `Новый профиль...`.
 
-<div align="center"><figure><img src="../../../.gitbook/assets/image (134).png" alt=""><figcaption></figcaption></figure></div>
+<div align="center"><figure>
+  <picture>
+    <source srcset="../../../.gitbook/assets/chrome-zeroomega-new-profile_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../../.gitbook/assets/chrome-zeroomega-new-profile_white.png" alt="Створення профілю ZeroOmega">
+  </picture>
+</figure></div>
 
-Тут вкажіть довільне ім'я профілю
+Введіть назву профілю, виберіть `Профиль прокси` і натисніть `Создать`.
 
-<figure><img src="../../../.gitbook/assets/image (135).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../../.gitbook/assets/chrome-zeroomega-new-profile-dialog_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../../.gitbook/assets/chrome-zeroomega-new-profile-dialog_white.png" alt="Назва й тип профілю ZeroOmega">
+  </picture>
+</figure>
 
-Далі відкриється інтерфейс налаштування серверів, тут вам необхідно взяти із замовлення в Proxy list самі проксі і вручну вставити IP сервера, порт, логін і пароль.
-
-\
-Логін та пароль задаються кнопкою зі значком замка 🔒.
+У налаштуваннях профілю виберіть протокол і вкажіть адресу сервера та порт із `Proxy List` вашого замовлення. Щоб додати логін і пароль, натисніть значок замка.
 
 {% hint style="info" %}
-**З прикладом налаштування проксі ви можете ознайомитись у розділі [Інструкція з налаштування](../../getting-started.md)**
+Формат даних і приклад замовлення описані в розділі [Початок роботи](../../getting-started.md).
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image (136).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../../.gitbook/assets/chrome-zeroomega-proxy-server_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../../.gitbook/assets/chrome-zeroomega-proxy-server_white.png" alt="Адреса й порт проксі в ZeroOmega">
+  </picture>
+</figure>
 
-Тут потрібно вставити логін і пароль проксі.
+Введіть логін і пароль проксі, потім натисніть `Сохранить изменения`.
 
-<figure><img src="../../../.gitbook/assets/image (137).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../../.gitbook/assets/chrome-zeroomega-proxy-auth_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../../.gitbook/assets/chrome-zeroomega-proxy-auth_white.png" alt="Авторизація проксі в ZeroOmega">
+  </picture>
+</figure>
 
-Потім застосуйте налаштування
+Натисніть `Применить изменения`, щоб зберегти профіль.
 
-<figure><img src="../../../.gitbook/assets/image (138).png" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../../.gitbook/assets/chrome-zeroomega-apply-changes_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../../.gitbook/assets/chrome-zeroomega-apply-changes_white.png" alt="Збереження профілю ZeroOmega">
+  </picture>
+</figure>
 
-У спливаючому вікні виберіть проксі які ви налаштували раніше
+Відкрийте ZeroOmega на панелі браузера та виберіть створений профіль.
 
-<figure><img src="../../../.gitbook/assets/image (139).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/chrome-zeroomega-select-profile.png" alt="Вибір профілю ZeroOmega"><figcaption></figcaption></figure>
 
-**Готово! Ви закінчили налаштування проксі через розширення в Chrome.**\
-**Тепер ви можете розпочати використання проксі.**
+Проксі підключено та готово до роботи в Chrome.

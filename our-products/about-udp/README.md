@@ -28,12 +28,12 @@ icon: shield-exclamation
 
 | Продукт | Підтримка UDP |
 | --- | --- |
-| [Datacenter](../datacenter-proxies.md) | ✓ У всіх локаціях |
-| [ISP](../isp-proxies.md) | ✓ У всіх локаціях |
-| [Mobile](../mobile-proxies.md) | ✓ |
-| [Standard Residential](../residential-proxies/standard-residential.md) | ✓ Крім США; діють [обмеження портів](../restrictions.md) |
-| [Unlimited Residential](../residential-proxies/unlimited-residential-proxy.md) | ✓ Крім США; діють [обмеження портів](../restrictions.md) |
-| [Premium Residential](../residential-proxies/premium-residential.md) | ✓ У всіх локаціях, [крім окремих міст і пристроїв macOS/iOS](../restrictions.md) |
+| [Datacenter](../datacenter-proxies.md) | Є в усіх локаціях |
+| [ISP](../isp-proxies.md) | Є в усіх локаціях |
+| [Mobile](../mobile-proxies.md) | Є |
+| [Standard Residential](../residential-proxies/standard-residential.md) | Є, крім США; діють [обмеження портів](../restrictions.md) |
+| [Unlimited Residential](../residential-proxies/unlimited-residential-proxy.md) | Є, крім США; діють [обмеження портів](../restrictions.md) |
+| [Premium Residential](../residential-proxies/premium-residential.md) | Є в усіх локаціях, [крім окремих міст і пристроїв macOS/iOS](../restrictions.md) |
 
 Для передавання UDP використовуйте SOCKS5 і програму з підтримкою `UDP ASSOCIATE`. Сумісні варіанти перелічені в розділі [Програмні рішення для ввімкнення WebRTC](webrtc-software-solutions.md).
 

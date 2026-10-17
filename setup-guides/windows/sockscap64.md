@@ -1,35 +1,61 @@
 # SocksCap64
 
 {% hint style="success" %}
-Дане рішення підтримує тунелювання UDP!
+SocksCap64 підтримує проксіювання TCP- і UDP-трафіку.
 {% endhint %}
 
-## Установка SocksCap64
+## Встановлення
 
-Перейдіть по [посиланню](https://github.com/bobo2334/sockscap64/releases/tag/4.7) для завантаження SocksCap64
+Завантажте `SocksCap64-setup-4.7.exe` зі [сторінки релізу](https://github.com/bobo2334/sockscap64/releases/tag/4.7), встановіть програму та запустіть її від імені адміністратора.
 
-{% embed url="https://github.com/bobo2334/sockscap64/releases/tag/4.7" %}
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/sockscap64-github-download_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/sockscap64-github-download_white.png" alt="Завантаження SocksCap64 з GitHub">
+  </picture>
+</figure>
 
-<figure><img src="../../.gitbook/assets/Image00004 (8).PNG" alt=""><figcaption></figcaption></figure>
+## Додавання проксі
 
-Після завантаження, здійсніть його встановлення та запустіть програму
+1. Натисніть `Proxy` у верхній панелі.
+2. У вікні `Proxy Manager` натисніть `+`.
+3. Заповніть дані підключення:
+   - `Proxy Address`: IP-адреса або домен сервера;
+   - `Port`: порт підключення;
+   - `Account`: логін;
+   - `Password`: пароль;
+   - `SOCKS Type`: `SOCKS 5`.
+4. Натисніть `Save`.
 
-## **Налаштування** SocksCap64
-
-Для початку роботи потрібно додати сервер проксі. Для цього відкрийте вкладку <mark style="color:purple;">Proxy</mark> і додайте нове з'єднання через <img src="../../.gitbook/assets/image (26) (1).png" alt="" data-size="line"> в нижній частині програми.
-
-<figure><img src="../../.gitbook/assets/Image00005 (2).PNG" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/sockscap64-proxy-manager-config_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/sockscap64-proxy-manager-config_white.png" alt="Налаштування проксі у SocksCap64">
+  </picture>
+</figure>
 
 {% hint style="info" %}
-**З прикладом налаштування проксі ви можете ознайомитись у розділі [Інструкція з налаштування](../getting-started.md)**
+Розташування даних підключення описано в [загальній інструкції](../getting-started.md).
 {% endhint %}
 
-## Налаштування проксіювання програми
+## Додавання програми
 
-Додайте програму в Apps і перезапустіть її
+Натисніть `Apps`, виберіть потрібну програму у вікні `Programs selector` і натисніть `OK`.
 
-<figure><img src="../../.gitbook/assets/Image00002 (9).PNG" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/sockscap64-programs-selector-add_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/sockscap64-programs-selector-add_white.png" alt="Додавання програми у SocksCap64">
+  </picture>
+</figure>
 
-Або зробіть додавання програми через програму через Proxy Panel
+## Запуск через проксі
 
-<figure><img src="../../.gitbook/assets/Image00001 (7).PNG" alt=""><figcaption></figcaption></figure>
+Клацніть правою кнопкою миші на доданій програмі та виберіть `Run selected program in tunnel`. Програма запуститься через налаштований SOCKS5-проксі.
+
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/sockscap64-run-program-in-tunnel_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/sockscap64-run-program-in-tunnel_white.png" alt="Запуск програми через проксі-тунель">
+  </picture>
+</figure>

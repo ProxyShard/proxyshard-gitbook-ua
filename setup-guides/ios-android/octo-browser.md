@@ -20,7 +20,12 @@ icon: octopus
 
 Зареєструйтеся за допомогою електронної пошти або натисніть **Sign up with Apple**.
 
-<figure><img src="../../.gitbook/assets/octo-browser-ios-1.png" alt="Реєстрація в Octo Browser" width="295"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/octo-browser-ios-log-in_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/octo-browser-ios-log-in_white.png" alt="Реєстрація в Octo Browser">
+  </picture>
+</figure>
 
 Після реєстрації увійдіть до облікового запису тим самим способом.
 
@@ -28,22 +33,43 @@ icon: octopus
 
 На екрані **Profiles** натисніть **Create Profile**.
 
-<figure><img src="../../.gitbook/assets/octo-browser-ios-2.png" alt="Створення профілю в Octo Browser" width="295"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/octo-browser-ios-create-profile_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/octo-browser-ios-create-profile_white.png" alt="Створення профілю в Octo Browser">
+  </picture>
+</figure>
 
 У налаштуваннях нового профілю натисніть **Set a proxy**.
 
-<figure><img src="../../.gitbook/assets/octo-browser-ios-3.png" alt="Додавання проксі до профілю Octo Browser" width="295"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/octo-browser-ios-set-proxy_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/octo-browser-ios-set-proxy_white.png" alt="Додавання проксі до профілю Octo Browser">
+  </picture>
+</figure>
 
-Скопіюйте рядок підключення до проксі з потрібного замовлення ProxyShard і вставте його повністю в поле **Proxy**. Octo Browser підтримує протоколи HTTP, HTTPS і SOCKS5.
+1. У полі **Type** виберіть HTTP, HTTPS або SOCKS5.
+2. Скопіюйте повний рядок підключення з потрібного замовлення ProxyShard і вставте його в поле **Proxy**.
+3. Натисніть **Check proxy**. Після успішної перевірки застосунок покаже IP-адресу, локацію та часовий пояс підключення.
+4. Натисніть **Done**.
 
-Натисніть **Check proxy**. Після успішної перевірки застосунок покаже IP-адресу, локацію та часовий пояс підключення. Потім натисніть **Done**.
-
-<figure><img src="../../.gitbook/assets/octo-browser-ios-4.png" alt="Перевірка проксі в Octo Browser" width="295"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/octo-browser-ios-proxy-form_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/octo-browser-ios-proxy-form_white.png" alt="Перевірка проксі в Octo Browser">
+  </picture>
+</figure>
 
 ## Запуск профілю
 
 Натисніть **Create & Start**, щоб зберегти профіль і відразу запустити його.
 
-<figure><img src="../../.gitbook/assets/octo-browser-ios-5.png" alt="Запуск профілю з проксі в Octo Browser" width="295"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/octo-browser-ios-profile-ready_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/octo-browser-ios-profile-ready_white.png" alt="Запуск профілю з проксі в Octo Browser">
+  </picture>
+</figure>
 
 Готово. Трафік цього профілю Octo Browser спрямовуватиметься через доданий проксі.

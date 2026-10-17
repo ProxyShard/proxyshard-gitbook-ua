@@ -4,37 +4,58 @@ icon: apple
 
 # Potatso
 
-## Установка Potatso
+## Встановлення Potatso
 
-Завантажте програму
+Встановіть Potatso з App Store.
 
 {% embed url="https://apps.apple.com/app/potatso/id1239860606" %}
 
 ## Налаштування Potatso
 
-Потім відкрийте програму та додайте проксі
+Відкрийте застосунок і натисніть `Add Servers`.
 
-<figure><img src="../../.gitbook/assets/photo_2025-08-12_00-17-16.png" alt="" width="295"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/potatso-ios-add-servers_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/potatso-ios-add-servers_white.png" alt="Додавання сервера в Potatso">
+  </picture>
+</figure>
 
-Створіть нову конфігурацію
+Виберіть `Manual Input`.
 
-<figure><img src="../../.gitbook/assets/photo_2025-08-12_00-17-18.png" alt="" width="295"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/potatso-ios-manual-input_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/potatso-ios-manual-input_white.png" alt="Ручне налаштування в Potatso">
+  </picture>
+</figure>
 
 ## Налаштування профілю
 
-Вкажіть із замовлення ваші проксі, вибравши тип підключення
+Виберіть тип підключення та заповніть форму даними з `Proxy List` вашого замовлення:
 
-<figure><img src="../../.gitbook/assets/image (107).png" alt="" width="295"><figcaption></figcaption></figure>
+1. Укажіть адресу сервера та порт.
+2. Введіть логін і пароль.
+3. Збережіть конфігурацію.
+
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/potatso-ios-add-server-form_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/potatso-ios-add-server-form_white.png" alt="Налаштування проксі в Potatso">
+  </picture>
+</figure>
 
 {% hint style="info" %}
-**З прикладом налаштування проксі ви можете ознайомитись у розділі [Інструкція з налаштування](../getting-started.md)**
+Формат даних і приклад замовлення описані в розділі [Початок роботи](../getting-started.md).
 {% endhint %}
 
-Збережіть налаштування та запустіть програму
+Виберіть створену конфігурацію та ввімкніть підключення.
 
-<figure><img src="../../.gitbook/assets/photo_2025-08-12_02-23-31.png" alt="" width="295"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/potatso-ios-connect_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/potatso-ios-connect_white.png" alt="Підключення проксі в Potatso">
+  </picture>
+</figure>
 
-
-
-**Готово! Ви закінчили налаштування проксі через програму "Potatso".**\
-**Тепер ви можете розпочати використання наших проксі.**
+Проксі підключено та готово до роботи в Potatso.

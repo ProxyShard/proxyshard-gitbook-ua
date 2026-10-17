@@ -1,41 +1,59 @@
 # v2rayN
 
 {% hint style="success" %}
-Дане рішення підтримує тунелювання UDP!
+v2rayN підтримує проксіювання TCP- і UDP-трафіку в режимі TUN.
 {% endhint %}
 
-## Налаштування v2rayN**.**
+## Завантаження та запуск
 
-Перейдіть по [посиланню](https://github.com/2dust/v2rayN/releases/latest) для завантаження <mark style="color:purple;">v2rayN</mark> і розпакуйте архів на робочому столі.
+Відкрийте [сторінку останнього релізу v2rayN](https://github.com/2dust/v2rayN/releases/latest), завантажте `v2rayN-windows-64.zip`, розпакуйте архів і запустіть `v2rayN.exe` від імені адміністратора.
 
-{% embed url="https://github.com/2dust/v2rayN/releases/latest" %}
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/v2rayn-github-download_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/v2rayn-github-download_white.png" alt="Завантаження v2rayN з GitHub">
+  </picture>
+</figure>
 
-<figure><img src="../../.gitbook/assets/Image00001 (5).PNG" alt=""><figcaption></figcaption></figure>
+## Додавання SOCKS-сервера
 
+Відкрийте меню `Configuration` і виберіть `Add [SOCKS]`.
 
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/v2rayn-menu-add-socks_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/v2rayn-menu-add-socks_white.png" alt="Додавання SOCKS-сервера у v2rayN">
+  </picture>
+</figure>
 
-## **Створення профілю**
+Заповніть параметри підключення:
 
-Створіть нову конфігурацію, вказавши <mark style="color:purple;">SOCKS / HTTP</mark> як протокол підключення
+- `Alias (remarks)`: будь-яка зрозуміла назва;
+- `Address`: IP-адреса або домен проксі;
+- `Port`: порт підключення;
+- `User(Optional)`: логін;
+- `Password(Optional)`: пароль.
 
-<figure><img src="../../.gitbook/assets/Image00002 (7).PNG" alt=""><figcaption></figcaption></figure>
+Натисніть `Confirm`, щоб зберегти профіль.
 
-
-
-## Налаштування профілю підключення
-
-Скопійовані проксі із замовлення вставте у відповідні поля, обов'язково вкажіть ядро ​​конфігурації (Xray/SingBox) та збережіть налаштування.
-
-<figure><img src="../../.gitbook/assets/Image00003 (6).PNG" alt=""><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/v2rayn-socks-config-dialog_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/v2rayn-socks-config-dialog_white.png" alt="Налаштування SOCKS-проксі у v2rayN">
+  </picture>
+</figure>
 
 {% hint style="info" %}
-**З прикладом налаштування проксі ви можете ознайомитись у розділі** [**Інструкція з налаштування**](../getting-started.md)
+Розташування даних підключення описано в [загальній інструкції](../getting-started.md).
 {% endhint %}
 
-## Запуск клієнта
+## Підключення
 
-Запустіть клієнт, увімкнувши режим <mark style="color:purple;">Tun</mark>.
+Виберіть створений сервер і перевірте затримку. Потім увімкніть `Enable Tun` у нижній панелі, щоб спрямувати системний трафік через проксі.
 
-<figure><img src="../../.gitbook/assets/Image00004 (7).PNG" alt=""><figcaption></figcaption></figure>
-
-**Готово! Тепер ви можете повноцінно використовувати проксі, тунелюючи весь трафік через проксі.**
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/v2rayn-enable-tun-mode_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/v2rayn-enable-tun-mode_white.png" alt="Увімкнення Enable Tun у v2rayN">
+  </picture>
+</figure>

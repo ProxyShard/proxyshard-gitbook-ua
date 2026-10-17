@@ -1,16 +1,16 @@
-# 🔥 V2Box
+# V2Box
 
 {% hint style="success" %}
-Дане рішення підтримує тунелювання UDP!
+V2Box підтримує UDP-трафік.
 {% endhint %}
 
-## Установка V2Box
+## Встановлення V2Box
 
-Перейдіть в App Store/Google play і завантажте програму V2BOX
+Встановіть V2Box із магазину застосунків для вашого пристрою.
 
 #### <mark style="color:green;">Android</mark>
 
-{% embed url="https://play.google.com/store/apps/details?id=dev.hexasoftware.v2box&hl=ru" %}
+{% embed url="https://play.google.com/store/apps/details?id=dev.hexasoftware.v2box" %}
 
 #### <mark style="color:blue;">**iOS**</mark>
 
@@ -18,31 +18,52 @@
 
 ## Налаштування V2Box
 
-Відкрийте програму та перейдіть у вкладку "<mark style="color:purple;">Configs</mark>" і через "➕" створіть нову конфігурацію
+1. Відкрийте `Configs`.
+2. Натисніть `+`, щоб створити конфігурацію.
 
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/v2box-ios-configs-add_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/v2box-ios-configs-add_white.png" alt="Додавання конфігурації у V2Box">
+  </picture>
+</figure>
 
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/v2box-ios-add-manual-config_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/v2box-ios-add-manual-config_white.png" alt="Ручне налаштування конфігурації у V2Box">
+  </picture>
+</figure>
 
-<figure><img src="../../.gitbook/assets/photo_2026-04-11_02-42-34.png" alt="" width="375"><figcaption></figcaption></figure>
+У полі `Protocol` виберіть `SOCKS`.
 
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/v2box-ios-protocol-socks_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/v2box-ios-protocol-socks_white.png" alt="Вибір протоколу SOCKS у V2Box">
+  </picture>
+</figure>
 
+Уведіть назву конфігурації в полі `Remarks`. Заповніть поля `Address`, `Port`, `Username` і `ID/Password/Key` даними з `Proxy List` вашого замовлення, потім натисніть `Save`.
 
-<figure><img src="../../.gitbook/assets/photo_2026-04-11_02-42-38.png" alt="" width="373"><figcaption></figcaption></figure>
-
-Вкажіть тип підключення <mark style="color:purple;">SOCKS</mark>
-
-<figure><img src="../../.gitbook/assets/photo_2026-04-11_02-42-42.png" alt="" width="367"><figcaption></figcaption></figure>
-
-Із замовлення вкажіть ваші проксі у поля програми
-
-<figure><img src="../../.gitbook/assets/photo_2026-04-11_02-42-49.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/v2box-ios-server-form_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/v2box-ios-server-form_white.png" alt="Налаштування проксі у V2Box">
+  </picture>
+</figure>
 
 {% hint style="info" %}
-**З прикладом налаштування проксі ви можете ознайомитись у розділі [Інструкція з налаштування](../getting-started.md)**
+Формат даних і приклад замовлення описані в розділі [Початок роботи](../getting-started.md).
 {% endhint %}
 
-Збережіть вашу конфігурацію та перейдіть назад у "<mark style="color:purple;">Configs</mark>", в ньому обов'язково потрібно натиснути на ваш конфіг і підключиться <br>
+Поверніться до `Configs`, виберіть створену конфігурацію та використайте `Slide to Connect` для підключення.
 
-<figure><img src="../../.gitbook/assets/photo_2026-04-11_02-42-52.png" alt="" width="375"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/v2box-ios-connected_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/v2box-ios-connected_white.png" alt="Підключення проксі у V2Box">
+  </picture>
+</figure>
 
-\
-**Готово! Тепер ви можете перевірити проксі на нашому** [**чекері**](https://proxyshard.com/proxy-tester)
+Перевірте підключення через [Proxy Tester](../../our-products/proxy-tester.md).

@@ -1,38 +1,60 @@
 # AdsPower
 
-## **Налаштування браузера** AdsPower
-
 {% hint style="warning" %}
-Дане рішення не підтримує тунелювання UDP! Дуже радимо розглянути для цих цілей [<mark style="color:green;">Vision</mark>](vision-browser.md)
+AdsPower не підтримує UDP-проксі. Для завдань із UDP використовуйте [Vision Browser](vision-browser.md).
 {% endhint %}
 
-Для масового додавання проксі до <mark style="color:blue;">AdsPower</mark>, вам необхідно:
+## Додавання проксі
 
-Перейдіть на вкладку **"**<mark style="color:purple;">**Proxies**</mark>**"**.
+Відкрийте розділ `Proxies` і натисніть `Add Proxy`.
 
-Скопіюйте рядок проксі з розділу **"**<mark style="color:purple;">**Proxy List**</mark>**"** у вашому замовленні та вставте їх у порожнє поле, як показано на скріншоті нижче.
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/adspower-proxies-add-proxy_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/adspower-proxies-add-proxy_white.png" alt="Додавання проксі в AdsPower">
+  </picture>
+</figure>
 
-<figure><img src="../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+1. Скопіюйте рядок підключення з `Proxy List` потрібного замовлення та вставте його у форму.
+2. Натисніть `Check proxy`.
+3. Після успішної перевірки натисніть `OK`.
+
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/adspower-add-proxy-form_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/adspower-add-proxy-form_white.png" alt="Форма додавання проксі в AdsPower">
+  </picture>
+</figure>
 
 {% hint style="info" %}
-**З прикладом налаштування проксі ви можете ознайомитись у розділі [Інструкція з налаштування](../getting-started.md)**
+Розташування даних підключення описано в [загальній інструкції](../getting-started.md).
 {% endhint %}
 
-<figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption></figcaption></figure>
+Якщо перевірка не проходить, перевірте логін, пароль і протокол. Також протестуйте з'єднання через [Proxy Tester](../../our-products/proxy-tester.md).
 
-Натисніть кнопку перевірки. Якщо перевірка була успішною, збережіть проксі.
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/adspower-proxy-tester-result_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/adspower-proxy-tester-result_white.png" alt="Перевірка проксі через Proxy Tester">
+  </picture>
+</figure>
 
-Якщо перевірка провалилася, переконайтеся, що ви правильно вказали логін і пароль проксі. В іншому випадку перевірте проксі через наш [Proxy Tester](../../our-products/proxy-tester.md).
+## Призначення проксі профілю
 
-<figure><img src="../../.gitbook/assets/image (24).png" alt=""><figcaption></figcaption></figure>
+Відкрийте `Profiles` і натисніть `New Profile`.
 
-Після додавання проксі перейдіть на вкладку **"**<mark style="color:purple;">**Profiles**</mark>**"**.
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/adspower-profiles-new-profile_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/adspower-profiles-new-profile_white.png" alt="Створення профілю AdsPower">
+  </picture>
+</figure>
 
-<figure><img src="../../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+У налаштуваннях профілю виберіть доданий сервер у `Saved Proxies`, перевірте його та збережіть профіль.
 
-Далі виберіть потрібну раніше додану проксі.
-
-<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
-
-Після цього ви можете запустити профіль та перевірити працездатність проксі\
-Готово!
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/adspower-new-profile-saved-proxy_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/adspower-new-profile-saved-proxy_white.png" alt="Вибір збереженого проксі для профілю AdsPower">
+  </picture>
+</figure>

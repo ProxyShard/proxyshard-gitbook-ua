@@ -6,32 +6,41 @@ icon: android
 
 ## Налаштування Super Proxy
 
-Завантажте програму через посилання:
+Встановіть Super Proxy із Google Play.
 
-{% embed url="https://play.google.com/store/apps/details?id=com.scheler.superproxy&hl" %}
+{% embed url="https://play.google.com/store/apps/details?id=com.scheler.superproxy" %}
 
 ## Створення профілю
 
-Потім відкрийте програму та додайте проксі через "<mark style="color:purple;">Add proxy</mark>"
+Відкрийте застосунок і натисніть `Add proxy`.
 
-<figure><img src="../../.gitbook/assets/photo_2025-08-12_00-16-57.png" alt="" width="321"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/super-proxy-android-add-proxy_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/super-proxy-android-add-proxy_white.png" alt="Додавання проксі в Super Proxy">
+  </picture>
+</figure>
 
-З замовлення встановіть проксі у відповідні поля та вкажіть тип протоколу підключення
+Укажіть назву профілю в полі `Profile name`, виберіть протокол і заповніть поля `Server`, `Port`, `Username` та `Password` даними з `Proxy List` вашого замовлення. Потім збережіть профіль.
 
-<figure><img src="../../.gitbook/assets/photo_2025-08-12_00-16-52.png" alt="" width="321"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/super-proxy-android-proxy-form_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/super-proxy-android-proxy-form_white.png" alt="Налаштування проксі в Super Proxy">
+  </picture>
+</figure>
 
 {% hint style="info" %}
-**З прикладом налаштування проксі ви можете ознайомитись у розділі [Інструкція з налаштування](../getting-started.md)**
+Формат даних і приклад замовлення описані в розділі [Початок роботи](../getting-started.md).
 {% endhint %}
 
-Збережіть налаштування та запустіть програму
+Виберіть створений профіль і запустіть підключення.
 
-<figure><img src="../../.gitbook/assets/photo_2025-08-12_00-16-34.png" alt="" width="321"><figcaption></figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../../.gitbook/assets/super-proxy-android-start_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../../.gitbook/assets/super-proxy-android-start_white.png" alt="Запуск проксі в Super Proxy">
+  </picture>
+</figure>
 
-
-
-**Готово! Ви закінчили налаштування проксі через програму "Super Proxy".**\
-**Тепер ви можете розпочати використання наших проксі.**
-
-
-
+Проксі підключено та готово до роботи в Super Proxy.
