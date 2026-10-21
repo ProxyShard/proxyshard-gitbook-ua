@@ -5,31 +5,33 @@ icon: puzzle-piece
 
 # ProxyShard Extension
 
-<mark style="color:purple;">**ProxyShard – Smart Proxy Manager**</mark> - це наше фірмове розширення для <mark style="color:purple;">Chrome</mark>, <mark style="color:purple;">Mozilla Firefox</mark> та інших браузерів на рушії Chromium (<mark style="color:purple;">Edge</mark>, <mark style="color:purple;">Opera</mark>, <mark style="color:purple;">Brave</mark>, <mark style="color:purple;">Yandex</mark> та інших), яке дозволяє в пару кліків додавати, перемикати та тестувати проксі прямо з браузера, без сторонніх програм.
+<mark style="color:purple;">**ProxyShard – Smart Proxy Manager**</mark> - фірмове розширення ProxyShard для Chrome, Mozilla Firefox і браузерів на Chromium: Edge, Opera, Brave, Yandex та інших. Воно дає змогу додавати, перевіряти й перемикати проксі безпосередньо у браузері.
 
-#### Що вміє розширення:
+#### Можливості розширення
 
-* Зберігає необмежену кількість профілів проксі
-* Підтримує <mark style="color:purple;">HTTP / HTTPS</mark> з'єднання в усіх підтримуваних браузерах
-* Підтримує <mark style="color:purple;">SOCKS5</mark> у версії для Mozilla Firefox
-* Тестування кожного профілю «в один клік» (latency, країна, IP)
-* <mark style="color:purple;">**IP-ротація за таймером або гарячою клавішею**</mark> для мобільних проксі
-* Bypass-списки та просунутий routing за доменами
-* Локалізація **Англійською, Російською, Українською та Китайською** мовами
+* Необмежена кількість проксі-профілів
+* Підтримка HTTP / HTTPS у всіх сумісних браузерах
+* Підтримка SOCKS5 у Mozilla Firefox
+* Перевірка з'єднання, IP-адреси, країни та затримки
+* Ротація IP мобільного проксі за інтервалом або сполученням клавіш
+* Правила маршрутизації та автоматичне перемикання профілів за доменами
+* Захист від витоку WebRTC і перевірка TCP-відбитка через p0f
+* Імпорт та експорт профілів
+* Інтерфейс англійською, російською, українською та китайською мовами
 
 <figure>
   <picture>
-    <source srcset="../.gitbook/assets/extension-overview_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/extension-overview_white.png" alt="Вигляд розширення ProxyShard">
+    <source srcset="../.gitbook/assets/proxyshard-extension-popup-overview_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/proxyshard-extension-popup-overview_white.png" alt="Головне вікно ProxyShard Extension">
   </picture>
-  <figcaption><p>Вигляд розширення ProxyShard</p></figcaption>
+  <figcaption><p>Головне вікно розширення зі списком проксі-профілів</p></figcaption>
 </figure>
 
 ## Встановлення розширення
 
-Розширення доступне в офіційних магазинах **Chrome Web Store** та **Firefox Add-ons**. Версія з Chrome Web Store також без проблем встановлюється в Edge, Opera, Brave та інші Chromium-браузери.
+Розширення доступне в офіційних магазинах Chrome Web Store і Firefox Add-ons. Версію з Chrome Web Store також можна встановити в Edge, Opera, Brave та інші браузери на Chromium.
 
-### Chrome, Edge, Opera, Brave, Yandex та інші Chromium-браузери
+### Chrome, Edge, Opera, Brave, Yandex та інші браузери на Chromium
 
 {% embed url="https://chromewebstore.google.com/detail/ohlcikccaeapbfpmejhckfjjddkcflbe" %}
 
@@ -37,144 +39,214 @@ icon: puzzle-piece
 
 {% embed url="https://addons.mozilla.org/en-US/firefox/addon/proxyshard-smart-proxy-manager/" %}
 
-Після встановлення відкрийте меню розширень (іконка пазла праворуч від адресного рядка) та **закріпіть ProxyShard** для швидкого доступу, натиснувши на іконку «шпильки» поруч із назвою розширення.
+Після встановлення відкрийте меню `Extensions` праворуч від адресного рядка та закріпіть `ProxyShard – Smart Proxy Manager`, натиснувши значок шпильки.
 
 <figure>
   <picture>
-    <source srcset="../.gitbook/assets/extension-pin_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/extension-pin_white.png" alt="Закріплення розширення в браузері">
+    <source srcset="../.gitbook/assets/proxyshard-extension-pin_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/proxyshard-extension-pin_white.png" alt="Закріплення ProxyShard Extension у браузері">
   </picture>
-  <figcaption><p>1) Відкрийте меню розширень. 2) Закріпіть ProxyShard.</p></figcaption>
+  <figcaption><p>Відкрийте меню Extensions і закріпіть розширення</p></figcaption>
 </figure>
 
 {% hint style="danger" %}
-**Обмеження SOCKS5 в Chromium-браузерах**
+**Обмеження SOCKS5 у браузерах на Chromium**
 
-У Google Chrome (та інших браузерах на Chromium) спочатку відсутня підтримка автентифікації за логіном/паролем через SOCKS5-проксі. Для розширень на базі **Manifest V3** це обмеження зберігається.
+Chrome та інші браузери на Chromium не підтримують авторизацію за логіном і паролем для SOCKS5-проксі через розширення Manifest V3.
 
-Використовувати SOCKS5 через розширення можна лише:
-
-* **без облікових даних** (анонімний проксі), або
-* **з прив'язкою за білим списком IP-адрес**
-
-Для проксі з авторизацією використовуйте <mark style="color:purple;">**HTTP / HTTPS**</mark> протокол, він повністю підтримується.
+SOCKS5 можна використовувати лише без облікових даних або з авторизацією за білим списком IP-адрес. Для проксі з логіном і паролем виберіть HTTP / HTTPS.
 {% endhint %}
 
 {% hint style="success" %}
 **SOCKS5 у Mozilla Firefox**
 
-У версії ProxyShard Extension для Mozilla Firefox SOCKS5 працює через розширення, тому у Firefox можна використовувати SOCKS5-профілі напряму.
+Версія ProxyShard Extension для Mozilla Firefox підтримує SOCKS5 з авторизацією, тому такі профілі можна використовувати безпосередньо.
 {% endhint %}
 
-## Налаштування для Резидентських проксі
+## Налаштування резидентського проксі
 
-1. Відкрийте ваше замовлення на сторінці [**Residential proxy**](https://dashboard.proxyshard.com/en/residential-main) та задайте параметри проксі (країна, регіон, протокол, TTL, порт тощо).
-2. Натисніть <mark style="color:purple;">**Generate proxy**</mark>, згенерований проксі з'явиться у блоці <mark style="color:purple;">Proxy List</mark> праворуч.
-3. Скопіюйте рядок підключення кнопкою <mark style="color:purple;">**Copy all**</mark>.
-4. Відкрийте розширення ProxyShard (закріплену іконку праворуч від адресного рядка).
-
-<figure>
-  <picture>
-    <source srcset="../.gitbook/assets/extension-residential-copy_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/extension-residential-copy_white.png" alt="Генерація резидентського проксі на сайті">
-  </picture>
-  <figcaption><p>Кроки 1-4: налаштування та копіювання проксі з дашборда</p></figcaption>
-</figure>
-
-5. У нижньому полі розширення **вставте скопійований рядок** у форматі `ip:port:login:password` і натисніть <mark style="color:purple;">**Add**</mark>.
+1. Відкрийте замовлення на сторінці [Residential proxy](https://dashboard.proxyshard.com/en/residential-main).
+2. Укажіть країну, регіон, тип сесії, протокол та інші параметри, потім натисніть `Generate proxy`.
+3. У блоці `Proxy List` виберіть потрібний формат і натисніть `Copy all`.
 
 <figure>
   <picture>
-    <source srcset="../.gitbook/assets/extension-residential-add_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/extension-residential-add_white.png" alt="Додавання проксі в розширення">
+    <source srcset="../.gitbook/assets/proxyshard-extension-residential-generate_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/proxyshard-extension-residential-generate_white.png" alt="Генерація та копіювання резидентського проксі">
   </picture>
-  <figcaption><p>Крок 5: вставка проксі та додавання профілю</p></figcaption>
+  <figcaption><p>Налаштування резидентського проксі та блок Proxy List</p></figcaption>
 </figure>
 
-6. Профіль з'явиться в списку. Натисніть <mark style="color:purple;">**Test**</mark>, щоб перевірити працездатність, та кнопку <mark style="color:purple;">**Play**</mark> для активації проксі.
+4. Відкрийте закріплене розширення ProxyShard.
+5. Вставте рядок у форматі `ip:port:login:password` у нижнє поле та натисніть `Add`.
 
 <figure>
   <picture>
-    <source srcset="../.gitbook/assets/extension-residential-run_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/extension-residential-run_white.png" alt="Активація проксі в розширенні">
+    <source srcset="../.gitbook/assets/proxyshard-extension-add-proxy-string_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/proxyshard-extension-add-proxy-string_white.png" alt="Додавання резидентського проксі до розширення">
   </picture>
-  <figcaption><p>Крок 6: тестування та запуск профілю</p></figcaption>
+  <figcaption><p>Вставте рядок підключення та натисніть Add</p></figcaption>
 </figure>
 
-## Налаштування для Datacenter / ISP проксі
-
-1. Відкрийте ваше замовлення <mark style="color:purple;">Datacenter</mark> або <mark style="color:purple;">ISP proxy</mark> на дашборді та **скопіюйте** рядок підключення з блоку <mark style="color:purple;">Proxy List</mark>.
-2. Відкрийте закріплене розширення **ProxyShard**.
+6. Новий профіль з'явиться у списку. Відкрийте його меню `...`, виберіть `Test connection`, а після успішної перевірки натисніть `Enable`.
 
 <figure>
   <picture>
-    <source srcset="../.gitbook/assets/extension-dcisp-copy_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/extension-dcisp-copy_white.png" alt="Копіювання проксі із замовлення DC/ISP">
+    <source srcset="../.gitbook/assets/proxyshard-extension-profile-actions_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/proxyshard-extension-profile-actions_white.png" alt="Перевірка та ввімкнення проксі-профілю">
   </picture>
-  <figcaption><p>Кроки 1-2: копіювання проксі із замовлення та відкриття розширення</p></figcaption>
+  <figcaption><p>Меню перевірки, редагування та видалення профілю</p></figcaption>
 </figure>
 
-3. У нижньому полі розширення **вставте проксі** (`ip:port:login:password`) і натисніть <mark style="color:purple;">**Add**</mark>.
+## Налаштування датацентр- або ISP-проксі
+
+1. Відкрийте замовлення датацентр- або ISP-проксі в особистому кабінеті.
+2. У блоці `Proxy List` виберіть протокол і формат, потім натисніть `Copy all`.
 
 <figure>
   <picture>
-    <source srcset="../.gitbook/assets/extension-dcisp-add_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/extension-dcisp-add_white.png" alt="Вставка проксі в розширення">
+    <source srcset="../.gitbook/assets/proxyshard-extension-datacenter-proxy-list_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/proxyshard-extension-datacenter-proxy-list_white.png" alt="Копіювання датацентр-проксі із замовлення">
   </picture>
-  <figcaption><p>Крок 3: вставка проксі в розширення</p></figcaption>
+  <figcaption><p>Скопіюйте рядок підключення з блоку Proxy List</p></figcaption>
 </figure>
 
-4. Натисніть <mark style="color:purple;">**Test**</mark> для перевірки та активуйте профіль кнопкою <mark style="color:purple;">**Play**</mark>.
+3. Відкрийте розширення, вставте рядок у нижнє поле та натисніть `Add`.
 
 <figure>
   <picture>
-    <source srcset="../.gitbook/assets/extension-dcisp-run_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/extension-dcisp-run_white.png" alt="Активація профілю DC/ISP">
+    <source srcset="../.gitbook/assets/proxyshard-extension-add-datacenter-proxy_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/proxyshard-extension-add-datacenter-proxy_white.png" alt="Додавання датацентр-проксі до розширення">
   </picture>
-  <figcaption><p>Крок 4: тестування та запуск профілю</p></figcaption>
+  <figcaption><p>Додавання датацентр- або ISP-проксі</p></figcaption>
 </figure>
 
-{% hint style="info" %}
-**Для Мобільних проксі: IP-ротація за таймером або гарячою клавішею**
-
-При редагуванні профілю доступний блок <mark style="color:purple;">**IP Rotation**</mark>, особливо корисний для <mark style="color:purple;">мобільних проксі</mark>:
-
-* **Rotation URL** - вставте посилання на зміну IP з вашого замовлення мобільного проксі, і розширення викликатиме його автоматично.
-* **Trigger: Interval** - ротація відбуватиметься через заданий інтервал часу.
-* **Trigger: Hotkey** - призначте комбінацію клавіш (наприклад, `Shift+F2`) для зміни IP «на льоту».
-* **Track IP history** - функція виявлення повторів: розширення повідомить вас, якщо протягом сесії повторилася одна й та сама IP-адреса.
+4. Відкрийте меню `...` нового профілю та виберіть `Test connection`.
+5. Якщо перевірка завершилася успішно, натисніть `Enable`. Коли ви вмикаєте інший профіль, поточне з'єднання перемикається автоматично.
 
 <figure>
   <picture>
-    <source srcset="../.gitbook/assets/extension-ip-rotation_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/extension-ip-rotation_white.png" alt="Налаштування IP Rotation">
+    <source srcset="../.gitbook/assets/proxyshard-extension-profile-switch_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/proxyshard-extension-profile-switch_white.png" alt="Перемикання між проксі-профілями">
   </picture>
+  <figcaption><p>Перевірка та ввімкнення нового профілю</p></figcaption>
 </figure>
-{% endhint %}
+
+## Ротація IP мобільного проксі
+
+Відкрийте меню `...` профілю, натисніть `Edit` і розгорніть блок `IP rotation`.
+
+* `Enable IP rotation` вмикає автоматичну зміну IP.
+* У `Rotation URL` вставте посилання для зміни IP із замовлення мобільного проксі.
+* У `Trigger` виберіть `Hotkey` або `Interval`.
+* Для `Hotkey` укажіть сполучення клавіш, наприклад `Shift+F2`. Для внутрішніх сторінок `chrome://` його потрібно окремо призначити на сторінці `chrome://extensions/shortcuts`.
+* Для `Interval` укажіть інтервал між запитами на зміну IP.
+* `Track IP history (detects duplicate IPs)` відстежує повторне отримання тієї самої IP-адреси.
+
+Натисніть `Save profile`, щоб зберегти налаштування.
+
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/proxyshard-extension-edit-profile-ip-rotation_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/proxyshard-extension-edit-profile-ip-rotation_white.png" alt="Налаштування IP rotation">
+  </picture>
+  <figcaption><p>Ротація IP за сполученням клавіш або інтервалом</p></figcaption>
+</figure>
+
+## Маршрутизація та автоматичне перемикання
+
+У вікні редагування профілю доступні блоки `Domain routing` і `Auto-switch`.
+
+### Domain routing
+
+Цей блок задає правила маршрутизації для окремих доменів.
+
+* `Enable routing rules` вмикає правила.
+* `Whitelist` спрямовує через проксі лише вказані домени.
+* `Blacklist` виключає вказані домени з проксі-маршрутизації.
+* У `Domains` укажіть по одному домену в кожному рядку. Щоб додати піддомени, поставте маску `*.` перед доменом, наприклад `*.google.com`.
+
+### Auto-switch
+
+Функція автоматично вмикає вибраний профіль під час відкриття вказаних сайтів.
+
+* `Enable auto-switch` вмикає автоматичне перемикання.
+* У `Activate on these domains` укажіть по одному домену в кожному рядку, наприклад `example.com` або `*.work-site.com`.
+
+Натисніть `Save profile`, щоб зберегти зміни, або `Cancel`, щоб закрити вікно без збереження.
+
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/proxyshard-extension-edit-profile-routing_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/proxyshard-extension-edit-profile-routing_white.png" alt="Налаштування Domain routing і Auto-switch">
+  </picture>
+  <figcaption><p>Маршрутизація за доменами та автоматичне перемикання профілю</p></figcaption>
+</figure>
 
 ## Ручне додавання профілю
 
-Якщо ви хочете створити профіль вручну, без вставки готового рядка, використовуйте повну форму <mark style="color:purple;">**+ Add Profile**</mark>.
+1. Натисніть значок шестерні в головному вікні розширення та відкрийте розділ `Profiles`.
+2. Натисніть `+ Add profile` і виберіть вкладку `Manual`.
+3. Заповніть поля:
+   * `Name` - назва профілю;
+   * `Type` - тип підключення;
+   * `Host` і `Port` - адреса та порт проксі-сервера;
+   * `Bypass list` - адреси, які мають відкриватися безпосередньо, по одній у рядку;
+   * `Username` і `Password` - дані авторизації.
+4. За потреби налаштуйте `IP rotation`, `Domain routing` і `Auto-switch domains`.
+5. Натисніть `Save profile`.
 
-1. У розширенні відкрийте розділ <mark style="color:purple;">**Profiles**</mark> (через значок шестерні / налаштувань).
-2. Натисніть кнопку <mark style="color:purple;">**+ Add Profile**</mark> у правому верхньому кутку.
-3. Заповніть параметри профілю:
-   * <mark style="color:purple;">**Name**</mark> - довільна назва профілю
-   * <mark style="color:purple;">**Color**</mark> - мітка кольору для зручності
-   * <mark style="color:purple;">**Type**</mark> - протокол (`HTTP / HTTPS` рекомендується)
-   * <mark style="color:purple;">**Host**</mark> та <mark style="color:purple;">**Port**</mark> - адреса та порт проксі-сервера
-   * <mark style="color:purple;">**Bypass List**</mark> - список IP / доменів, які повинні йти **напряму**, минаючи проксі (по одному запису на рядок)
-   * <mark style="color:purple;">**Username**</mark> / <mark style="color:purple;">**Password**</mark> - дані авторизації
-4. Натисніть <mark style="color:purple;">**Save Profile**</mark>.
+Щоб швидко додати готовий рядок проксі, скористайтеся вкладкою `Quick paste`.
 
 <figure>
   <picture>
-    <source srcset="../.gitbook/assets/extension-manual-profile_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/extension-manual-profile_white.png" alt="Ручне додавання профілю">
+    <source srcset="../.gitbook/assets/proxyshard-extension-options-add-profile_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/proxyshard-extension-options-add-profile_white.png" alt="Ручне додавання проксі-профілю">
   </picture>
-  <figcaption><p>Повна форма створення профілю</p></figcaption>
+  <figcaption><p>Форма Add profile на вкладці Manual</p></figcaption>
+</figure>
+
+## Імпорт та експорт профілів
+
+Розділ `Import and export` дає змогу створити резервну копію профілів і відновити її за потреби.
+
+* `Export profiles` зберігає всі профілі у JSON-файл. Натисніть `Export JSON` і збережіть файл у безпечному місці.
+* `Import from JSON` відновлює профілі з раніше експортованого файлу. Натисніть `Import JSON` і виберіть резервну копію.
+
+{% hint style="warning" %}
+Файл резервної копії може містити адреси проксі та дані авторизації. Не передавайте його стороннім особам.
+{% endhint %}
+
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/proxyshard-extension-options-import-export_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/proxyshard-extension-options-import-export_white.png" alt="Імпорт та експорт профілів ProxyShard Extension">
+  </picture>
+  <figcaption><p>Резервне копіювання та відновлення профілів</p></figcaption>
+</figure>
+
+## Додаткові налаштування
+
+У розділі `Preferences` доступні такі параметри:
+
+* `Show IP widget in popup` показує поточну IP-адресу та локацію у верхній частині вікна розширення.
+* `Show badge on the toolbar icon` показує індикатор стану на значку розширення.
+* `Context menu` додає перемикання проксі-профілів до контекстного меню браузера.
+* `Auto-switch by domain` дозволяє автоматично вмикати профіль для налаштованих доменів.
+* `WebRTC leak protection` допомагає захистити реальну IP-адресу від витоку через WebRTC. Коли захист увімкнено, деякі сервіси на основі WebRTC можуть працювати некоректно. Докладніше читайте в розділі [UDP і WebRTC](about-udp/README.md).
+* `Proxy fingerprint check (p0f)` порівнює операційну систему з User-Agent із TCP-відбитком. Невідповідність може вказувати на використання проксі. Докладніше читайте в розділі [Підміна відбитка ОС через p0f](p0f-spoofing.md).
+* `IP checker` дає змогу вибрати сервіс для визначення IP-адреси та локації. У режимі `Auto (fallback)` розширення послідовно перевіряє доступні сервіси, доки один із них не відповість.
+
+Після зміни параметрів натисніть `Save preferences`.
+
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/proxyshard-extension-options-preferences_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/proxyshard-extension-options-preferences_white.png" alt="Налаштування Preferences у ProxyShard Extension">
+  </picture>
+  <figcaption><p>Додаткові налаштування розширення</p></figcaption>
 </figure>
 
 {% hint style="success" %}
-**Готово!** Розширення ProxyShard повністю налаштоване і готове до роботи. Перемикайтеся між проксі «в один клік» з будь-якого підтримуваного браузера.
+ProxyShard Extension готове до роботи. Вмикати та перемикати збережені профілі можна з головного вікна розширення.
 {% endhint %}
