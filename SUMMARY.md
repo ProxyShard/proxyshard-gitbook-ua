@@ -120,9 +120,12 @@
 * [IP Чекер](https://proxyshard.com/ip-checker)
 * [Proxy Tester](https://proxyshard.com/proxy-tester)
 
-## API ProxyShard <a href="#proxyshard-api" id="proxyshard-api"></a>
+## API та інтеграції <a href="#api-and-integrations" id="api-and-integrations"></a>
 
 * [Початок роботи](proxyshard-api/getting-started.md)
+
+## API ProxyShard <a href="#proxyshard-api" id="proxyshard-api"></a>
+
 * ```yaml
   props:
     models: true
