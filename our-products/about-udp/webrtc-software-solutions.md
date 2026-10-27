@@ -16,7 +16,7 @@ icon: git-alt
 Поєднання наших [ISP Proxy](https://dashboard.proxyshard.com/en/isp-proxy) і браузера [Vision](../../setup-guides/antidetect-browsers/vision-browser.md) є одним із рекомендованих варіантів для роботи з UDP через проксі. ISP Proxy також підтримує зміну мережевого відбитка [p0f](../p0f-spoofing.md).
 {% endhint %}
 
-* [<mark style="color:$tint;">ShardX</mark>](../shardx-launcher.md): наше рішення з відкритим вихідним кодом, широким вибором профілів і коректною підтримкою UDP та QUIC.
+* [<mark style="color:$tint;">ShardBrowser</mark>](../shardx-launcher.md): наше рішення з відкритим вихідним кодом, широким вибором профілів і коректною підтримкою UDP та QUIC.
 
 <mark style="color:purple;">**Windows:**</mark>
 

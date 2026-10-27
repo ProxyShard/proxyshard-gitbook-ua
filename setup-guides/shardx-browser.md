@@ -1,46 +1,31 @@
 ---
-description: Встановлення ShardX Launcher, налаштування проксі та запуск першого профілю
+description: Встановлення ShardBrowser, додавання проксі та запуск першого профілю
 icon: browser
 ---
 
-# ShardX Launcher
+# ShardBrowser
 
 <figure>
   <picture>
     <source srcset="../.gitbook/assets/shardx-cover_black.svg" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/shardx-cover_white.svg" alt="Логотип ShardX Launcher">
+    <img src="../.gitbook/assets/shardx-cover_white.svg" alt="Логотип ShardBrowser">
   </picture>
 </figure>
 
 {% hint style="info" %}
-ShardX Launcher поширюється за ліцензією MIT як безкоштовний інструмент для особистого використання. Програма надається «як є». Ми регулярно випускаємо оновлення, але підтримку в лайв-чаті не надаємо - за серйозних проблем, будь ласка, створіть баг-репорт на [GitHub](https://github.com/ProxyShard/ShardBrowser/issues).
+ShardBrowser - антидетект-браузер на базі Chromium від команди ProxyShard. Кожен профіль отримує власний відбиток (fingerprint) реального пристрою та свій проксі, тому сайти бачать профілі як різні комп'ютери. Програма розповсюджується безкоштовно і постачається «як є». У разі серйозних проблем створіть баг-репорт на [GitHub](https://github.com/ProxyShard/ShardBrowser/issues).
 {% endhint %}
 
-## Системні вимоги
+## Системні вимоги для Windows
 
-### Windows
-
-| Компонент       | Мінімум                                           | Рекомендується                                      |
-| --------------- | ------------------------------------------------- | --------------------------------------------------- |
-| ОС              | Windows 10 22H2 або Windows 11, 64-бит            | Windows 11 64-бит                                   |
-| Архітектура     | x64 / x86\_64                                     | x64                                                 |
-| Процесор        | Двоядерний 64-бит, підтримка SSE3                 | Чотириядерний і вище                                |
-| ОЗП             | 4 ГБ                                              | 8 ГБ (16 ГБ при роботі з багатьма профілями)        |
-| Місце на диску  | 1 ГБ                                              | 5 ГБ+                                               |
-| Середовище      | Microsoft Edge WebView2                           | -                                                   |
-
-### macOS
-
-| Компонент      | Мінімум                             | Рекомендується              |
-| -------------- | ----------------------------------- | --------------------------- |
-| ОС             | macOS 11 Big Sur або новіше         | Остання стабільна версія    |
-| Процесор       | Apple Silicon M1 або новіше         | Apple M2 або новіше         |
-| ОЗП            | 4 ГБ                                | 8 ГБ і більше               |
-| Місце на диску | 1 ГБ                                | 5 ГБ+                       |
-
-{% hint style="warning" %}
-Поточна збірка скомпільована під `aarch64-apple-darwin`. Mac на Intel не підтримується.
-{% endhint %}
+| Компонент          | Мінімум                                | Рекомендовано                                  |
+| ------------------ | -------------------------------------- | ---------------------------------------------- |
+| ОС                 | Windows 10 22H2 або Windows 11, 64-біт | Windows 11 64-біт                              |
+| Архітектура        | x64 / x86\_64                          | x64                                            |
+| Процесор           | Двоядерний 64-біт, підтримка SSE3      | Чотириядерний і вище                           |
+| ОЗП                | 4 ГБ                                   | 8 ГБ (16 ГБ при роботі з великою кількістю профілів) |
+| Місце на диску     | 1 ГБ                                   | Від 5 ГБ                                       |
+| Середовище виконання | Microsoft Edge WebView2              | Остання версія                                 |
 
 ---
 
@@ -50,144 +35,190 @@ ShardX Launcher поширюється за ліцензією MIT як безк
 
 {% embed url="https://github.com/ProxyShard/ShardBrowser/releases/latest" %}
 
-У розділі <mark style="color:purple;">**Assets**</mark> виберіть файл <mark style="color:purple;">`.exe`</mark> або <mark style="color:purple;">`.msi`</mark>.
+У розділі <mark style="color:purple;">**Assets**</mark> виберіть інсталятор <mark style="color:purple;">`ShardBrowser.Launcher_<версія>_x64-setup.exe`</mark>. Якщо потрібна версія без встановлення, завантажте <mark style="color:purple;">`ShardBrowser-Launcher-portable-win-x64.exe`</mark>.
 
-<figure><img src="../.gitbook/assets/shardx-win-download.png" alt=""><figcaption>Виберіть .exe або .msi у розділі Assets</figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/shardbrowser-github-release-assets_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/shardbrowser-github-release-assets_white.png" alt="Виберіть x64-setup.exe у розділі Assets">
+  </picture>
+  <figcaption>Виберіть x64-setup.exe у розділі Assets</figcaption>
+</figure>
 
-Запустіть завантажений файл. <mark style="color:purple;">Windows SmartScreen</mark> може показати попередження - натисніть <mark style="color:purple;">**Докладніше**</mark>, потім <mark style="color:purple;">**Виконати в будь-якому разі**</mark>.
+Запустіть завантажений файл. <mark style="color:purple;">Windows SmartScreen</mark> може показати попередження. Натисніть <mark style="color:purple;">**More info**</mark>, а потім <mark style="color:purple;">**Run anyway**</mark>.
 
-<figure><img src="../.gitbook/assets/shardx-win-smartscreen.png" alt=""><figcaption>SmartScreen - натисніть «Run anyway»</figcaption></figure>
-
-Встановлювач завершить роботу за кілька секунд.
-
-<figure><img src="../.gitbook/assets/shardx-win-install-done.png" alt=""><figcaption>Встановлення завершено</figcaption></figure>
-
----
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/shardbrowser-windows-smartscreen_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/shardbrowser-windows-smartscreen_white.png" alt="SmartScreen: натисніть Run anyway">
+  </picture>
+  <figcaption>SmartScreen: натисніть Run anyway</figcaption>
+</figure>
 
 ## Встановлення на macOS
 
-Завантажте останню версію:
+У розділі <mark style="color:purple;">**Assets**</mark> завантажте <mark style="color:purple;">`ShardBrowser.Launcher_<версія>_aarch64.dmg`</mark>. Ця збірка призначена для комп'ютерів Mac із процесорами Apple Silicon.
 
-{% embed url="https://github.com/ProxyShard/ShardBrowser/releases/latest" %}
-
-У розділі <mark style="color:purple;">**Assets**</mark> виберіть файл <mark style="color:purple;">`aarch64.dmg`</mark>.
-
-<figure><img src="../.gitbook/assets/shardx-mac-download.png" alt=""><figcaption>Виберіть aarch64.dmg у розділі Assets</figcaption></figure>
-
-Відкрийте завантажений `.dmg` і перетягніть <mark style="color:purple;">**ShardX Launcher**</mark> до папки <mark style="color:purple;">**Applications**</mark>.
-
-<figure><img src="../.gitbook/assets/shardx-mac-install-dmg.png" alt=""><figcaption>Перетягніть іконку до Applications</figcaption></figure>
-
-### Зняття блокування Gatekeeper
-
-{% hint style="warning" %}
-Цей крок обов'язковий. macOS блокує всі непідписані застосунки - без нього програма не відкриється.
-{% endhint %}
-
-Відкрийте <mark style="color:purple;">**Термінал**</mark> одним із двох способів:
-
-- <mark style="color:purple;">**Spotlight:**</mark> натисніть `⌘ + Пробіл`, введіть `terminal`, виберіть застосунок
-
-<figure><img src="../.gitbook/assets/shardx-mac-find-terminal.png" alt=""><figcaption>Пошук Терміналу через Spotlight</figcaption></figure>
-
-- <mark style="color:purple;">**Finder:**</mark> Програми (Applications) -> Службові програми (Utilities) -> Термінал
-
-Вставте команду і натисніть <mark style="color:purple;">**Enter:**</mark>
+Відкрийте файл `.dmg` і перетягніть <mark style="color:purple;">**ShardBrowser Launcher**</mark> до <mark style="color:purple;">**Applications**</mark>. Збірка не нотаризована, тому macOS може заблокувати перший запуск. Відкрийте Terminal і виконайте команду:
 
 ```bash
-xattr -dr com.apple.quarantine "/Applications/ShardX Launcher.app"
+xattr -dr com.apple.quarantine "/Applications/ShardBrowser Launcher.app"
 ```
 
-<figure><img src="../.gitbook/assets/shardx-mac-xattr-command.png" alt=""><figcaption>Команда виконається без виводу - це нормально</figcaption></figure>
+Також застосунок можна дозволити в <mark style="color:purple;">**System Settings**</mark> → <mark style="color:purple;">**Privacy & Security**</mark> → <mark style="color:purple;">**Open Anyway**</mark>.
 
-Після цього відкрийте застосунок через <mark style="color:purple;">Spotlight</mark> (`⌘ + Пробіл` → `shardx`) або з папки <mark style="color:purple;">Applications</mark>.
+## Встановлення на Linux
 
-<figure><img src="../.gitbook/assets/shardx-mac-open-spotlight.png" alt=""><figcaption>Запуск ShardX через Spotlight</figcaption></figure>
+У розділі <mark style="color:purple;">**Assets**</mark> доступні збірки `.AppImage`, `.deb` і `.rpm`. Щоб запустити AppImage, надайте файлу право на виконання:
 
----
+```bash
+chmod +x ShardBrowser.Launcher_<версія>_amd64.AppImage
+./ShardBrowser.Launcher_<версія>_amd64.AppImage
+```
+
+Встановити пакет `.deb` можна командою:
+
+```bash
+sudo apt install ./ShardBrowser.Launcher_<версія>_amd64.deb
+```
 
 ## Перший запуск
 
-При першому запуску ShardX завантажить браузерний рушій із CDN (близько 198 МБ, один раз). Зачекайте завершення завантаження.
+Після встановлення та запуску відкриється головний екран <mark style="color:purple;">**All profiles**</mark>. Ліворуч розташоване меню розділів: профілі, проксі, відбитки, розширення, закладки, автоматизація та кабінет ProxyShard.
 
-<figure><img src="../.gitbook/assets/shardx-win-first-run.png" alt=""><figcaption>Завантаження рушія при першому запуску</figcaption></figure>
-
-Після завантаження відкриється головний екран <mark style="color:purple;">**Browsers**</mark>.
-
-<figure><img src="../.gitbook/assets/shardx-win-ready.png" alt=""><figcaption>Головний екран ShardX Launcher</figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/shardbrowser-profiles-empty_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/shardbrowser-profiles-empty_white.png" alt="Головний екран ShardBrowser">
+  </picture>
+  <figcaption>Головний екран ShardBrowser</figcaption>
+</figure>
 
 ---
 
 ## Додаємо проксі
 
-Перейдіть до розділу <mark style="color:purple;">**Proxies**</mark> і натисніть <mark style="color:purple;">**+ New proxy**</mark>.
+Перейдіть до розділу <mark style="color:purple;">**Proxies**</mark> і натисніть <mark style="color:purple;">**+ Add proxies**</mark>.
 
-<figure><img src="../.gitbook/assets/shardx-setup-proxy-empty.png" alt=""><figcaption>Розділ Proxies</figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/shardbrowser-proxies-empty_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/shardbrowser-proxies-empty_white.png" alt="Розділ Proxies">
+  </picture>
+  <figcaption>Розділ Proxies</figcaption>
+</figure>
 
-У вікні <mark style="color:purple;">**Bulk import proxies**</mark> вставте проксі по одному на рядок. Підтримувані формати:
+У вікні <mark style="color:purple;">**Add proxies**</mark> виберіть тип у полі <mark style="color:purple;">**Type for lines without one**</mark> (за замовчуванням <mark style="color:purple;">SOCKS5</mark>) і вставте проксі по одному в рядок. Підтримувані формати:
 
 ```
 host:port
 host:port:user:pass
-scheme://host:port
-scheme://user:pass@host:port
+user:pass@host:port
+socks5://user:pass@host:port
 ```
 
-<figure><img src="../.gitbook/assets/shardx-setup-add-proxy.png" alt=""><figcaption>Вставте проксі по одному на рядок</figcaption></figure>
+Рядки, що починаються з `#`, ігноруються. Проксі, які вже є у списку (той самий тип, хост, порт, логін і пароль), будуть пропущені.
 
-Натисніть <mark style="color:purple;">**Test all**</mark>, щоб перевірити проксі перед імпортом.
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/shardbrowser-add-proxies-paste_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/shardbrowser-add-proxies-paste_white.png" alt="Вставте проксі по одному в рядок і натисніть «Preview»">
+  </picture>
+  <figcaption>Вставте проксі по одному в рядок і натисніть «Preview»</figcaption>
+</figure>
 
-<figure><img src="../.gitbook/assets/shardx-setup-check-proxy.png" alt=""><figcaption>Натисніть «Test all» для перевірки, потім «Import»</figcaption></figure>
+Натисніть <mark style="color:purple;">**Preview**</mark>. У вікні попереднього перегляду натисніть <mark style="color:purple;">**Test all**</mark>, щоб перевірити проксі перед додаванням. Після тесту кожен проксі отримає статус і країну.
 
-Після тесту кожен проксі отримає статус. Проксі з міткою <mark style="color:purple;">**UDP**</mark> підтримують <mark style="color:purple;">SOCKS5 UDP</mark>, а отже і <mark style="color:purple;">WebRTC</mark> - що дуже корисно при роботі з серйозними антифрод-системами. Якщо мітки <mark style="color:purple;">**UDP**</mark> немає, профіль браузера автоматично переходить у режим <mark style="color:purple;">**TCP-only**</mark>: IP не витече, однак трафік може виглядати підозріло для просунутих антифрод-систем. Ми наполегливо рекомендуємо використовувати [проксі з підтримкою UDP](../our-products/about-udp/).
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/shardbrowser-add-proxies-preview_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/shardbrowser-add-proxies-preview_white.png" alt="Натисніть «Test all», потім «Add 1 proxy»">
+  </picture>
+  <figcaption>Натисніть «Test all», потім «Add 1 proxy»</figcaption>
+</figure>
 
-Натисніть <mark style="color:purple;">**Import**</mark> - проксі з'явиться у списку зі статусом <mark style="color:purple;">**Active**</mark>.
+Проксі з міткою <mark style="color:purple;">**UDP**</mark> підтримують <mark style="color:purple;">SOCKS5 UDP</mark>, а отже і <mark style="color:purple;">WebRTC</mark>, що дуже корисно під час роботи із серйозними антифрод-системами. Якщо мітки <mark style="color:purple;">**UDP**</mark> немає, профіль переходить у режим <mark style="color:purple;">**TCP-only**</mark>: IP не витече, однак трафік може виглядати підозріло для просунутих антифрод-систем. Ми наполегливо радимо використовувати [проксі з підтримкою UDP](../our-products/about-udp/).
 
-<figure><img src="../.gitbook/assets/shardx-setup-proxy-done.png" alt=""><figcaption>Проксі додано</figcaption></figure>
+Кнопка <mark style="color:purple;">**Select working only**</mark> залишить вибраними лише робочі проксі. Натисніть <mark style="color:purple;">**Add 1 proxy**</mark> - проксі з'явиться у списку.
 
 ---
 
 ## Створюємо перший профіль
 
-Перейдіть до розділу <mark style="color:purple;">**Browsers**</mark> і натисніть <mark style="color:purple;">**+ New profile**</mark>.
+Перейдіть до розділу <mark style="color:purple;">**All profiles**</mark> і натисніть <mark style="color:purple;">**+ New profile**</mark>. Профіль також можна імпортувати з буфера обміну кнопкою <mark style="color:purple;">**Import from clipboard**</mark>.
 
-<figure><img src="../.gitbook/assets/shardx-setup-profiles-empty.png" alt=""><figcaption>Розділ Browsers</figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/shardbrowser-new-profile-button_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/shardbrowser-new-profile-button_white.png" alt="Розділ All profiles">
+  </picture>
+  <figcaption>Розділ All profiles</figcaption>
+</figure>
 
-Параметри за замовчуванням змінювати не потрібно - ShardX сам згенерує унікальний <mark style="color:purple;">відбиток (fingerprint)</mark>. Обов'язково виберіть проксі у полі <mark style="color:purple;">**Proxy**</mark> внизу форми.
+Відкриється вікно <mark style="color:purple;">**New profile**</mark> із вкладками <mark style="color:purple;">**Basics**</mark>, <mark style="color:purple;">**Proxy**</mark>, <mark style="color:purple;">**Fingerprint**</mark> та <mark style="color:purple;">**Extensions**</mark>. На вкладці <mark style="color:purple;">**Basics**</mark> вкажіть ім'я профілю. Тут же можна вибрати папку, теги, колір, додати нотатку та завантажити файл cookies.
 
-<figure><img src="../.gitbook/assets/shardx-setup-new-profile.png" alt=""><figcaption>Виберіть проксі і натисніть «Create profile»</figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/shardbrowser-new-profile-basics_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/shardbrowser-new-profile-basics_white.png" alt="Вкажіть ім'я профілю">
+  </picture>
+  <figcaption>Вкажіть ім'я профілю</figcaption>
+</figure>
+
+На вкладці <mark style="color:purple;">**Proxy**</mark> виберіть збережений проксі зі списку. Через <mark style="color:purple;">**+ Add a new proxy**</mark> можна одразу додати новий.
+
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/shardbrowser-new-profile-proxy_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/shardbrowser-new-profile-proxy_white.png" alt="Виберіть проксі для профілю">
+  </picture>
+  <figcaption>Виберіть проксі для профілю</figcaption>
+</figure>
+
+На вкладці <mark style="color:purple;">**Fingerprint**</mark> параметри змінювати не обов'язково - ShardBrowser сам підбере відбиток під вибрану ОС. За бажання виберіть <mark style="color:purple;">операційну систему</mark> (macOS, Windows, Linux, Android), конкретний відбиток, відеокарту, кількість ядер, пам'ять, частоту оновлення та роздільну здатність екрана.
+
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/shardbrowser-new-profile-fingerprint_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/shardbrowser-new-profile-fingerprint_white.png" alt="Налаштування відбитка профілю">
+  </picture>
+  <figcaption>Налаштування відбитка профілю</figcaption>
+</figure>
 
 Натисніть <mark style="color:purple;">**Create profile**</mark>.
-
-<figure><img src="../.gitbook/assets/shardx-setup-profile-proxy-check.png" alt=""><figcaption>Профіль створено</figcaption></figure>
 
 ---
 
 ## Запуск профілю
 
-Натисніть <mark style="color:purple;">**Start**</mark> - браузер запуститься з ізольованим відбитком і проксі.
+Профіль з'явиться у списку. Праворуч відкривається картка профілю: проксі, розширення, нотатки, параметри відбитка, часовий пояс і мова (за замовчуванням визначаються за проксі). Натисніть <mark style="color:purple;">**Start**</mark>.
 
-<figure><img src="../.gitbook/assets/shardx-setup-done.png" alt=""><figcaption>Профіль запущено</figcaption></figure>
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/shardbrowser-profile-start_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/shardbrowser-profile-start_white.png" alt="Натисніть «Start», щоб запустити профіль">
+  </picture>
+  <figcaption>Натисніть «Start», щоб запустити профіль</figcaption>
+</figure>
+
+Браузер запуститься з ізольованим відбитком і проксі. На стартовій сторінці `chrome://shardx` перелічено захисти профілю.
+
+<figure>
+  <picture>
+    <source srcset="../.gitbook/assets/shardbrowser-profile-browser-started_black.png" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/shardbrowser-profile-browser-started_white.png" alt="Профіль запущено">
+  </picture>
+  <figcaption>Профіль запущено</figcaption>
+</figure>
 
 ---
 
 ## Можливі проблеми
 
-### Windows: застосунок не запускається
+### Застосунок не запускається
 
 Найімовірніше, не встановлено <mark style="color:purple;">Microsoft Edge WebView2 Runtime</mark>. Завантажте та встановіть його:
 
 {% embed url="https://developer.microsoft.com/en-us/microsoft-edge/webview2/consumer" %}
 
-На оригінальних образах Windows 10/11 WebView2 вже включено. На урізаних збірках його може бути видалено.
-
-### macOS: «ShardX Launcher пошкоджено і не можна відкрити»
-
-Стандартне блокування <mark style="color:purple;">Gatekeeper</mark>. Дотримуйтесь кроків у розділі [Зняття блокування Gatekeeper](#znyattya-blokuvannya-gatekeeper) - там описані обидва способи відкрити Термінал і команда для зняття карантину.
-
----
-
-## Що далі?
-
-- **Автоматизація:** керуйте профілями через [локальний HTTP API](../our-products/shardx-launcher.md) на `127.0.0.1:40325`
-- **MCP-сервер:** завантажте з налаштувань (<mark style="color:purple;">Settings -> MCP server</mark>) для керування профілями через AI-агента
+В оригінальних образах Windows 10/11 WebView2 вже є. У полегшених збірках його можуть видалити.

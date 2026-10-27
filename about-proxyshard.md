@@ -39,7 +39,7 @@ IP-адреси домашніх і мобільних провайдерів і
 
 Розширення для Chrome, Firefox і браузерів на Chromium. Дає змогу зберігати профілі, перемикати й перевіряти проксі, а також запускати ротацію мобільного IP за таймером або сполученням клавіш.
 
-### [<mark style="color:purple;">ShardX Launcher</mark>](our-products/shardx-launcher.md)
+### [<mark style="color:purple;">ShardBrowser</mark>](our-products/shardx-launcher.md)
 
 Сучасний антидетект-браузер для ізольованих профілів з узгодженими відбитками та окремими проксі. Підтримує Windows, macOS і Linux, локальний HTTP API, CDP, Puppeteer, Playwright та MCP-сервер для автоматизації.
 
