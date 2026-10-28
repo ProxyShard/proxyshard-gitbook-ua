@@ -7,4 +7,4 @@ icon: circle-half-stroke
 
 Розширення для браузера Vivaldi. Vivaldi побудований на рушії Chromium і **напряму підтримує** встановлення розширень з Chrome Web Store.
 
-* [🔥 ShardX Extension](proxyshard.md)
+* [🔥 ShardX Extension](shardx.md)

@@ -7,14 +7,18 @@ icon: browser
 
 <figure>
   <picture>
-    <source srcset="../.gitbook/assets/shardx-cover_black.svg" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/shardx-cover_white.svg" alt="Логотип ShardBrowser">
+    <source srcset="../.gitbook/assets/shardbrowser-cover_black.svg" media="(prefers-color-scheme: dark)">
+    <img src="../.gitbook/assets/shardbrowser-cover_white.svg" alt="Логотип ShardBrowser">
   </picture>
 </figure>
 
 {% hint style="info" %}
 ShardBrowser - антидетект-браузер на базі Chromium від команди ShardX. Кожен профіль отримує власний відбиток (fingerprint) реального пристрою та свій проксі, тому сайти бачать профілі як різні комп'ютери. Програма розповсюджується безкоштовно і постачається «як є». У разі серйозних проблем створіть баг-репорт на [GitHub](https://github.com/ProxyShard/ShardBrowser/issues).
 {% endhint %}
+
+Офіційний сайт ShardBrowser: [shardbrowser.com](https://shardbrowser.com/).
+
+<figure><img src="../.gitbook/assets/shardbrowser-website.png" alt="Офіційний сайт ShardBrowser"><figcaption>Офіційний сайт ShardBrowser</figcaption></figure>
 
 ## Системні вимоги для Windows
 

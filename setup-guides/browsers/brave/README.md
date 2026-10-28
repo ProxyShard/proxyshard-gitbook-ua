@@ -7,4 +7,4 @@ icon: shield-halved
 
 Розширення для браузера Brave. Brave побудований на рушії Chromium і **напряму підтримує** встановлення розширень з Chrome Web Store.
 
-* [🔥 ShardX Extension](proxyshard.md)
+* [🔥 ShardX Extension](shardx.md)

@@ -16,7 +16,7 @@ icon: hand
 * Державні портали та сайти, а також сайти в доменних зонах `.gov` і `.edu`
 * Платіжні процесори: <mark style="color:purple;">Stripe</mark>, <mark style="color:purple;">PayPal</mark> (у тому числі <mark style="color:purple;">Yahoo</mark>)
 
-Це вимога регуляторів, спрямована на запобігання шахрайству. Блокування **не поширюється** на криптосервіси та платіжні системи на кшталт бірж.
+Це вимога регуляторів, спрямована на запобігання шахрайству. Зазвичай блокування **не поширюється** на криптосервіси, наприклад біржі. Окремі винятки для Premium Residential наведені нижче.
 
 {% hint style="warning" %}
 Стосується всіх продуктів, **крім** [Mobile proxy](mobile-proxies.md).
@@ -27,6 +27,7 @@ Stripe і PayPal доступні на датацентрових та ISP-пр�
 Додаткові обмеження на резидентських проксі:
 
 * На [Standard Residential](residential-proxies/standard-residential.md) / [Unlimited Residential](residential-proxies/unlimited-residential-proxy.md) / [Premium Residential](residential-proxies/premium-residential.md) недоступні сервіси Microsoft та Apple.
+* На Premium Residential додатково недоступні Coinbase, CoinGate і DeBank.
 
 ***
 

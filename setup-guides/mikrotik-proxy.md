@@ -1,8 +1,6 @@
 ---
 description: Налаштування проксі на MikroTik
 icon: router
-cover: https://mikrotik.ru/image/catalog/routeros7/mikrotik.png
-coverY: 0
 ---
 
 # MikroTik проксі
@@ -151,7 +149,7 @@ add key=SOCKS5_USERNAME list=proxy1 value=username_proxy
 {% endhint %}
 
 {% hint style="info" %}
-Зверніть увагу, тестове підключення здійснюється через SOCKS5! Щоб дізнатися порт підключення SOCKS, потрібно натиснути _**Show socks5**_ всередині замовлення
+Тестове підключення виконується через SOCKS5. Датацентрові та ISP-проксі використовують один порт для HTTP і SOCKS5. У `SOCKS5_PORT` вкажіть порт із блоку `Proxy List`. Перемикати формат замовлення не потрібно.
 {% endhint %}
 
 ## **Додавання контейнера**

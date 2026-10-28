@@ -42,8 +42,8 @@ icon: check-to-slot
 
 Докладний опис полів наведено на сторінці [IP Checker](../ip-checker.md).
 
-## 2. Ipbinding
+## 2. BrowserLeaks
 
-[Ipbinding](https://ipbinding.online/) також показує WebRTC-кандидати. Результат читається так само: адреса WebRTC має збігатися з адресою проксі.
+[BrowserLeaks WebRTC Leak Test](https://browserleaks.com/webrtc) також показує WebRTC-кандидати. Результат читається так само: адреса WebRTC має збігатися з адресою проксі.
 
-{% embed url="https://ipbinding.online/" %}
+{% embed url="https://browserleaks.com/webrtc" %}

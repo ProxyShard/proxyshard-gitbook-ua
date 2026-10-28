@@ -114,7 +114,7 @@ rules:
 
 ## Перевірка підключення
 
-Відкрийте [ShardX IP Checker](https://proxyshard.com/tools/ip-checker) і переконайтеся, що відображається IP-адреса проксі.
+Відкрийте [ShardX IP Checker](https://proxyshard.com/ip-checker) і переконайтеся, що відображається IP-адреса проксі.
 
 <figure>
   <picture>
