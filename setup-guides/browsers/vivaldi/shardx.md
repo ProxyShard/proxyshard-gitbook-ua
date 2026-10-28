@@ -1,11 +1,11 @@
 ---
-description: Розширення ProxyShard для Яндекс.Браузера
+description: Розширення ShardX для Vivaldi
 icon: puzzle-piece
 ---
 
-# ProxyShard Extension
+# ShardX Extension
 
-Наше фірмове розширення <mark style="color:purple;">**ProxyShard – Smart Proxy Manager**</mark> встановлюється у Яндекс.Браузер напряму з **Chrome Web Store**, ніяких додаткових кроків не потрібно.
+Наше фірмове розширення <mark style="color:purple;">**ShardX – Smart Proxy Manager**</mark> встановлюється у Vivaldi напряму з **Chrome Web Store**, браузер використовує рушій Chromium і сумісний з усіма Chrome-розширеннями.
 
 {% embed url="https://chromewebstore.google.com/detail/ohlcikccaeapbfpmejhckfjjddkcflbe" %}
 
@@ -13,6 +13,6 @@ icon: puzzle-piece
 
 Повний опис можливостей розширення, кроки із закріплення, налаштування профілів під Residential / Datacenter / ISP проксі, а також увімкнення IP-ротації для мобільних проксі знаходяться на окремій сторінці:
 
-{% content-ref url="../../../our-products/proxyshard-extension.md" %}
-[proxyshard-extension.md](../../../our-products/proxyshard-extension.md)
+{% content-ref url="../../../our-products/shardx-extension.md" %}
+[shardx-extension.md](../../../our-products/shardx-extension.md)
 {% endcontent-ref %}

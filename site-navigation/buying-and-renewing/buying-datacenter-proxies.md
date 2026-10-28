@@ -6,7 +6,7 @@ icon: server
 
 ## Купівля проксі
 
-Щоб придбати [датацентрові проксі](https://dashboard.proxyshard.com/datacenter-proxy):
+Щоб придбати [датацентрові проксі](https://dashboard.shardx.com/datacenter-proxy):
 
 1. Відкрийте розділ `Datacenter Proxy`.
 2. У полі `Proxy region` виберіть країну проксі.
@@ -32,11 +32,11 @@ icon: server
 <figure>
   <picture>
     <source srcset="../../.gitbook/assets/datacenter-invoice-payment_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../.gitbook/assets/datacenter-invoice-payment_white.png" alt="Оплата рахунку з балансу ProxyShard">
+    <img src="../../.gitbook/assets/datacenter-invoice-payment_white.png" alt="Оплата рахунку з балансу ShardX">
   </picture>
 </figure>
 
-Після оплати замовлення з'явиться в блоці `Active products` і в розділі [`My orders`](https://dashboard.proxyshard.com/products). Для оплаченого замовлення відображається статус `Active`.
+Після оплати замовлення з'явиться в блоці `Active products` і в розділі [`My orders`](https://dashboard.shardx.com/products). Для оплаченого замовлення відображається статус `Active`.
 
 <figure>
   <picture>

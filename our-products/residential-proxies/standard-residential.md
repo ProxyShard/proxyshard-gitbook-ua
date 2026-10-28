@@ -4,9 +4,9 @@ icon: house-signal
 
 # Standard Residential
 
-<mark style="color:purple;">Standard Residential</mark> - базовий пул резидентських проксі ProxyShard. Проксі розміщені на реальних домашніх пристроях, що пройшли стандартні фільтри відбору. Підтримують <mark style="color:purple;">UDP</mark>, що робить їх оптимальним вибором для завдань з <mark style="color:purple;">WebRTC</mark>.
+<mark style="color:purple;">Standard Residential</mark> - базовий пул резидентських проксі ShardX. Проксі розміщені на реальних домашніх пристроях, що пройшли стандартні фільтри відбору. Підтримують <mark style="color:purple;">UDP</mark>, що робить їх оптимальним вибором для завдань з <mark style="color:purple;">WebRTC</mark>.
 
-{% embed url="https://dashboard.proxyshard.com/en/residential-main" %}
+{% embed url="https://dashboard.shardx.com/en/residential-main" %}
 
 Покрокова інструкція з придбання та оплати: [Придбання резидентських проксі](../../site-navigation/buying-and-renewing/buying-residential-proxies.md).
 

@@ -39,7 +39,7 @@ Clash for Windows підтримує проксіювання TCP- і UDP-тра
 
 ```yaml
 proxies:
-  - name: "ProxyShard-Germany"
+  - name: "ShardX-Germany"
     type: socks5
     server: 123.123.123.123
     port: 41733
@@ -48,13 +48,13 @@ proxies:
     udp: true
 
 proxy-groups:
-  - name: "ProxyShard"
+  - name: "ShardX"
     type: select
     proxies:
-      - ProxyShard-Germany
+      - ShardX-Germany
 
 rules:
-  - PROCESS-NAME,chrome.exe,ProxyShard
+  - PROCESS-NAME,chrome.exe,ShardX
   - MATCH,DIRECT
 ```
 
@@ -75,7 +75,7 @@ rules:
 
 1. Відкрийте `Proxies`.
 2. Виберіть режим `Global`.
-3. Натисніть `Check` біля сервера ProxyShard.
+3. Натисніть `Check` біля сервера ShardX.
 
 <figure>
   <picture>
@@ -90,7 +90,7 @@ rules:
 
 ## Кілька проксі
 
-Додайте кожен сервер окремим елементом у `proxies:` і перелічіть їхні назви в групі `ProxyShard`. Після збереження сервери з'являться в розділі `Proxies`, де між ними можна перемикатися.
+Додайте кожен сервер окремим елементом у `proxies:` і перелічіть їхні назви в групі `ShardX`. Після збереження сервери з'являться в розділі `Proxies`, де між ними можна перемикатися.
 
 <figure>
   <picture>
@@ -114,7 +114,7 @@ rules:
 
 ## Перевірка підключення
 
-Відкрийте [ProxyShard IP Checker](https://proxyshard.com/tools/ip-checker) і переконайтеся, що відображається IP-адреса проксі.
+Відкрийте [ShardX IP Checker](https://proxyshard.com/tools/ip-checker) і переконайтеся, що відображається IP-адреса проксі.
 
 <figure>
   <picture>

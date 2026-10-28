@@ -1,11 +1,11 @@
 ---
-description: Розширення ProxyShard для Opera
+description: Розширення ShardX для Opera
 icon: puzzle-piece
 ---
 
-# ProxyShard Extension
+# ShardX Extension
 
-Наше фірмове розширення <mark style="color:purple;">**ProxyShard – Smart Proxy Manager**</mark> встановлюється в Opera безпосередньо з **Chrome Web Store**.
+Наше фірмове розширення <mark style="color:purple;">**ShardX – Smart Proxy Manager**</mark> встановлюється в Opera безпосередньо з **Chrome Web Store**.
 
 ## Встановлення
 
@@ -17,6 +17,6 @@ icon: puzzle-piece
 
 Повний опис можливостей розширення, кроки із закріплення, налаштування профілів під Residential / Datacenter / ISP проксі, а також увімкнення IP-ротації для мобільних проксі знаходяться на окремій сторінці:
 
-{% content-ref url="../../../our-products/proxyshard-extension.md" %}
-[proxyshard-extension.md](../../../our-products/proxyshard-extension.md)
+{% content-ref url="../../../our-products/shardx-extension.md" %}
+[shardx-extension.md](../../../our-products/shardx-extension.md)
 {% endcontent-ref %}

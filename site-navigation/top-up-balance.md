@@ -8,7 +8,7 @@ icon: dollar-sign
 
 Щоб поповнити баланс:
 
-1. Відкрийте розділ [`Wallet`](https://dashboard.proxyshard.com/en/wallet).
+1. Відкрийте розділ [`Wallet`](https://dashboard.shardx.com/en/wallet).
 2. Вкажіть суму в полі `Top up balance amount`.
 3. Виберіть спосіб оплати в полі `Payment method`.
 4. Натисніть `Top up your balance` і завершіть оплату.
@@ -16,7 +16,7 @@ icon: dollar-sign
 <figure>
   <picture>
     <source srcset="../.gitbook/assets/wallet-top-up-form_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/wallet-top-up-form_white.png" alt="Поповнення балансу ProxyShard">
+    <img src="../.gitbook/assets/wallet-top-up-form_white.png" alt="Поповнення балансу ShardX">
   </picture>
 </figure>
 

@@ -1,18 +1,18 @@
 ---
-description: Коротко про сервіс і продукти ProxyShard
+description: Коротко про сервіс і продукти ShardX
 icon: question
 ---
 
-# Що таке ProxyShard
+# Що таке ShardX
 
-<mark style="color:purple;">**ProxyShard**</mark> поєднує резидентські, датацентрові, ISP та мобільні проксі з інструментами для роботи в браузері, перевірки й автоматизації. Датацентрові та ISP адреси закріплюються за одним клієнтом і не використовуються спільно. Доступність UDP, зміни p0f та інших функцій залежить від продукту й локації.
+<mark style="color:purple;">**ShardX**</mark> (раніше ProxyShard) поєднує резидентські, датацентрові, ISP та мобільні проксі з інструментами для роботи в браузері, перевірки й автоматизації. Датацентрові та ISP адреси закріплюються за одним клієнтом і не використовуються спільно. Доступність UDP, зміни p0f та інших функцій залежить від продукту й локації.
 
 <figure>
   <picture>
     <source srcset=".gitbook/assets/proxyshard-products_black.svg" media="(prefers-color-scheme: dark)">
-    <img src=".gitbook/assets/proxyshard-products_white.svg" alt="Продукти та інструменти ProxyShard">
+    <img src=".gitbook/assets/proxyshard-products_white.svg" alt="Продукти та інструменти ShardX">
   </picture>
-  <figcaption><p>Проксі, браузерні інструменти та сервіси перевірки ProxyShard</p></figcaption>
+  <figcaption><p>Проксі, браузерні інструменти та сервіси перевірки ShardX</p></figcaption>
 </figure>
 
 ***
@@ -35,7 +35,7 @@ IP-адреси домашніх і мобільних провайдерів і
 
 Проксі мобільних операторів із вибором країни та оператора. IP можна змінювати за посиланням, а доступні параметри залежать від вибраного тарифу й локації.
 
-### [<mark style="color:purple;">ProxyShard Extension</mark>](our-products/proxyshard-extension.md)
+### [<mark style="color:purple;">ShardX Extension</mark>](our-products/shardx-extension.md)
 
 Розширення для Chrome, Firefox і браузерів на Chromium. Дає змогу зберігати профілі, перемикати й перевіряти проксі, а також запускати ротацію мобільного IP за таймером або сполученням клавіш.
 

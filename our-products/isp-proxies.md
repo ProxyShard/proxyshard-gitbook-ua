@@ -12,7 +12,7 @@ icon: fire
 
 ISP проксі підтримують підміну мережевого відбитка <mark style="color:purple;">p0f</mark>.
 
-{% embed url="https://dashboard.proxyshard.com/en/isp-proxy" %}
+{% embed url="https://dashboard.shardx.com/en/isp-proxy" %}
 
 Покрокова інструкція з придбання та оплати: [Придбання ISP-проксі](../site-navigation/buying-and-renewing/buying-isp-proxies.md).
 

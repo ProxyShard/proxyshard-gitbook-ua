@@ -1,10 +1,10 @@
 # Початок роботи
 
-API ProxyShard дає змогу отримувати інформацію про профіль і замовлення, керувати проксі та виконувати інші операції зі своїх застосунків і скриптів.
+API ShardX дає змогу отримувати інформацію про профіль і замовлення, керувати проксі та виконувати інші операції зі своїх застосунків і скриптів.
 
 ## Де отримати API-ключ
 
-Відкрити вкладку з API-ключем можна [за прямим посиланням](https://dashboard.proxyshard.com/en/profile?tab=api-key). Щоб перейти до неї через меню особистого кабінету:
+Відкрити вкладку з API-ключем можна [за прямим посиланням](https://dashboard.shardx.com/en/profile?tab=api-key). Щоб перейти до неї через меню особистого кабінету:
 
 1. У лівому нижньому куті натисніть кнопку з трьома крапками поруч із профілем.
 2. Виберіть `Settings`.
@@ -14,7 +14,7 @@ API ProxyShard дає змогу отримувати інформацію пр�
 <figure>
   <picture>
     <source srcset="../.gitbook/assets/proxyshard-api-key_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../.gitbook/assets/proxyshard-api-key_white.png" alt="Отримання API-ключа в особистому кабінеті ProxyShard">
+    <img src="../.gitbook/assets/proxyshard-api-key_white.png" alt="Отримання API-ключа в особистому кабінеті ShardX">
   </picture>
 </figure>
 
@@ -24,7 +24,7 @@ API ProxyShard дає змогу отримувати інформацію пр�
 
 ## Автентифікація
 
-Базова адреса API: `https://user-api.proxyshard.com`.
+Базова адреса API: `https://user-api.shardx.com`.
 
 Для методів, які потребують автентифікації, передавайте API-ключ у заголовку запиту:
 

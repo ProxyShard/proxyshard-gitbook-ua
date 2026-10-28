@@ -6,7 +6,7 @@ icon: crown
 
 <mark style="color:purple;">Premium Residential</mark> - пул із жорсткішими критеріями відбору пристроїв. Розмір пулу приблизно в 10–15 разів більший за Standard: від 3,8 до 4,6 млн IP-адрес. Пропонує розширений геотаргетинг аж до вибору оператора.
 
-{% embed url="https://dashboard.proxyshard.com/en/residential-premium" %}
+{% embed url="https://dashboard.shardx.com/en/residential-premium" %}
 
 Покрокова інструкція з придбання та оплати: [Придбання резидентських проксі](../../site-navigation/buying-and-renewing/buying-residential-proxies.md).
 

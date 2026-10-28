@@ -83,7 +83,7 @@ Authorization: Bearer <token>
 **Тимчасові профілі.** `POST /profiles/temporary` створює профіль із прапором `temporary`: прихований із загального списку та інтерфейсу, а після закриття браузера видаляється автоматично (разом із папкою даних). Зручно для одноразових завдань.
 {% endhint %}
 
-Повний опис усіх методів (профілі, відбитки, проксі, папки, cookies, запуск/зупинка) з моделями даних та прикладами дивіться у [специфікації API ShardX Launcher](https://docs.proxyshard.com/ua/shardx-launcher-api/binding-and-lifecycle).
+Повний опис усіх методів (профілі, відбитки, проксі, папки, cookies, запуск/зупинка) з моделями даних та прикладами дивіться у [специфікації API ShardX Launcher](https://docs.shardx.com/ua/shardx-launcher-api/binding-and-lifecycle).
 
 ## MCP-сервер для ШІ-агентів
 

@@ -25,14 +25,14 @@ icon: arrows-rotate
 Допустимо, ви згенерували німецькі проксі:
 
 ```
-relay-eu.proxyshard.com:8080:plan-limited-country-de-sid-aaaaaaaaa:xxxxxxxxx
+relay-eu.shardx.com:8080:plan-limited-country-de-sid-aaaaaaaaa:xxxxxxxxx
 ```
 
 Розберемо рядок підключення:
 
 | Частина значення | Що означає |
 | ------------------------- | ---------------------------------------------------------------------------------- |
-| `relay-eu.proxyshard.com` | Сервер балансування навантаження (relay) |
+| `relay-eu.shardx.com` | Сервер балансування навантаження (relay) |
 | `8080` | Порт сервера |
 | `plan-limited` | Тариф проксі (`limited` - звичайні, `unlimited` - безлімітні, `premium` - преміум) |
 | `country-de` | Країна підключення: Німеччина (`de`) |

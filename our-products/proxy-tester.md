@@ -4,7 +4,7 @@ icon: vial
 
 # Proxy Tester
 
-<mark style="color:purple;">ProxyShard Proxy Tester</mark> дає змогу швидко перевірити працездатність проксі безпосередньо в браузері без встановлення додаткового програмного забезпечення. Для проксі SOCKS5 сервіс також перевіряє підтримку UDP.
+<mark style="color:purple;">ShardX Proxy Tester</mark> дає змогу швидко перевірити працездатність проксі безпосередньо в браузері без встановлення додаткового програмного забезпечення. Для проксі SOCKS5 сервіс також перевіряє підтримку UDP.
 
 {% embed url="https://proxyshard.com/proxy-tester" %}
 

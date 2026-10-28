@@ -8,7 +8,7 @@ icon: server
 
 <mark style="color:purple;">Датацентрові проксі</mark>, як і <mark style="color:purple;">ISP</mark>, надаються одному користувачу без прихованого спільного використання. Це адреси <mark style="color:purple;">IPv4</mark> із підтримкою <mark style="color:purple;">UDP</mark>.
 
-{% embed url="https://dashboard.proxyshard.com/en/datacenter-proxy" %}
+{% embed url="https://dashboard.shardx.com/en/datacenter-proxy" %}
 
 Покрокова інструкція з придбання та оплати: [Придбання датацентрових проксі](../site-navigation/buying-and-renewing/buying-datacenter-proxies.md).
 

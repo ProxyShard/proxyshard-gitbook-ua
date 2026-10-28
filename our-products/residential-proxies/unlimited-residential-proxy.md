@@ -6,7 +6,7 @@ icon: triple-chevrons-up
 
 <mark style="color:purple;">Unlimited Residential</mark> базується на пулі [Standard Residential](standard-residential.md) - ті самі пристрої, ті самі країни, той самий діапазон IP. Головна відмінність: **без обмежень за трафіком**. Тариф вигідний там, де Standard з оплатою за гігабайт стає дорогим.
 
-{% embed url="https://dashboard.proxyshard.com/en/residential-unlimited" %}
+{% embed url="https://dashboard.shardx.com/en/residential-unlimited" %}
 
 Покрокова інструкція з придбання та оплати: [Придбання резидентських проксі](../../site-navigation/buying-and-renewing/buying-residential-proxies.md).
 

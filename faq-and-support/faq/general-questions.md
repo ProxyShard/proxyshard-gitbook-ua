@@ -6,7 +6,7 @@ icon: circle-question
 # Популярні питання
 
 {% hint style="warning" %}
-Список продуктів, локацій, операторів і цін може змінюватися. Перед покупкою звіряйтеся з актуальними сторінками в [дашборді](https://dashboard.proxyshard.com/).
+Список продуктів, локацій, операторів і цін може змінюватися. Перед покупкою звіряйтеся з актуальними сторінками в [дашборді](https://dashboard.shardx.com/).
 {% endhint %}
 
 ***
@@ -114,7 +114,7 @@ UDP підтримується на Datacenter, ISP, Mobile, Standard Residentia
 * В середньому оператор оновлює адресу **раз на добу**.
 * Оператор може ініціювати зміну пулу у довільний момент, і адреса зміниться раніше.
 
-Це особливість роботи мобільного інтернету і **не знаходиться у нашому управлінні**. Якщо потрібна ротація за таймером або за натисканням гарячої клавіші - використовуйте функцію [IP Rotation у нашому розширенні](../../our-products/proxyshard-extension.md).
+Це особливість роботи мобільного інтернету і **не знаходиться у нашому управлінні**. Якщо потрібна ротація за таймером або за натисканням гарячої клавіші - використовуйте функцію [IP Rotation у нашому розширенні](../../our-products/shardx-extension.md).
 
 ***
 
@@ -163,7 +163,7 @@ UDP підтримується на Datacenter, ISP, Mobile, Standard Residentia
 **Спосіб 2.** Змінити <mark style="color:purple;">**SID**</mark> вручну у рядку підключення. Наприклад, у рядку:
 
 ```
-relay-eu.proxyshard.com:8080:plan-limited-country-any-sid-8dbryym0a32i:7nnrpl63344545gx
+relay-eu.shardx.com:8080:plan-limited-country-any-sid-8dbryym0a32i:7nnrpl63344545gx
 ```
 
 у логіні є фрагмент `sid-8dbryym0a32i`. Якщо змінити в ньому один символ, наприклад на `sid-8dbryym0a324`, то IP-адреса зміниться. Те саме відбувається «під капотом», коли ви натискаєте <mark style="color:purple;">Generate proxy</mark>.
@@ -271,7 +271,7 @@ ISP проксі доступні в таких локаціях:
 | 🇨🇦 Канада | Rogers |
 | 🇮🇩 Індонезія | Telkomsel |
 
-Список регулярно розширюється. Актуальні локації та вартість доступні на сторінці покупки [Mobile proxy](https://dashboard.proxyshard.com/en/mobile-proxy).
+Список регулярно розширюється. Актуальні локації та вартість доступні на сторінці покупки [Mobile proxy](https://dashboard.shardx.com/en/mobile-proxy).
 
 ***
 
@@ -287,7 +287,7 @@ ISP проксі доступні в таких локаціях:
 | **Mobile** | **від $4 / день, $55 / місяць** | залежить від країни та оператора |
 
 {% hint style="info" %}
-Точна ціна та доступні періоди по кожному тарифу відображаються безпосередньо на сторінці покупки в [дашборді](https://dashboard.proxyshard.com/).
+Точна ціна та доступні періоди по кожному тарифу відображаються безпосередньо на сторінці покупки в [дашборді](https://dashboard.shardx.com/).
 {% endhint %}
 
 ***
@@ -299,13 +299,13 @@ ISP проксі доступні в таких локаціях:
 Приклади рядків підключення:
 
 ```
-mobile.eu.proxyshard.com:1234:aabbbcc:password
-resident.eu.proxyshard.com:8080:plan-limited-country-NL-sid-ABXdedq:AAAbbbbCC
+mobile.proxy-eu.shardx.com:1234:aabbbcc:password
+relay-eu.shardx.com:8080:plan-limited-country-NL-sid-ABXdedq:AAAbbbbCC
 ```
 
 Якщо вашому софту обов'язково потрібен саме IPv4, домен можна **опитати (resolve)** і підставити отриману адресу замість доменного імені.
 
-**Спосіб 1. Через сайт.** Відкрийте [www.nslookup.io](https://www.nslookup.io), введіть домен із рядка підключення і отримайте список IPv4-адрес. Наприклад, якщо запит повернув `172.67.72.239`, то замість `mobile.eu.proxyshard.com` можна поставити цей IP:
+**Спосіб 1. Через сайт.** Відкрийте [www.nslookup.io](https://www.nslookup.io), введіть домен із рядка підключення і отримайте список IPv4-адрес. Наприклад, якщо запит повернув `172.67.72.239`, то замість `mobile.proxy-eu.shardx.com` можна поставити цей IP:
 
 ```
 172.67.72.239:1234:aabbbcc:password
@@ -314,7 +314,7 @@ resident.eu.proxyshard.com:8080:plan-limited-country-NL-sid-ABXdedq:AAAbbbbCC
 **Спосіб 2. Вручну з термінала.** У Windows або Linux виконайте:
 
 ```
-nslookup mobile.eu.proxyshard.com
+nslookup mobile.proxy-eu.shardx.com
 ```
 
 У відповіді в розділі **Addresses** будуть IPv4-адреси - беріть будь-яку і підставляйте замість домену.

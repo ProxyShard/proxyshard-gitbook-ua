@@ -20,7 +20,7 @@ icon: signal
 2\) Недоступно користувачам РФ без використання VPN
 {% endhint %}
 
-{% embed url="https://dashboard.proxyshard.com/en/mobile-proxy" %}
+{% embed url="https://dashboard.shardx.com/en/mobile-proxy" %}
 
 Покрокова інструкція з придбання та активації: [Придбання мобільних проксі](../site-navigation/buying-and-renewing/buying-mobile-proxies.md).
 
@@ -55,7 +55,7 @@ icon: signal
 | 🇮🇩 Індонезія | Telkomsel |
 
 {% hint style="info" %}
-Список регулярно розширюється. Актуальні локації та вартість - на сторінці купівлі [Mobile proxy](https://dashboard.proxyshard.com/en/mobile-proxy).
+Список регулярно розширюється. Актуальні локації та вартість - на сторінці купівлі [Mobile proxy](https://dashboard.shardx.com/en/mobile-proxy).
 {% endhint %}
 
 ## Як придбати
