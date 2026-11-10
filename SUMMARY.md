@@ -119,12 +119,12 @@
 
 ## Купити <a href="#buy" id="buy"></a>
 
-* [Купити резидентські проксі](https://proxyshard.com/residential-proxy)
-* [Купити датацентр проксі](https://proxyshard.com/datacenter-proxy)
-* [Купити ISP проксі](https://proxyshard.com/isp-proxy)
-* [Купити мобільні проксі](https://proxyshard.com/mobile-proxy)
-* [IP Чекер](https://proxyshard.com/ip-checker)
-* [Proxy Tester](https://proxyshard.com/proxy-tester)
+* [Купити резидентські проксі](https://shardx.com/residential-proxy)
+* [Купити датацентр проксі](https://shardx.com/datacenter-proxy)
+* [Купити ISP проксі](https://shardx.com/isp-proxy)
+* [Купити мобільні проксі](https://shardx.com/mobile-proxy)
+* [IP Чекер](https://shardx.com/ip-checker)
+* [Proxy Tester](https://shardx.com/proxy-tester)
 
 ## API та інтеграції <a href="#api-and-integrations" id="api-and-integrations"></a>
 
