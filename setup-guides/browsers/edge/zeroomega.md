@@ -7,7 +7,7 @@ description: Налаштування проксі для Microsoft Edge
 ## Встановлення ZeroOmega
 
 {% hint style="warning" %}
-ZeroOmega працює лише з TCP-трафіком. Для роботи з UDP використовуйте [Vision Browser](../../antidetect-browsers/vision-browser.md).
+ZeroOmega працює лише з TCP-трафіком. Для роботи з UDP використовуйте [Vision Browser](../../antidetect-browsers/vision-browser.md) або безкоштовний [ShardBrowser](../../../our-products/shardx-launcher.md).
 {% endhint %}
 
 Встановіть [ZeroOmega](https://microsoftedge.microsoft.com/addons/detail/proxy-switchyomega-3-zer/dmaldhchmoafliphkijbfhaomcgglmgd) із Microsoft Edge Add-ons.

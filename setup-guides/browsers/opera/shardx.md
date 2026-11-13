@@ -1,11 +1,11 @@
 ---
-description: Розширення ShardX для Opera
+description: ShardExtension для Opera
 icon: puzzle-piece
 ---
 
-# ShardX Extension
+# ShardExtension
 
-Наше фірмове розширення <mark style="color:purple;">**ShardX – Smart Proxy Manager**</mark> встановлюється в Opera безпосередньо з **Chrome Web Store**.
+Наше фірмове розширення <mark style="color:purple;">**ShardExtension**</mark> встановлюється в Opera безпосередньо з **Chrome Web Store**.
 
 ## Встановлення
 
@@ -17,6 +17,6 @@ icon: puzzle-piece
 
 Повний опис можливостей розширення, кроки із закріплення, налаштування профілів під Residential / Datacenter / ISP проксі, а також увімкнення IP-ротації для мобільних проксі знаходяться на окремій сторінці:
 
-{% content-ref url="../../../our-products/shardx-extension.md" %}
-[shardx-extension.md](../../../our-products/shardx-extension.md)
+{% content-ref url="../../../our-products/shardextension.md" %}
+[shardextension.md](../../../our-products/shardextension.md)
 {% endcontent-ref %}

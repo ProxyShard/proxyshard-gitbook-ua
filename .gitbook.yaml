@@ -154,7 +154,7 @@ redirects:
   nashi-produkti/restrictions: our-products/restrictions
   instrumenti/proxy-tester: our-products/proxy-tester
   instrumenti/ip-checker: our-products/ip-checker
-  instrumenti/proxyshard-extension: our-products/shardx-extension
+  instrumenti/proxyshard-extension: our-products/shardextension
   instrumenti/shardx-launcher: our-products/shardx-launcher
   tekhnologiyi-ta-mozhlivosti/p0f-spoofing: our-products/p0f-spoofing
   tekhnologiyi-ta-mozhlivosti/about-udp: our-products/about-udp
@@ -229,7 +229,8 @@ redirects:
 
   # ProxyShard → ShardX (28.10.2026): страницы с «proxyshard» в пути переименованы
   about-proxyshard: about-shardx
-  tools/proxyshard-extension: tools/shardx-extension
+  tools/proxyshard-extension: tools/shardextension
+  tools/shardx-extension: tools/shardextension
   usage-instructions/shardx-browser/proxyshard-dashboard: usage-instructions/shardx-browser/shardx-dashboard
   usage-instructions/browsers/brave/proxyshard: usage-instructions/browsers/brave/shardx
   usage-instructions/browsers/chrome/proxyshard: usage-instructions/browsers/chrome/shardx

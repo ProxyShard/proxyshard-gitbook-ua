@@ -7,5 +7,5 @@ icon: chrome
 
 Розширення для браузера Chrome
 
-* [🔥 ShardX Extension](shardx.md)
+* [🔥 ShardExtension](shardx.md)
 * [ZeroOmega](zeroomega.md)

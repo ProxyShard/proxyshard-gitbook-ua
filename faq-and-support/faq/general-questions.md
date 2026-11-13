@@ -43,7 +43,7 @@ UDP підтримується на Datacenter, ISP, Mobile, Standard Residentia
 
 Так, **QUIC підтримується** на всіх проксі, де працює UDP (див. питання 2). Однак ваше програмне забезпечення також повинно вміти працювати з QUIC.
 
-Наприклад, у [браузері Vision](../../setup-guides/antidetect-browsers/vision-browser.md) для використання QUIC необхідно увімкнути опцію <mark style="color:purple;">**Enable QUIC**</mark> у налаштуваннях.
+Наприклад, у [браузері Vision](../../setup-guides/antidetect-browsers/vision-browser.md) для використання QUIC необхідно увімкнути опцію <mark style="color:purple;">**Enable QUIC**</mark> у налаштуваннях. Безкоштовний [ShardBrowser](../../our-products/shardx-launcher.md) налаштовує QUIC і WebRTC автоматично після перевірки проксі на підтримку UDP.
 
 ***
 
@@ -96,7 +96,7 @@ UDP підтримується на Datacenter, ISP, Mobile, Standard Residentia
 * Перехід за персональним посиланням **Reset URL** із замовлення
 
 {% hint style="warning" %}
-Якщо не використовувати проксі, через **3 години** порт переходить в енергозбережний режим. Зняти це обмеження неможливо, для відновлення роботи достатньо знову викликати Restart proxy або Reset URL.
+Якщо не використовувати проксі, через **3 години** порт переходить у режим енергозбереження. Зняти це обмеження неможливо. Щоб відновити роботу, натисніть <mark style="color:purple;">**Restart proxy**</mark> або знову перейдіть за посиланням <mark style="color:purple;">**Reset URL**</mark>.
 {% endhint %}
 
 ***
@@ -114,14 +114,14 @@ UDP підтримується на Datacenter, ISP, Mobile, Standard Residentia
 * В середньому оператор оновлює адресу **раз на добу**.
 * Оператор може ініціювати зміну пулу у довільний момент, і адреса зміниться раніше.
 
-Це особливість роботи мобільного інтернету і **не знаходиться у нашому управлінні**. Якщо потрібна ротація за таймером або за натисканням гарячої клавіші - використовуйте функцію [IP Rotation у нашому розширенні](../../our-products/shardx-extension.md).
+Це особливість роботи мобільного інтернету, яку **ми не контролюємо**. Якщо потрібна ротація за таймером або сполученням клавіш, використовуйте функцію [IP Rotation у нашому розширенні](../../our-products/shardextension.md).
 
 ***
 
 ## 11. Що таке TTL та Sticky на резидентських проксі?
 
 * <mark style="color:purple;">**TTL**</mark> (Time-To-Live) - час «життя» сесії у секундах. Після закінчення TTL проксі-ланцюг створюється заново, і ви отримуєте нову IP. Діапазон від 60 до 86400 секунд.
-* <mark style="color:purple;">**Sticky / Random**</mark> - режим сесії. <mark style="color:purple;">Sticky</mark> намагається утримувати одну й ту саму IP у межах TTL, <mark style="color:purple;">Random</mark> видає випадкову IP при кожному новому підключенні.
+* <mark style="color:purple;">**Sticky / Random**</mark> - режим сесії. <mark style="color:purple;">Sticky</mark> намагається утримувати одну й ту саму IP-адресу в межах TTL, а <mark style="color:purple;">Random</mark> призначає випадкову IP-адресу під час кожного нового з'єднання.
 
 Повний опис усіх параметрів замовлення резидентських проксі: [Налаштування резидентських проксі](../../our-products/residential-proxies/#nalashtuvannya-proksi).
 
@@ -166,7 +166,7 @@ UDP підтримується на Datacenter, ISP, Mobile, Standard Residentia
 relay-eu.shardx.com:8080:plan-limited-country-any-sid-8dbryym0a32i:7nnrpl63344545gx
 ```
 
-у логіні є фрагмент `sid-8dbryym0a32i`. Якщо змінити в ньому один символ, наприклад на `sid-8dbryym0a324`, то IP-адреса зміниться. Те саме відбувається «під капотом», коли ви натискаєте <mark style="color:purple;">Generate proxy</mark>.
+у логіні є фрагмент `sid-8dbryym0a32i`. Якщо змінити в ньому один символ, наприклад на `sid-8dbryym0a324`, то IP-адреса зміниться.
 
 <mark style="color:purple;">SID</mark> відповідає за підбір пристрою та IP у межах сесії підключення.
 {% endhint %}
@@ -178,10 +178,10 @@ relay-eu.shardx.com:8080:plan-limited-country-any-sid-8dbryym0a32i:7nnrpl6334454
 Капча від Google та Cloudflare найчастіше пов'язана **не з самим проксі**, а з відбитком браузера. Найчастіші причини:
 
 * Використовується застарілий або неякісний антидетект-браузер
-* У профілі «злиплий» / повторюваний fingerprint
+* Один і той самий fingerprint використовується в кількох профілях
 * Браузер видає невідповідні параметри (timezone, language, WebRTC тощо)
 
-**Що робити:** генеруйте нові відбитки профілю при кожній проблемі, використовуйте якісні антидетект-рішення (наприклад [браузер Vision](../../setup-guides/antidetect-browsers/vision-browser.md)), та перевіряйте витоки на [IP Checker](../../our-products/ip-checker.md).
+**Що робити:** генеруйте нові відбитки профілю при кожній проблемі, використовуйте якісні антидетект-рішення, наприклад [браузер Vision](../../setup-guides/antidetect-browsers/vision-browser.md) або безкоштовний [ShardBrowser](../../our-products/shardx-launcher.md), та перевіряйте витоки на [IP Checker](../../our-products/ip-checker.md).
 
 ***
 
@@ -215,7 +215,7 @@ relay-eu.shardx.com:8080:plan-limited-country-any-sid-8dbryym0a32i:7nnrpl6334454
 
 Так, у нас є повноцінне користувацьке API.
 
-* **Специфікація та Try-it-out:** розділ [Користувацьке API](../../) у цьому GitBook.
+* **Специфікація та Try-it-out:** розділ [Користувацьке API](../../proxyshard-api/getting-started.md) у цьому GitBook.
 * **Приклади використання російською:** [github.com/ProxyShard/proxyshard-api-examples-ru](https://github.com/ProxyShard/proxyshard-api-examples-ru)
 * **Приклади використання англійською:** [github.com/ProxyShard/proxyshard-api-examples](https://github.com/ProxyShard/proxyshard-api-examples)
 
@@ -237,19 +237,14 @@ ISP проксі доступні в таких локаціях:
 | 🇺🇸 США (Пенсильванія) |
 | 🇹🇷 Туреччина |
 | 🇺🇦 Україна |
+| 🇲🇩 Молдова |
+| 🇦🇹 Австрія |
 
 ***
 
 ## 21. Які країни доступні на Datacenter проксі?
 
-Доступні локації:
-
-* 🇲🇩 Молдова
-* 🇺🇦 Україна
-* 🇳🇱 Нідерланди
-* 🇩🇪 Німеччина
-* 🇵🇱 Польща
-* 🇺🇸 США (найближчим часом)
+Актуальний список країн дивіться на сторінці [Datacenter проксі](../../our-products/datacenter-proxies.md) або безпосередньо в розділі покупки [Datacenter Proxy](https://dashboard.shardx.com/en/datacenter-proxy).
 
 ***
 

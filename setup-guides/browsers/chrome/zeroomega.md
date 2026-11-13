@@ -7,7 +7,7 @@ description: Налаштування проксі для Chrome
 ## Встановлення ZeroOmega
 
 {% hint style="warning" %}
-ZeroOmega працює лише з TCP-трафіком. Для роботи з UDP використовуйте [Vision Browser](../../antidetect-browsers/vision-browser.md).
+ZeroOmega працює лише з TCP-трафіком. Для роботи з UDP використовуйте [Vision Browser](../../antidetect-browsers/vision-browser.md) або безкоштовний [ShardBrowser](../../../our-products/shardx-launcher.md).
 {% endhint %}
 
 Встановіть [ZeroOmega](https://chromewebstore.google.com/detail/pfnededegaaopdmhkdmcofjmoldfiped) із Chrome Web Store.
