@@ -136,8 +136,8 @@ redirects:
 
   # Localized group slug migration (2026-07-14)
   nashi-produkti: our-products/residential-proxies
-  instrumenti: our-products/proxy-tester
-  tekhnologiyi-ta-mozhlivosti: our-products/p0f-spoofing
+  instrumenti: tools/proxy-tester
+  tekhnologiyi-ta-mozhlivosti: technologies-and-capabilities/p0f-spoofing
   navigaciya-saitom: site-navigation/top-up-balance
   pitannya-ta-vidpovidi: faq-and-support/faq
   instrukciyi-z-vikoristannya: setup-guides/getting-started
@@ -152,19 +152,19 @@ redirects:
   nashi-produkti/mobile-proxies: our-products/mobile-proxies
   nashi-produkti/isp-proxies: our-products/isp-proxies
   nashi-produkti/restrictions: our-products/restrictions
-  instrumenti/proxy-tester: our-products/proxy-tester
-  instrumenti/ip-checker: our-products/ip-checker
-  instrumenti/proxyshard-extension: our-products/shardextension
-  instrumenti/shardx-launcher: our-products/shardx-launcher
-  tekhnologiyi-ta-mozhlivosti/p0f-spoofing: our-products/p0f-spoofing
-  tekhnologiyi-ta-mozhlivosti/about-udp: our-products/about-udp
-  tekhnologiyi-ta-mozhlivosti/about-udp/tampermonkey-webrtc-debug: our-products/about-udp/tampermonkey-webrtc-debug
-  tekhnologiyi-ta-mozhlivosti/about-udp/how-webrtc-leak-works: our-products/about-udp/how-webrtc-leak-works
-  tekhnologiyi-ta-mozhlivosti/about-udp/webrtc-leak-check-tools: our-products/about-udp/webrtc-leak-check-tools
-  tekhnologiyi-ta-mozhlivosti/about-udp/why-tcp-proxy-not-enough: our-products/about-udp/how-webrtc-leak-works
-  tekhnologiyi-ta-mozhlivosti/about-udp/why-blocking-webrtc-doesnt-help: our-products/about-udp/why-blocking-webrtc-doesnt-help
-  tekhnologiyi-ta-mozhlivosti/about-udp/field-test-results: our-products/about-udp/field-test-results
-  tekhnologiyi-ta-mozhlivosti/about-udp/webrtc-software-solutions: our-products/about-udp/webrtc-software-solutions
+  instrumenti/proxy-tester: tools/proxy-tester
+  instrumenti/ip-checker: tools/ip-checker
+  instrumenti/proxyshard-extension: tools/shardextension
+  instrumenti/shardx-launcher: tools/shardx-launcher
+  tekhnologiyi-ta-mozhlivosti/p0f-spoofing: technologies-and-capabilities/p0f-spoofing
+  tekhnologiyi-ta-mozhlivosti/about-udp: technologies-and-capabilities/about-udp
+  tekhnologiyi-ta-mozhlivosti/about-udp/tampermonkey-webrtc-debug: technologies-and-capabilities/about-udp/tampermonkey-webrtc-debug
+  tekhnologiyi-ta-mozhlivosti/about-udp/how-webrtc-leak-works: technologies-and-capabilities/about-udp/how-webrtc-leak-works
+  tekhnologiyi-ta-mozhlivosti/about-udp/webrtc-leak-check-tools: technologies-and-capabilities/about-udp/webrtc-leak-check-tools
+  tekhnologiyi-ta-mozhlivosti/about-udp/why-tcp-proxy-not-enough: technologies-and-capabilities/about-udp/how-webrtc-leak-works
+  tekhnologiyi-ta-mozhlivosti/about-udp/why-blocking-webrtc-doesnt-help: technologies-and-capabilities/about-udp/why-blocking-webrtc-doesnt-help
+  tekhnologiyi-ta-mozhlivosti/about-udp/field-test-results: technologies-and-capabilities/about-udp/field-test-results
+  tekhnologiyi-ta-mozhlivosti/about-udp/webrtc-software-solutions: technologies-and-capabilities/about-udp/webrtc-software-solutions
   navigaciya-saitom/top-up-balance: site-navigation/top-up-balance
   navigaciya-saitom/buying-and-renewing: site-navigation/buying-and-renewing
   navigaciya-saitom/buying-and-renewing/buying-datacenter-proxies: site-navigation/buying-and-renewing/buying-datacenter-proxies
@@ -182,7 +182,14 @@ redirects:
   pitannya-ta-vidpovidi/faq/mobile-proxies: faq-and-support/faq/mobile-proxies
   pitannya-ta-vidpovidi/faq/how-to-check-proxy: faq-and-support/faq/how-to-check-proxy
   instrukciyi-z-vikoristannya/getting-started: setup-guides/getting-started
-  instrukciyi-z-vikoristannya/shardx-browser: setup-guides/shardx-browser
+  instrukciyi-z-vikoristannya/shardx-browser: tools/shardx-launcher
+  instrukciyi-z-vikoristannya/shardx-browser/folders: tools/shardx-launcher/folders
+  instrukciyi-z-vikoristannya/shardx-browser/fingerprints: tools/shardx-launcher/fingerprints
+  instrukciyi-z-vikoristannya/shardx-browser/extensions: tools/shardx-launcher/extensions
+  instrukciyi-z-vikoristannya/shardx-browser/bookmarks: tools/shardx-launcher/bookmarks
+  instrukciyi-z-vikoristannya/shardx-browser/automation: tools/shardx-launcher/automation
+  instrukciyi-z-vikoristannya/shardx-browser/shardx-dashboard: tools/shardx-launcher/shardx-dashboard
+  instrukciyi-z-vikoristannya/shardx-browser/proxyshard-dashboard: tools/shardx-launcher/shardx-dashboard
   instrukciyi-z-vikoristannya/windows: setup-guides/windows
   instrukciyi-z-vikoristannya/windows/proxifier: setup-guides/windows/proxifier
   instrukciyi-z-vikoristannya/windows/v2rayn: setup-guides/windows/v2rayn
@@ -231,7 +238,28 @@ redirects:
   about-proxyshard: about-shardx
   tools/proxyshard-extension: tools/shardextension
   tools/shardx-extension: tools/shardextension
-  usage-instructions/shardx-browser/proxyshard-dashboard: usage-instructions/shardx-browser/shardx-dashboard
+  # Moved product and ShardBrowser pages (2026-11-17)
+  our-products/proxy-tester: tools/proxy-tester
+  our-products/ip-checker: tools/ip-checker
+  our-products/shardextension: tools/shardextension
+  our-products/p0f-spoofing: technologies-and-capabilities/p0f-spoofing
+  our-products/about-udp: technologies-and-capabilities/about-udp
+  our-products/about-udp/tampermonkey-webrtc-debug: technologies-and-capabilities/about-udp/tampermonkey-webrtc-debug
+  our-products/about-udp/how-webrtc-leak-works: technologies-and-capabilities/about-udp/how-webrtc-leak-works
+  our-products/about-udp/webrtc-leak-check-tools: technologies-and-capabilities/about-udp/webrtc-leak-check-tools
+  our-products/about-udp/why-tcp-proxy-not-enough: technologies-and-capabilities/about-udp/how-webrtc-leak-works
+  our-products/about-udp/why-blocking-webrtc-doesnt-help: technologies-and-capabilities/about-udp/why-blocking-webrtc-doesnt-help
+  our-products/about-udp/field-test-results: technologies-and-capabilities/about-udp/field-test-results
+  our-products/about-udp/webrtc-software-solutions: technologies-and-capabilities/about-udp/webrtc-software-solutions
+  our-products/shardx-launcher: tools/shardx-launcher
+  usage-instructions/shardx-browser: tools/shardx-launcher
+  usage-instructions/shardx-browser/folders: tools/shardx-launcher/folders
+  usage-instructions/shardx-browser/fingerprints: tools/shardx-launcher/fingerprints
+  usage-instructions/shardx-browser/extensions: tools/shardx-launcher/extensions
+  usage-instructions/shardx-browser/bookmarks: tools/shardx-launcher/bookmarks
+  usage-instructions/shardx-browser/automation: tools/shardx-launcher/automation
+  usage-instructions/shardx-browser/shardx-dashboard: tools/shardx-launcher/shardx-dashboard
+  usage-instructions/shardx-browser/proxyshard-dashboard: tools/shardx-launcher/shardx-dashboard
   usage-instructions/browsers/brave/proxyshard: usage-instructions/browsers/brave/shardx
   usage-instructions/browsers/chrome/proxyshard: usage-instructions/browsers/chrome/shardx
   usage-instructions/browsers/edge/proxyshard: usage-instructions/browsers/edge/shardx
