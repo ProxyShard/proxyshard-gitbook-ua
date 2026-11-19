@@ -1,9 +1,9 @@
 ---
-description: ShardExtension для Brave
+description: "Встановлення ShardExtension у Brave, додавання проксі ShardX, перемикання профілів і перевірка зовнішньої IP-адреси."
 icon: puzzle-piece
 ---
 
-# ShardExtension
+# ShardExtension для Brave
 
 Наше фірмове розширення <mark style="color:purple;">**ShardExtension**</mark> встановлюється у Brave напряму з **Chrome Web Store**: браузер використовує рушій Chromium і сумісний з усіма розширеннями Chrome.
 

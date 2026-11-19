@@ -1,4 +1,5 @@
 ---
+description: "Список країн і регіонів, доступних для Standard та Unlimited Residential проксі ShardX."
 icon: earth-americas
 ---
 

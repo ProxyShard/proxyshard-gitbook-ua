@@ -1,3 +1,7 @@
+---
+description: "Довідник API ShardX для керування проксі, замовленнями, профілями й автоматизацією ShardBrowser."
+---
+
 # Специфікації API
 
 Тут зібрані інтерактивні довідники <mark style="color:$tint;">API ShardX</mark> і <mark style="color:$tint;">ShardX Launcher</mark>.

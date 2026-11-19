@@ -1,3 +1,7 @@
+---
+description: "Покрокове налаштування HTTP або SOCKS5 проксі ShardX у v2rayN для Windows і ввімкнення системного проксі."
+---
+
 # v2rayN
 
 {% hint style="success" %}

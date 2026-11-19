@@ -1,3 +1,7 @@
+---
+description: "Налаштування HTTP і SOCKS5 проксі ShardX у ProxyCap або NetDetour для окремих програм у Windows."
+---
+
 # ProxyCap (NetDetour)
 
 {% hint style="success" %}

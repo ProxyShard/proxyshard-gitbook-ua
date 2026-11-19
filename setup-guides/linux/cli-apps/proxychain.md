@@ -1,3 +1,7 @@
+---
+description: "Налаштування HTTP і SOCKS5 проксі ShardX у proxychains для запуску Linux-застосунків через проксі з термінала."
+---
+
 # Proxychain
 
 ## Налаштування Proxychains4

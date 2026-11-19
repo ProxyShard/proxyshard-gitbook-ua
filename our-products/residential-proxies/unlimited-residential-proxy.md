@@ -1,4 +1,5 @@
 ---
+description: "Unlimited Residential проксі ShardX із необмеженим трафіком, ротацією IP та вибором доступних локацій."
 icon: triple-chevrons-up
 ---
 

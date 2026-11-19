@@ -1,4 +1,5 @@
 ---
+description: "Як придбати резидентські проксі ShardX: вибір Standard, Premium або Unlimited, трафіку, локації та тарифу."
 icon: house-signal
 ---
 

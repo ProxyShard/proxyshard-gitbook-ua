@@ -1,4 +1,5 @@
 ---
+description: "Резидентські проксі ShardX: порівняння Standard, Premium та Unlimited, вибір тарифу, геолокації й режиму ротації."
 icon: house-signal
 ---
 

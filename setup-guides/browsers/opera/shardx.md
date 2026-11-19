@@ -1,9 +1,9 @@
 ---
-description: ShardExtension для Opera
+description: "Встановлення ShardExtension в Opera, додавання проксі ShardX, перемикання профілів і перевірка зовнішньої IP-адреси."
 icon: puzzle-piece
 ---
 
-# ShardExtension
+# ShardExtension для Opera
 
 Наше фірмове розширення <mark style="color:purple;">**ShardExtension**</mark> встановлюється в Opera безпосередньо з **Chrome Web Store**.
 

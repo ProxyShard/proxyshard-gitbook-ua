@@ -1,4 +1,5 @@
 ---
+description: "Standard Residential проксі ShardX із великим пулом IP, вибором країни та оплатою за використаний трафік."
 icon: house-signal
 ---
 

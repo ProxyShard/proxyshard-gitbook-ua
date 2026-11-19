@@ -1,5 +1,5 @@
 ---
-description: Папки для профілів ShardBrowser
+description: "Створення та керування папками профілів у ShardBrowser: групування, переміщення, перейменування й видалення."
 icon: folder
 ---
 

@@ -1,4 +1,5 @@
 ---
+description: "Інструкції з налаштування проксі ShardX на iOS та Android у V2Box, Potatso, Super Proxy й інших застосунках."
 icon: mobile-signal-out
 ---
 

@@ -1,4 +1,5 @@
 ---
+description: "Список країн і регіонів, доступних для Premium Residential проксі ShardX із розширеним геотаргетингом."
 icon: earth-americas
 ---
 

@@ -1,3 +1,7 @@
+---
+description: "Налаштування проксі ShardX у графічному клієнті v2rayN для Linux: додавання сервера та перевірка підключення."
+---
+
 # v2rayN GUI
 
 {% hint style="success" %}

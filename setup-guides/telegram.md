@@ -1,5 +1,5 @@
 ---
-description: Налаштування проксі для Telegram
+description: "Покрокове налаштування HTTP або SOCKS5 проксі ShardX у Telegram Desktop і мобільному застосунку."
 icon: telegram
 ---
 

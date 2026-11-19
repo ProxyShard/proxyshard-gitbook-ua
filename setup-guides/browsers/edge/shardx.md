@@ -1,9 +1,9 @@
 ---
-description: ShardExtension для Microsoft Edge
+description: "Встановлення ShardExtension у Microsoft Edge, додавання проксі ShardX, перемикання профілів і перевірка IP."
 icon: puzzle-piece
 ---
 
-# ShardExtension
+# ShardExtension для Microsoft Edge
 
 Наше фірмове розширення <mark style="color:purple;">**ShardExtension**</mark> працює в Microsoft Edge без обмежень: браузер побудований на рушії Chromium і підтримує розширення з **Chrome Web Store**.
 

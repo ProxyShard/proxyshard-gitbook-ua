@@ -1,9 +1,9 @@
 ---
-description: ShardExtension для Vivaldi
+description: "Встановлення ShardExtension у Vivaldi, додавання проксі ShardX, перемикання профілів і перевірка зовнішньої IP-адреси."
 icon: puzzle-piece
 ---
 
-# ShardExtension
+# ShardExtension для Vivaldi
 
 Наше фірмове розширення <mark style="color:purple;">**ShardExtension**</mark> встановлюється у Vivaldi напряму з **Chrome Web Store**: браузер використовує рушій Chromium і сумісний з усіма розширеннями Chrome.
 

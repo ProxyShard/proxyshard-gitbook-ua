@@ -1,8 +1,8 @@
 ---
-description: Налаштування проксі для Microsoft Edge
+description: "Покрокове налаштування HTTP або SOCKS5 проксі ShardX у розширенні ZeroOmega для Microsoft Edge."
 ---
 
-# ZeroOmega
+# ZeroOmega для Microsoft Edge
 
 ## Встановлення ZeroOmega
 

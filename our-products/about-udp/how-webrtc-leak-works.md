@@ -1,5 +1,5 @@
 ---
-description: Принцип роботи WebRTC
+description: "Як WebRTC встановлює з'єднання, чому реальна IP-адреса може витекти через UDP і як проксі запобігає витоку."
 icon: wave-square
 ---
 
