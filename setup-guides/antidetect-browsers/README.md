@@ -19,5 +19,4 @@ icon: window-restore
 ### [<mark style="color:purple;">Adspower</mark>](adspower.md)
 
 * Платформа: <mark style="color:purple;">macOS</mark>, <mark style="color:purple;">Windows</mark>, <mark style="color:purple;">Linux</mark>
-* Підтримка UDP\QUIC: Ні
 
