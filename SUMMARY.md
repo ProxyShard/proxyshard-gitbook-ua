@@ -29,6 +29,7 @@
   * [Bookmarks](setup-guides/shardx-browser/bookmarks.md)
   * [Automation](setup-guides/shardx-browser/automation.md)
   * [ShardX Dashboard](setup-guides/shardx-browser/shardx-dashboard.md)
+  * [Team server](setup-guides/shardx-browser/team-server.md)
 * [Специфікації API](our-products/api-specifications.md)
 
 ## Технології та можливості <a href="#technologies-and-capabilities" id="technologies-and-capabilities"></a>
