@@ -1,5 +1,5 @@
 ---
-description: "Інструкції з налаштування проксі ShardX і розширення ShardExtension у Chrome, Firefox, Edge, Opera та інших браузерах."
+description: "Інструкції з налаштування проксі ShardX і розширення ShardExtension: Proxy Manager у Chrome, Firefox, Edge, Opera та інших браузерах."
 icon: browsers
 ---
 

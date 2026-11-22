@@ -6,13 +6,13 @@ icon: users
 # Team server
 
 {% hint style="info" %}
-Тім-сервер дає змогу кільком людям працювати зі спільними профілями ShardBrowser. Сервер ви запускаєте самі, наприклад на VPS: профілі команди зберігаються на ньому, а лаунчери учасників підключаються до сервера за інвайтом. Адміністратор сам вирішує, які папки й дії доступні кожному учаснику.
+Тім-сервер дає змогу кільком людям працювати зі спільними профілями ShardBrowser. Сервер ви запускаєте самі, наприклад на VPS: профілі команди зберігаються на ньому, а лаунчери учасників підключаються до сервера за запрошенням. Адміністратор сам вирішує, які папки й дії доступні кожному учаснику.
 {% endhint %}
 
 ## Що знадобиться
 
 * ShardBrowser версії 2.1.2 або новішої на комп'ютерах усіх учасників.
-* Сервер, до якого учасники можуть підключитися через мережу, наприклад VPS на Ubuntu з доступом по SSH під `root` або користувачем із `sudo`.
+* Доступний учасникам через мережу сервер, наприклад VPS з Ubuntu, до якого можна підключитися через SSH як `root` або як користувач із правами `sudo`.
 * Відкритий вхідний порт <mark style="color:purple;">`8787`</mark> (TCP) на сервері.
 
 ---
@@ -29,7 +29,7 @@ icon: users
   <figcaption>Меню робочого простору - «Create a team...»</figcaption>
 </figure>
 
-Відкриється вікно <mark style="color:purple;">**Create a team**</mark>. У полі <mark style="color:purple;">**Team name**</mark> вкажіть назву команди. Сервер читає її лише під час першого запуску, пізніше команду можна перейменувати на її сторінці.
+Відкриється вікно <mark style="color:purple;">**Create a team**</mark>. У полі <mark style="color:purple;">**Team name**</mark> вкажіть назву команди. Сервер зчитує її лише під час першого запуску; згодом команду можна перейменувати на її сторінці.
 
 <figure>
   <picture>
@@ -83,7 +83,7 @@ sudo sh get-docker.sh
 </figure>
 
 {% hint style="warning" %}
-`SHARDBROWSER_TEAM_BIND` за замовчуванням дорівнює `127.0.0.1:8787`, і тоді до сервера можна підключитися лише з цієї ж машини. Щоб підключалися інші учасники, залиште в команді `0.0.0.0:8787`.
+`SHARDBROWSER_TEAM_BIND` за замовчуванням дорівнює `127.0.0.1:8787`, і тоді до сервера можна підключитися лише з цього самого комп'ютера. Щоб підключалися інші учасники, залиште в команді `0.0.0.0:8787`.
 
 `SHARDBROWSER_TEAM_DATA_DIR` - папка з даними команди та її ключем. Робіть резервну копію всієї папки повністю.
 {% endhint %}
@@ -102,7 +102,7 @@ docker compose version
 docker run -d --name shardbrowser-team --restart unless-stopped -p 8787:8787 -v shardbrowser-team:/data -e SHARDBROWSER_TEAM_NAME='ShardX team' -e SHARDBROWSER_TEAM_BIND=0.0.0.0:8787 -e SHARDBROWSER_TEAM_DATA_DIR=/data ghcr.io/proxyshard/shardbrowser-team-server:latest
 ```
 
-Замість `ShardX team` у команді буде назва, яку ви вказали. Docker завантажить образ `shardbrowser-team-server` і запустить контейнер `shardbrowser-team`. Завдяки `--restart unless-stopped` сервер сам підніметься після перезавантаження VPS.
+Замість `ShardX team` у команді буде назва, яку ви вказали. Docker завантажить образ `shardbrowser-team-server` і запустить контейнер `shardbrowser-team`. Завдяки `--restart unless-stopped` сервер автоматично запуститься після перезавантаження VPS.
 
 <figure>
   <picture>
@@ -112,13 +112,13 @@ docker run -d --name shardbrowser-team --restart unless-stopped -p 8787:8787 -v 
   <figcaption>Запуск контейнера тім-сервера</figcaption>
 </figure>
 
-Під час першого запуску сервер один раз виводить у лог токен адміністратора. Перегляньте його командою:
+Під час першого запуску сервер один раз записує токен адміністратора в журнал. Перегляньте його командою:
 
 ```bash
 docker logs shardbrowser-team
 ```
 
-Скопіюйте значення <mark style="color:purple;">`admin token`</mark>. У лозі також є <mark style="color:purple;">`invite`</mark> (посилання з тим самим токеном, замість `0.0.0.0` підставте адресу сервера) і <mark style="color:purple;">`public key`</mark>, за яким лаунчери перевіряють сервер.
+Скопіюйте значення <mark style="color:purple;">`admin token`</mark>. У журналі також є <mark style="color:purple;">`invite`</mark> (посилання з тим самим токеном, замість `0.0.0.0` підставте адресу сервера) і <mark style="color:purple;">`public key`</mark>, за яким лаунчери перевіряють сервер.
 
 <figure>
   <picture>
@@ -139,7 +139,7 @@ docker logs shardbrowser-team
 У вікні <mark style="color:purple;">**Create a team**</mark>, у блоці <mark style="color:purple;">**Join as the team's admin**</mark>, заповніть поля:
 
 * <mark style="color:purple;">**Server address**</mark> - IP-адреса сервера й порт, наприклад `203.0.113.5:8787` або `http://203.0.113.5:8787`. Домен і сертифікат не потрібні: лаунчер сам шифрує з'єднання.
-* <mark style="color:purple;">**Admin token**</mark> - токен із логу контейнера.
+* <mark style="color:purple;">**Admin token**</mark> - токен із журналу контейнера.
 
 Натисніть <mark style="color:purple;">**Join as admin**</mark>.
 
@@ -151,7 +151,7 @@ docker logs shardbrowser-team
   <figcaption>Вкажіть адресу сервера й токен адміністратора</figcaption>
 </figure>
 
-Відкриється сторінка команди. У перемикачі ліворуч унизу тепер вибрана ваша команда. Профілі, створені в цьому режимі, зберігаються на тім-сервері. Блок <mark style="color:purple;">**Getting the team going**</mark> підказує порядок дій: створити папки, створити профілі, додати учасників і видати їм права.
+Відкриється сторінка команди. У перемикачі ліворуч унизу тепер вибрана ваша команда. Профілі, створені в цьому режимі, зберігаються на тім-сервері. Блок <mark style="color:purple;">**Getting the team going**</mark> підказує порядок дій: створити папки, створити профілі, додати учасників і надати їм права.
 
 <figure>
   <picture>
@@ -185,23 +185,23 @@ docker logs shardbrowser-team
   <figcaption>Ім'я нового учасника</figcaption>
 </figure>
 
-З'явиться інвайт для учасника. Скопіюйте його й надішліть учаснику: він вставить його у вікні <mark style="color:purple;">**Join a team**</mark>. Інвайт показується лише один раз, новий можна створити через <mark style="color:purple;">**New invite...**</mark> у меню учасника.
+З'явиться запрошення для учасника. Скопіюйте його й надішліть учаснику: він вставить його у вікні <mark style="color:purple;">**Join a team**</mark>. Запрошення показується лише один раз; нове можна створити через <mark style="color:purple;">**New invite...**</mark> у меню учасника.
 
-Поки в учасника немає прав, команда для нього порожня. Натисніть <mark style="color:purple;">**Set rights...**</mark>, щоб одразу видати доступ.
+Поки учаснику не надано права, він не бачить вмісту команди. Натисніть <mark style="color:purple;">**Set rights...**</mark>, щоб одразу надати доступ.
 
 <figure>
   <picture>
     <source srcset="../../.gitbook/assets/shardbrowser-team-member-invite_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../.gitbook/assets/shardbrowser-team-member-invite_white.png" alt="Інвайт для учасника й кнопка Set rights">
+    <img src="../../.gitbook/assets/shardbrowser-team-member-invite_white.png" alt="Запрошення для учасника й кнопка Set rights">
   </picture>
-  <figcaption>Інвайт для учасника й кнопка Set rights</figcaption>
+  <figcaption>Запрошення для учасника й кнопка Set rights</figcaption>
 </figure>
 
 ---
 
 ## Права учасника
 
-У вікні <mark style="color:purple;">**Rights**</mark> права задаються в таблиці. Натисніть на клітинку (або клавішу `Space`), щоб перемкнути її: не задано, дозволено (галочка) або заборонено (хрестик). Якщо правила перетинаються, діє найвужче.
+У вікні <mark style="color:purple;">**Rights**</mark> права задаються в таблиці. Натисніть на клітинку (або клавішу `Space`), щоб перемкнути її: не задано, дозволено (галочка) або заборонено (хрестик). Якщо правила перетинаються, перевагу має найконкретніше правило.
 
 | Право        | Що дозволяє                       |
 | ------------ | --------------------------------- |
@@ -211,7 +211,7 @@ docker logs shardbrowser-team
 | **Create**   | Створювати профілі                |
 | **Delete**   | Видаляти профілі                  |
 | **Cookies**  | Працювати з cookies профілів      |
-| **Take out** | Виносити профілі з команди        |
+| **Take out** | Переміщувати профілі з команди    |
 
 Для швидкого налаштування рядка <mark style="color:purple;">**Whole team**</mark> є готові набори: <mark style="color:purple;">**None**</mark>, <mark style="color:purple;">**See only**</mark>, <mark style="color:purple;">**Start**</mark>, <mark style="color:purple;">**Edit**</mark> і <mark style="color:purple;">**All but take out**</mark>. Права також можна задати окремо для кожної папки команди. Натисніть <mark style="color:purple;">**Save rights**</mark>.
 
@@ -227,7 +227,7 @@ docker logs shardbrowser-team
 Право без <mark style="color:purple;">**See**</mark> не працює: учасник не зможе запустити або змінити профіль, якого не бачить.
 {% endhint %}
 
-Видані права відображаються в колонці <mark style="color:purple;">**Access**</mark>. У меню учасника (<mark style="color:purple;">**⋮**</mark>) можна змінити права (<mark style="color:purple;">**Rights...**</mark>), тимчасово вимкнути учасника (<mark style="color:purple;">**Switch off**</mark>), створити новий інвайт (<mark style="color:purple;">**New invite...**</mark>) або видалити учасника з команди (<mark style="color:purple;">**Remove...**</mark>).
+Надані права відображаються у стовпці <mark style="color:purple;">**Access**</mark>. У меню учасника (<mark style="color:purple;">**⋮**</mark>) можна змінити права (<mark style="color:purple;">**Rights...**</mark>), тимчасово вимкнути учасника (<mark style="color:purple;">**Switch off**</mark>), створити нове запрошення (<mark style="color:purple;">**New invite...**</mark>) або видалити учасника з команди (<mark style="color:purple;">**Remove...**</mark>).
 
 <figure>
   <picture>
@@ -267,17 +267,17 @@ docker logs shardbrowser-team
   <figcaption>Меню робочого простору - «Join a team...»</figcaption>
 </figure>
 
-У вікні <mark style="color:purple;">**Join a team**</mark> потрібно вставити інвайт, отриманий від адміністратора, у поле <mark style="color:purple;">**Invite or server address**</mark>. Адреса сервера й <mark style="color:purple;">**Access token**</mark> заповняться самі. Потім натисніть <mark style="color:purple;">**Join**</mark>.
+У вікні <mark style="color:purple;">**Join a team**</mark> вставте запрошення, отримане від адміністратора, у поле <mark style="color:purple;">**Invite or server address**</mark>. Адреса сервера й <mark style="color:purple;">**Access token**</mark> заповняться автоматично. Потім натисніть <mark style="color:purple;">**Join**</mark>.
 
 <figure>
   <picture>
     <source srcset="../../.gitbook/assets/shardbrowser-team-join-dialog_black.png" media="(prefers-color-scheme: dark)">
-    <img src="../../.gitbook/assets/shardbrowser-team-join-dialog_white.png" alt="Вставте інвайт у вікні Join a team">
+    <img src="../../.gitbook/assets/shardbrowser-team-join-dialog_white.png" alt="Вставте запрошення у вікні Join a team">
   </picture>
-  <figcaption>Вставте інвайт у вікні Join a team</figcaption>
+  <figcaption>Вставте запрошення у вікні Join a team</figcaption>
 </figure>
 
-Після підключення в меню перемикача в учасника з'являється пункт <mark style="color:purple;">**Your access**</mark>. Він показує, які права видав адміністратор. Змінити їх може лише адміністратор.
+Після підключення в меню перемикача в учасника з'являється пункт <mark style="color:purple;">**Your access**</mark>. Він показує, які права надав адміністратор. Змінити їх може лише адміністратор.
 
 <figure>
   <picture>
@@ -287,7 +287,7 @@ docker logs shardbrowser-team
   <figcaption>Права учасника в розділі Your access</figcaption>
 </figure>
 
-У розділі <mark style="color:purple;">**All profiles**</mark> учасник бачить профілі команди з доступних йому папок і працює з ними в межах виданих прав. Щоб повернутися до локальних профілів, виберіть <mark style="color:purple;">**Personal**</mark> у перемикачі.
+У розділі <mark style="color:purple;">**All profiles**</mark> учасник бачить профілі команди з доступних йому папок і працює з ними в межах наданих прав. Щоб повернутися до локальних профілів, виберіть <mark style="color:purple;">**Personal**</mark> у перемикачі.
 
 <figure>
   <picture>

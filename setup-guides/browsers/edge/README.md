@@ -1,5 +1,5 @@
 ---
-description: "Способи налаштувати проксі ShardX у Microsoft Edge через ShardExtension, ZeroOmega або системні параметри."
+description: "Способи налаштувати проксі ShardX у Microsoft Edge через ShardExtension: Proxy Manager, ZeroOmega або системні параметри."
 icon: edge
 ---
 
@@ -7,5 +7,5 @@ icon: edge
 
 Розширення для браузера Edge
 
-* [🔥 ShardExtension](shardx.md)
+* [🔥 ShardExtension: Proxy Manager](shardx.md)
 * [ZeroOmega](zeroomega.md)

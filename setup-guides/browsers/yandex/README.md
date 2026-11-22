@@ -1,5 +1,5 @@
 ---
-description: "Способи налаштувати проксі ShardX у Яндекс.Браузері через ShardExtension, розширення Chromium або системні параметри."
+description: "Способи налаштувати проксі ShardX у Яндекс.Браузері через ShardExtension: Proxy Manager, розширення Chromium або системні параметри."
 icon: yandex
 ---
 
@@ -7,4 +7,4 @@ icon: yandex
 
 Розширення для Яндекс.Браузера. Браузер побудований на рушії Chromium і **напряму підтримує** встановлення розширень з Chrome Web Store.
 
-* [🔥 ShardExtension](shardx.md)
+* [🔥 ShardExtension: Proxy Manager](shardx.md)

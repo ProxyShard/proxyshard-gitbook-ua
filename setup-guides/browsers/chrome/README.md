@@ -1,5 +1,5 @@
 ---
-description: "Способи налаштувати проксі ShardX у Google Chrome через ShardExtension, ZeroOmega або системні параметри."
+description: "Способи налаштувати проксі ShardX у Google Chrome через ShardExtension: Proxy Manager, ZeroOmega або системні параметри."
 icon: chrome
 ---
 
@@ -7,5 +7,5 @@ icon: chrome
 
 Розширення для браузера Chrome
 
-* [🔥 ShardExtension](shardx.md)
+* [🔥 ShardExtension: Proxy Manager](shardx.md)
 * [ZeroOmega](zeroomega.md)

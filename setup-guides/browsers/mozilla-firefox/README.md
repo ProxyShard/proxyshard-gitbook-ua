@@ -1,5 +1,5 @@
 ---
-description: "Способи налаштувати проксі ShardX у Mozilla Firefox через ShardExtension, FoxyProxy або параметри браузера."
+description: "Способи налаштувати проксі ShardX у Mozilla Firefox через ShardExtension: Proxy Manager, FoxyProxy або параметри браузера."
 icon: firefox-browser
 ---
 
@@ -7,5 +7,5 @@ icon: firefox-browser
 
 Розширення для браузера Mozilla Firefox
 
-* [🔥 ShardExtension](shardx.md)
+* [🔥 ShardExtension: Proxy Manager](shardx.md)
 * [FoxyProxy](foxyproxy.md)
